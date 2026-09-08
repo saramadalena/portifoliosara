@@ -1,0 +1,11 @@
+{
+  "title": "saramadalena",
+  "description": "Guides marketing and communication professionals in updating portfolios with tailored advice and resources to showcase their expertise effectively.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
