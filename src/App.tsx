@@ -174,7 +174,7 @@ const timeline = [
 // Cabeçalho editorial de seção: número grande em fundo + label + linha conectora
 const sectionIconMap: Record<string, SiteIconName> = {
   '01': 'cases', '02': 'method', '03': 'skills',
-  '04': 'about', '05': 'contact',
+  '04': 'about', '05': 'contact', '06': 'blog',
 }
 
 function SectionHead({ n, label, color = T.navy, light = false }: { n: string; label: string; color?: string; light?: boolean }) {
@@ -920,7 +920,7 @@ function CaseIcon({ id, size = 24, color = 'currentColor' }: { id: number; size?
 
 // Ícones do site — seções, método, pilares, steps (mesmo traço dos CaseIcons)
 type SiteIconName =
-  | 'cases' | 'method' | 'skills' | 'about' | 'contact'
+  | 'cases' | 'method' | 'skills' | 'about' | 'contact' | 'blog'
   | 'diagnose' | 'strategy' | 'process' | 'create'
   | 'attention' | 'production' | 'campaign' | 'digital'
   | 'marketing' | 'branding' | 'experience' | 'channels'
@@ -964,6 +964,12 @@ function SiteIcon({ name, size = 24, color = 'currentColor' }: { name: SiteIconN
       <svg width={s} height={s} viewBox="0 0 24 24" fill="none">
         <rect x="2" y="5" width="20" height="14" rx="1.5" stroke={color} strokeWidth={sw}/>
         <polyline points="2,5 12,13 22,5" stroke={color} strokeWidth={sw} strokeLinejoin="round"/>
+      </svg>
+    )
+    case 'blog': return (
+      <svg width={s} height={s} viewBox="0 0 24 24" fill="none">
+        <path d="M11 4H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" stroke={color} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke={color} strokeWidth={sw} strokeLinejoin="round"/>
       </svg>
     )
     // ── Método / formaDeTrabalhar ──────────────────────────────────────────────
@@ -1929,6 +1935,93 @@ function CaseDetailRouter({ id, onBack }: { id: number; onBack: () => void }) {
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
 }
 
+// ─── BLOG ────────────────────────────────────────────────────────────────────
+
+type BlogPost = { id: number; title: string; excerpt: string; category: string; date: string; readTime: string }
+
+const blogPosts: BlogPost[] = [
+  { id: 1, title: 'Como estruturar comunicação corporativa do zero', excerpt: 'Quando a comunicação acontece em silos — cada área falando por conta própria, sem linha editorial, sem padrão — o ruído vira cultura. O que aprendi estruturando áreas do zero em empresas de diferentes portes.', category: 'Comunicação Corporativa', date: 'Ago 2025', readTime: '5 min' },
+  { id: 2, title: 'Branding interno: por que a identidade começa antes do cliente', excerpt: 'Antes de falar com o mercado, a marca precisa fazer sentido para quem trabalha dentro dela. Como o endomarketing sustenta a consistência de marca a longo prazo.', category: 'Branding', date: 'Jul 2025', readTime: '4 min' },
+  { id: 3, title: 'ESG na comunicação: do relatório ao conteúdo', excerpt: 'Transformar dados de ESG em narrativa não é simplificar — é traduzir. Como conectar indicadores de impacto com a linguagem dos diferentes públicos de uma empresa.', category: 'ESG', date: 'Jun 2025', readTime: '6 min' },
+]
+
+function BlogCard({ post, onSelect }: { post: BlogPost; onSelect: () => void }) {
+  const [hov, setHov] = useState(false)
+  return (
+    <div onClick={onSelect} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      style={{ backgroundColor:T.white,cursor:'pointer',padding:'32px 28px',borderTop:`2px solid ${hov?T.magenta:T.ruleLight}`,transition:'all 0.2s' }}>
+      <div style={{ display:'flex',alignItems:'center',gap:'8px',marginBottom:'16px',flexWrap:'wrap' }}>
+        <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:T.magenta }}>{post.category}</span>
+        <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
+        <span style={{ fontSize:'9px',fontWeight:300,color:T.inkLight }}>{post.date}</span>
+        <span style={{ fontSize:'9px',fontWeight:300,color:T.inkLight }}>· {post.readTime}</span>
+      </div>
+      <h3 style={{ fontFamily:'Playfair Display, serif',fontSize:'17px',fontWeight:600,lineHeight:1.3,letterSpacing:'-0.01em',color:T.ink,margin:'0 0 12px' }}>{post.title}</h3>
+      <p style={{ fontSize:'12px',fontWeight:300,lineHeight:1.78,color:T.inkMid,margin:'0 0 20px' }}>{post.excerpt}</p>
+      <div style={{ display:'flex',alignItems:'center',gap:'6px',color: hov?T.magenta:T.inkLight,transition:'color 0.18s' }}>
+        <span style={{ fontSize:'10px',fontWeight:600,letterSpacing:'0.1em',textTransform:'uppercase' }}>Ler artigo</span>
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><line x1="0" y1="4" x2="9" y2="4" stroke="currentColor" strokeWidth="1.5"/><polyline points="6,1 9,4 6,7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
+      </div>
+    </div>
+  )
+}
+
+function BlogListing({ onSelect, onBack }: { onSelect: (id: number) => void; onBack: () => void }) {
+  const { isMobile, isTablet } = useBreakpoint()
+  return (
+    <div style={{ minHeight:'calc(100vh - 56px)',backgroundColor:T.bg }}>
+      <div style={{ padding: isMobile?'48px 20px 36px':'64px 48px 48px',borderBottom:`1px solid ${T.rule}`,backgroundColor:T.white }}>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'7px',background:'none',border:'none',padding:'0 0 28px',cursor:'pointer',fontSize:'10px',fontWeight:500,letterSpacing:'0.12em',textTransform:'uppercase',color:T.inkLight,fontFamily:'Inter, sans-serif',transition:'color 0.18s' }}
+          onMouseEnter={e=>(e.currentTarget.style.color=T.magenta)} onMouseLeave={e=>(e.currentTarget.style.color=T.inkLight)}>
+          ← Portfólio
+        </button>
+        <SectionHead n="06" label="Blog" color={T.magenta} />
+        <h1 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(26px,2.8vw,40px)',fontWeight:700,lineHeight:1.12,letterSpacing:'-0.03em',margin:'0 0 12px',color:T.ink }}>
+          Reflexões sobre{' '}
+          <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>comunicação e estratégia.</em>
+        </h1>
+        <p style={{ fontSize:'14px',fontWeight:300,color:T.inkLight,margin:0,lineHeight:1.7 }}>Artigos sobre comunicação corporativa, branding, ESG e estratégia de conteúdo.</p>
+      </div>
+      <div style={{ padding: isMobile?'32px 20px':'48px 48px',display:'grid',gridTemplateColumns: isMobile?'1fr':isTablet?'1fr 1fr':'1fr 1fr 1fr',gap:'2px' }}>
+        {blogPosts.map(post => <BlogCard key={post.id} post={post} onSelect={() => onSelect(post.id)} />)}
+      </div>
+    </div>
+  )
+}
+
+function BlogArticle({ id, onBack }: { id: number; onBack: () => void }) {
+  const post = blogPosts.find(p => p.id === id)!
+  const { isMobile } = useBreakpoint()
+  return (
+    <div style={{ minHeight:'calc(100vh - 56px)',backgroundColor:T.bg }}>
+      <div style={{ padding:'14px 28px',borderBottom:`1px solid ${T.ruleLight}`,display:'flex',alignItems:'center',gap:'12px',backgroundColor:T.white }}>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'7px',background:'none',border:'none',padding:0,cursor:'pointer',fontSize:'10px',fontWeight:500,letterSpacing:'0.12em',textTransform:'uppercase',color:T.inkMid,fontFamily:'Inter, sans-serif' }}>
+          ← Blog
+        </button>
+        <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
+        <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:T.magenta }}>{post.category}</span>
+      </div>
+      <div style={{ maxWidth:'720px',margin:'0 auto',padding: isMobile?'40px 24px':'64px 48px' }}>
+        <p style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:T.inkLight,margin:'0 0 16px' }}>{post.date} · {post.readTime} de leitura</p>
+        <h1 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.4vw,34px)',fontWeight:700,lineHeight:1.18,letterSpacing:'-0.025em',color:T.ink,margin:'0 0 24px' }}>{post.title}</h1>
+        <div style={{ width:'40px',height:'3px',backgroundColor:T.magenta,marginBottom:'32px' }} />
+        <p style={{ fontSize:'16px',fontWeight:300,lineHeight:1.85,color:T.inkMid,margin:'0 0 36px' }}>{post.excerpt}</p>
+        <div style={{ padding:'28px 24px',border:`1.5px dashed ${T.ruleLight}`,marginBottom:'32px',backgroundColor:T.white }}>
+          <p style={{ fontSize:'10px',fontWeight:600,letterSpacing:'0.14em',textTransform:'uppercase',color:T.inkLight,margin:'0 0 6px' }}>Corpo do artigo</p>
+          <p style={{ fontSize:'11px',fontWeight:300,color:T.inkLight,margin:0,lineHeight:1.55 }}>O conteúdo completo do artigo será adicionado aqui. A estrutura suporta subtítulos, imagens, citações em destaque e múltiplos parágrafos.</p>
+        </div>
+        <div style={{ padding:'40px 24px',backgroundColor:T.white,border:`1px solid ${T.ruleLight}`,marginBottom:'36px',display:'flex',alignItems:'center',justifyContent:'center',gap:'12px' }}>
+          <svg width="20" height="16" viewBox="0 0 20 16" fill="none"><rect x="1" y="1" width="18" height="14" rx="1" stroke={T.rule} strokeWidth="1.5"/><circle cx="6.5" cy="5.5" r="1.5" fill={T.rule}/><polyline points="1,11 7,6 11,10 14,7 19,11" fill="none" stroke={T.rule} strokeWidth="1.5" strokeLinejoin="round"/></svg>
+          <span style={{ fontSize:'10px',fontWeight:300,color:T.inkLight }}>Imagem do artigo</span>
+        </div>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          ← Voltar ao Blog
+        </button>
+      </div>
+    </div>
+  )
+}
+
 // NavLink
 function NavLink({ href, children, onClick }: { href: string; children: string; onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
   const [hov, setHov] = useState(false)
@@ -1940,7 +2033,7 @@ function NavLink({ href, children, onClick }: { href: string; children: string; 
 }
 
 // Menu mobile drawer
-function MobileMenu({ open, onClose, onCase, onNav }: { open: boolean; onClose: () => void; onCase: () => void; onNav: (id: string) => void }) {
+function MobileMenu({ open, onClose, onBlog, onCase, onNav }: { open: boolean; onClose: () => void; onBlog: () => void; onCase: () => void; onNav: (id: string) => void }) {
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = ''
@@ -1965,6 +2058,7 @@ function MobileMenu({ open, onClose, onCase, onNav }: { open: boolean; onClose: 
           {item('Método', () => onNav('forma'))}
           {item('Competências', () => onNav('competencias'))}
           {item('Sobre', () => onNav('sobre'))}
+          {item('Blog', onBlog)}
           {item('Contato', () => onNav('contato'))}
         </nav>
         <div style={{ padding:'24px 28px',borderTop:`1px solid ${T.rule}` }}>
@@ -1980,6 +2074,8 @@ function MobileMenu({ open, onClose, onCase, onNav }: { open: boolean; onClose: 
 
 export default function App() {
   const [openCase, setOpenCase] = useState<number | null>(null)
+  const [blogView, setBlogView] = useState(false)
+  const [blogArticleId, setBlogArticleId] = useState<number | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { isMobile, isTablet, isWide } = useBreakpoint()
@@ -1992,7 +2088,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
-  }, [openCase])
+  }, [openCase, blogView, blogArticleId])
 
   const gridBg = {
     backgroundImage: `linear-gradient(${T.ruleLight} 1px, transparent 1px), linear-gradient(90deg, ${T.ruleLight} 1px, transparent 1px)`,
@@ -2002,6 +2098,8 @@ export default function App() {
   const goHome = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenCase(null)
+    setBlogView(false)
+    setBlogArticleId(null)
   }
 
   const navEl = (
@@ -2009,8 +2107,9 @@ export default function App() {
       <MobileMenu
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
-        onCase={() => { setOpenCase(null); setTimeout(() => document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }), 50) }}
-        onNav={(id) => { setOpenCase(null); setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 50) }}
+        onBlog={() => { setBlogView(true); setBlogArticleId(null); setOpenCase(null) }}
+        onCase={() => { setOpenCase(null); setBlogView(false); setBlogArticleId(null); setTimeout(() => document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }), 50) }}
+        onNav={(id) => { setOpenCase(null); setBlogView(false); setBlogArticleId(null); setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 50) }}
       />
       <nav style={{ position:'fixed',top:0,left:0,right:0,zIndex:100,height:'56px',padding: isMobile?'0 16px':'0 48px',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor: scrolled?'rgba(245,245,243,0.97)':T.white,borderBottom:`1px solid ${T.rule}`,backdropFilter: scrolled?'blur(16px)':'none',transition:'all 0.3s ease' }}>
         <a href="#" onClick={goHome} style={{ textDecoration:'none',display:'flex',alignItems:'center',gap:'10px',minHeight:'44px' }}>
@@ -2022,11 +2121,12 @@ export default function App() {
         </a>
         {!isMobile && (
           <div style={{ display:'flex',gap:'28px',alignItems:'center' }}>
-            <NavLink href="#cases" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('cases')?.scrollIntoView({behavior:'smooth'}),50)}}>Cases</NavLink>
-            <NavLink href="#forma" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('forma')?.scrollIntoView({behavior:'smooth'}),50)}}>Método</NavLink>
-            {!isTablet && <NavLink href="#competencias" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('competencias')?.scrollIntoView({behavior:'smooth'}),50)}}>Competências</NavLink>}
-            <NavLink href="#sobre" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('sobre')?.scrollIntoView({behavior:'smooth'}),50)}}>Sobre</NavLink>
-            <a href="#contato" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('contato')?.scrollIntoView({behavior:'smooth'}),50)}} style={{ display:'inline-flex',alignItems:'center',gap:'6px',padding:'9px 18px',backgroundColor:T.navy,color:'#fff',fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',transition:'background-color 0.18s',minHeight:'44px' }}
+            <NavLink href="#cases" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('cases')?.scrollIntoView({behavior:'smooth'}),50)}}>Cases</NavLink>
+            <NavLink href="#forma" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('forma')?.scrollIntoView({behavior:'smooth'}),50)}}>Método</NavLink>
+            {!isTablet && <NavLink href="#competencias" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('competencias')?.scrollIntoView({behavior:'smooth'}),50)}}>Competências</NavLink>}
+            <NavLink href="#sobre" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('sobre')?.scrollIntoView({behavior:'smooth'}),50)}}>Sobre</NavLink>
+            <button onClick={()=>{setBlogView(true);setBlogArticleId(null);setOpenCase(null)}} style={{ fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',color:T.inkLight,background:'none',border:'none',cursor:'pointer',fontFamily:'Inter, sans-serif',padding:0,transition:'color 0.18s',minHeight:'44px' }} onMouseEnter={e=>(e.currentTarget.style.color=T.navy)} onMouseLeave={e=>(e.currentTarget.style.color=T.inkLight)}>Blog</button>
+            <a href="#contato" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('contato')?.scrollIntoView({behavior:'smooth'}),50)}} style={{ display:'inline-flex',alignItems:'center',gap:'6px',padding:'9px 18px',backgroundColor:T.navy,color:'#fff',fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',transition:'background-color 0.18s',minHeight:'44px' }}
               onMouseEnter={e=>(e.currentTarget.style.backgroundColor=T.magenta)} onMouseLeave={e=>(e.currentTarget.style.backgroundColor=T.navy)}>
               Contato <span style={{ fontSize:'14px',lineHeight:1 }}>→</span>
             </a>
@@ -2072,6 +2172,22 @@ export default function App() {
         {navEl}
         <div style={{ paddingTop:'56px' }}>
           <CaseDetailRouter id={openCase} onBack={() => setOpenCase(null)} />
+        </div>
+        {footerEl}
+      </div>
+    )
+  }
+
+  // ── BLOG ──
+  if (blogView) {
+    return (
+      <div style={{ backgroundColor:T.bg,color:T.ink,fontFamily:'Inter, sans-serif',minHeight:'100vh' }}>
+        {navEl}
+        <div style={{ paddingTop:'56px' }}>
+          {blogArticleId !== null
+            ? <BlogArticle id={blogArticleId} onBack={() => setBlogArticleId(null)} />
+            : <BlogListing onSelect={(id) => setBlogArticleId(id)} onBack={() => setBlogView(false)} />
+          }
         </div>
         {footerEl}
       </div>
