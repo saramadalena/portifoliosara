@@ -38,6 +38,16 @@ s = s.replaceAll('Cobertura da Expo Favela 2025.', 'move.e na Expo Favela 2025.'
 s = s.replaceAll('Freelance de Marketing, Branding e Conteúdo · 2024–2025', 'move.e · jul–out/2025')
 s = s.replaceAll('move.e · 2025', 'move.e · jul–out/2025')
 
+// Fecha também a experiência na trajetória, sem indicador de vínculo atual.
+s = s.replaceAll(
+  "{ ano: '2025', cargo: 'Comunicação, Branding e projetos', empresa: 'move.e', atual: true }",
+  "{ ano: 'jul–out/25', cargo: 'Comunicação, Branding e projetos', empresa: 'move.e' }"
+)
+s = s.replaceAll(
+  "'move.e': 'Em 2025, passei a desenvolver projetos de comunicação contratados e administrados pela move.e. A experiência reúne Branding, conteúdo, materiais corporativos, apresentações, comunicação institucional e projetos relacionados a eventos. As entregas receberam retorno positivo da CEO nas diferentes frentes, com destaque também para a organização visual e a diagramação dos relatórios em relação ao que havia sido solicitado.'",
+  "'move.e': 'Entre julho e outubro de 2025, desenvolvi projetos de comunicação contratados e administrados pela move.e. A experiência reuniu Branding, conteúdo, materiais corporativos, apresentações, comunicação institucional e projetos relacionados a eventos. As entregas receberam retorno positivo da CEO nas diferentes frentes, com destaque também para a organização visual e a diagramação dos relatórios em relação ao que havia sido solicitado.'"
+)
+
 // Reverte a ocultação criada pelo patch editorial antigo e devolve o bloco ESG ao layout.
 s = s.replace(
   "{/* Bloco reservado para projeto ainda não publicado */}\n      {false && <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:'#060f08' }}>",
@@ -70,4 +80,4 @@ if (esgStart !== -1 && esgEnd !== -1) {
 }
 
 fs.writeFileSync(file, s)
-console.log('Case move.e revisado com período jul–out/2025, materiais ASG/ESG liberados e bloco ESG integrado ao layout.')
+console.log('Case move.e revisado com período fechado jul–out/2025, trajetória encerrada e bloco ESG integrado ao layout.')
