@@ -37,22 +37,55 @@ img[alt="Murillo Esperandio"] {
 }
 
 /* Evita estouro horizontal e preserva o carregamento das imagens. */
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 img,
 iframe {
   max-width: 100%;
 }
 
-/* Ajuste apenas dos mosaicos de cases em telas menores. Não altera cards ou navegação do site. */
+/* Ajustes responsivos sobre o layout original. */
 @media (max-width: 700px) {
-  div:has(> div > img[alt="SADA Vôlei"]) {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  /* Evita que títulos e textos longos escapem da largura útil do celular. */
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  summary,
+  a,
+  button {
+    overflow-wrap: anywhere;
   }
 
+  /* Cards e blocos editoriais não podem ultrapassar a viewport. */
+  section > div,
+  main > div {
+    max-width: 100%;
+  }
+
+  /* Tags de competências passam a respeitar a largura disponível. */
+  #competencias span,
+  #competencias li,
+  #competencias button {
+    max-width: 100%;
+    white-space: normal !important;
+  }
+
+  /* Mosaicos de cases: duas colunas consistentes no mobile, uma coluna para blocos largos. */
+  div:has(> div > img[alt="SADA Vôlei"]),
   div:has(> a > img[alt="Marcela Araujo"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
   }
 
-  div:has(> div > img[alt="Equipe Grupo SADA — Intermodal 2024"]) {
+  div:has(> div > img[alt="Equipe Grupo SADA — Intermodal 2024"]),
+  div:has(> div > img[alt="Convite Intermodal 2024"]) {
     grid-template-columns: 1fr !important;
   }
 
@@ -61,7 +94,25 @@ iframe {
     min-height: 220px;
   }
 
+  /* Imagens dos mosaicos mantêm proporção e não geram faixas escuras por enquadramento. */
+  #cases img,
+  [id^="case-"] img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+  }
+
   img[alt="Convite Intermodal 2024"] {
-    background: #f5f5f3;
+    background: #f5f5f3 !important;
+  }
+
+  /* Sobre: garante quebra natural dos títulos e do texto em telas estreitas. */
+  #sobre h2,
+  #sobre h3,
+  #sobre p {
+    max-width: 100% !important;
   }
 }
