@@ -67,6 +67,18 @@ iframe {
     max-width: 100%;
   }
 
+  /* No mobile, o hero deixa de ocupar uma tela inteira vazia. */
+  #hero {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 56px !important;
+  }
+
+  #hero > div:first-child {
+    padding: 34px 24px 40px !important;
+    overflow-y: visible !important;
+  }
+
   #competencias span,
   #competencias li,
   #competencias button {
