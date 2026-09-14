@@ -27,16 +27,19 @@ r('Marketing · Branding · Conteúdo', 'Branding · Conteúdo multimídia · Ca
 r('Ver projetos', 'Ver cases')
 r('© 2025', '© 2026')
 
-r('Mais de <strong style={{ fontWeight:600,color:T.ink }}>10 anos</strong> estruturando áreas, processos e narrativas para empresas que precisam falar com clareza.', 'Uma trajetória construída em diferentes segmentos, estruturas e momentos de comunicação.')
-r('Vivência integrada com <em>RH, Educação Corporativa, ESG, Compliance e LGPD</em>.', 'Vivência com diferentes áreas, lideranças, fornecedores, parceiros e stakeholders internos e externos.')
+// Sobre: formação e narrativa profissional.
+r('Sara Madalena Silva.<br/><em style={{ fontStyle:\'italic\',fontWeight:400,color:T.magenta }}>Estratégia, criação e execução.</em>', 'Comunicação que começa entendendo o contexto.<br/><em style={{ fontStyle:\'italic\',fontWeight:400,color:T.magenta }}>Repertório construído em diferentes estruturas e públicos.</em>')
+r('Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong>. Mais de <strong style={{ fontWeight:600,color:T.ink }}>10 anos</strong> estruturando áreas, processos e narrativas para empresas que precisam falar com clareza.', 'Publicitária e especialista em <strong style={{ fontWeight:600,color:T.ink }}>Comunicação e Marketing pela PUC Minas</strong>. Minha trajetória passou por educação, tecnologia, saúde, certificação digital, logística, mobilidade e indústria, além de experiências ligadas aos setores financeiro e público.')
+r('Vivência integrada com <em>RH, Educação Corporativa, ESG, Compliance e LGPD</em>. Atuação que conecta diagnóstico, estratégia, criação e execução — sempre com foco em consistência e resultado.', 'Trabalhar em estruturas tão diferentes me colocou em contato com muitos assuntos, áreas e públicos. Ao longo desse percurso, aprendi que comunicar também exige entender o contexto: quem precisa falar, com quem, por qual canal, com quais limites e para qual necessidade.')
+r("['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem, MG', 'B2B & B2C']", "['Publicidade e Propaganda · PUC Minas · 2014–2017', 'MBA Comunicação e Marketing · PUC Minas · 2023–2024', 'Marketing Digital Avançado · ESPM · 2023', 'Inglês intermediário · CCAA', 'CENEX/FALE UFMG · leitura em inglês · 2026']")
+
 r("{n:'+33%',l:'de abertura de comunicados internos em 2024, atingindo a meta estabelecida',cor:T.magenta},", "{n:'Branding',l:'marca, identidade e posicionamento aplicados a diferentes contextos',cor:T.magenta},")
 r("{n:'+7%',l:'de engajamento no Instagram e LinkedIn, com aumento perceptível de 2023 para 2024',cor:T.navy},", "{n:'Canais',l:'comunicação interna, digital e relacionamento com diferentes públicos',cor:T.navy},")
 
-// Trajetória: nomenclaturas e experiências que faltavam no resumo visual.
 r("{ ano: '2025', cargo: 'Freelance de Marketing, Branding e Conteúdo', empresa: 'Autônoma', atual: true }", "{ ano: '2025', cargo: 'Comunicação, Branding e projetos', empresa: 'move.e', atual: true }")
 r("{ ano: '2018–19', cargo: 'Auxiliar de Comunicação', empresa: 'Colégio Arnaldo' }", "{ ano: '2018–19', cargo: 'Assistente de Comunicação', empresa: 'Colégio Arnaldo' },\n  { ano: '2017', cargo: 'Estagiária · Gerência de Comunicação', empresa: 'Prodemge' },\n  { ano: '2015–17', cargo: 'Estagiária · Comunicação e Apoio', empresa: 'Banco do Brasil' }")
 r('PolyCare', 'Polycare')
 r('QualityCert', 'Qualitycert')
 
 fs.writeFileSync(file, s)
-console.log('Ajustes de cases, sobre e trajetória aplicados.')
+console.log('Ajustes de cases, sobre, formação e trajetória aplicados.')
