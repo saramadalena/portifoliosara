@@ -6,5 +6,12 @@ s = s.replaceAll('Da estratégia à execução, cada entrega buscou manter consi
 s = s.replaceAll("{n:'+10',l:'anos de experiência, buscando consistência e assertividade na comunicação',cor:T.navy},", "{n:'Conteúdo',l:'produção textual, visual, editorial e audiovisual em diferentes contextos',cor:T.navy},")
 s = s.replaceAll('Aberta a projetos de <strong style={{ fontWeight:500,color:T.ink }}>marketing</strong>, <strong style={{ fontWeight:500,color:T.ink }}>branding</strong>, produção de conteúdo, comunicação corporativa e consultoria estratégica.', 'Aberta a projetos e oportunidades em <strong style={{ fontWeight:500,color:T.ink }}>Comunicação e Marketing</strong>, com atuação em Branding, conteúdo, canais e comunicação corporativa.')
 s = s.replace('>Indicadores</span>', '>Repertório</span>')
+
+// Completa o Sobre sem repetir a função dos cases ou da trajetória detalhada.
+s = s.replaceAll(
+  'Trabalhar em estruturas tão diferentes me colocou em contato com muitos assuntos, áreas e públicos. Ao longo desse percurso, aprendi que comunicar também exige entender o contexto: quem precisa falar, com quem, por qual canal, com quais limites e para qual necessidade.',
+  'Trabalhar em estruturas tão diferentes me colocou em contato com muitos assuntos, áreas e públicos. Ao longo desse percurso, aprendi que comunicar também exige entender o contexto: quem precisa falar, com quem, por qual canal, com quais limites e para qual necessidade.<br/><br/>Comecei em experiências muito ligadas à comunicação interna, ao ambiente presencial e à produção gráfica. Depois vieram a produção multimídia em maior escala, os canais digitais, o Marketing, a interface comercial e o Branding. Com o avanço da trajetória, as entregas passaram a responder também a objetivos de marca, reputação, alcance, captação, posicionamento e relacionamento, além de processos, indicadores e diferentes stakeholders.<br/><br/>Hoje reúno esse repertório em uma atuação que combina criação e organização, conteúdo e canais, leitura de públicos e consistência de marca.'
+)
+
 fs.writeFileSync(file, s)
 console.log('Detalhamento SADA, Sobre, repertório e contato revisados.')
