@@ -29,7 +29,7 @@ s = s.replaceAll(
 )
 s = s.replaceAll(
   "resultadoTexto: 'A startup saiu do zero com marca, posicionamento e materiais prontos para conversar com investidores, clientes e parceiros — cada um na sua linguagem.'",
-  "resultadoTexto: 'O projeto consolidou uma base de comunicação com mensagens e materiais adaptados aos diferentes públicos de relacionamento, reunindo posicionamento institucional, conteúdos ASG e presença em evento.'"
+  "resultadoTexto: 'Como resultado qualitativo, o trabalho foi reconhecido positivamente pela CEO da move.e nas diferentes frentes desenvolvidas. A organização visual e a diagramação dos relatórios também receberam avaliação muito positiva em relação ao que havia sido solicitado. O projeto consolidou mensagens e materiais para diferentes públicos, reunindo posicionamento institucional, conteúdos ASG e ESG e presença em evento.'"
 )
 s = s.replaceAll('Consultoria Estratégica · move.e', 'Comunicação e posicionamento · move.e')
 s = s.replaceAll('Consultoria Estratégica<br/>', 'Comunicação e posicionamento<br/>')
@@ -46,4 +46,4 @@ s = s.replace(
 )
 
 fs.writeFileSync(file, s)
-console.log('Case move.e revisado e materiais ASG/ESG liberados para exibição.')
+console.log('Case move.e revisado com resultados qualitativos e materiais ASG/ESG liberados.')
