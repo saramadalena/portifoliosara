@@ -27,7 +27,6 @@ r('Marketing · Branding · Conteúdo', 'Branding · Conteúdo multimídia · Ca
 r('Ver projetos', 'Ver cases')
 r('© 2025', '© 2026')
 
-// Sobre: formação e narrativa profissional.
 r('Sara Madalena Silva.<br/><em style={{ fontStyle:\'italic\',fontWeight:400,color:T.magenta }}>Estratégia, criação e execução.</em>', 'Comunicação que começa entendendo o contexto.<br/><em style={{ fontStyle:\'italic\',fontWeight:400,color:T.magenta }}>Repertório construído em diferentes estruturas e públicos.</em>')
 r('Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong>. Mais de <strong style={{ fontWeight:600,color:T.ink }}>10 anos</strong> estruturando áreas, processos e narrativas para empresas que precisam falar com clareza.', 'Publicitária e especialista em <strong style={{ fontWeight:600,color:T.ink }}>Comunicação e Marketing pela PUC Minas</strong>. Minha trajetória passou por educação, tecnologia, saúde, certificação digital, logística, mobilidade e indústria, além de experiências ligadas aos setores financeiro e público.')
 r('Vivência integrada com <em>RH, Educação Corporativa, ESG, Compliance e LGPD</em>. Atuação que conecta diagnóstico, estratégia, criação e execução — sempre com foco em consistência e resultado.', 'Trabalhar em estruturas tão diferentes me colocou em contato com muitos assuntos, áreas e públicos. Ao longo desse percurso, aprendi que comunicar também exige entender o contexto: quem precisa falar, com quem, por qual canal, com quais limites e para qual necessidade.')
@@ -41,5 +40,14 @@ r("{ ano: '2018–19', cargo: 'Auxiliar de Comunicação', empresa: 'Colégio Ar
 r('PolyCare', 'Polycare')
 r('QualityCert', 'Qualitycert')
 
+// Limpeza final já incorporada a um patch ativo para evitar uma etapa extra de build.
+r('Engajamento orgânico (2024)', 'Engajamento orgânico · contexto do projeto')
+r('Alcance Instagram — Intermodal', 'Alcance Instagram · Intermodal')
+r('Alcance LinkedIn — Intermodal', 'Alcance LinkedIn · Intermodal')
+r('Comunicação interna, endomarketing e identidade digital — de ponta a ponta.', 'Comunicação, marca e produtos em uma empresa de tecnologia para saúde.')
+r('Cuidando da comunicação de duas unidades e da mantenedora sem firula, no ritmo da escola.', 'Produção multimídia e comunicação em uma rotina de alto volume.')
+r('Comunicação das duas unidades funcionando sem travar, campanhas de rematrícula no ar e as redes e o site sempre atualizados — mesmo com o volume alto de demandas do dia a dia escolar.', 'Foi uma experiência marcada por produção, agilidade e atendimento simultâneo a diferentes assuntos, áreas e públicos.')
+r('Estratégia, criação e execução integradas — do posicionamento de marca à produção de conteúdo, conectando comunicação, identidade e resultado.', 'Atuo entre estratégia e execução, conectando comunicação, conteúdo, marca e canais às necessidades das pessoas e do negócio.')
+
 fs.writeFileSync(file, s)
-console.log('Ajustes de cases, sobre, formação e trajetória aplicados.')
+console.log('Ajustes de cases, sobre, formação, trajetória e limpeza final aplicados.')
