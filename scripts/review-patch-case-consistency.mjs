@@ -1,0 +1,26 @@
+import fs from 'node:fs'
+
+const file = new URL('../src/App.tsx', import.meta.url)
+let s = fs.readFileSync(file, 'utf8')
+const r = (a,b) => { s = s.split(a).join(b) }
+
+// Régua editorial comum: remove contagens artificiais e transforma os cards em entregas legíveis.
+r("{ valor: '1', label: 'Campanha de endomarketing completa' },", "{ valor: 'Campanha', label: 'SPDATA&Você · comunicação interna e pesquisa de clima' },")
+r("{ valor: '2', label: 'Identidades visuais por produto' },", "{ valor: 'Produtos', label: 'Identidade e aplicações para as linhas SPDATA e Minha Clínica' },")
+r("{ valor: '100%', label: 'Consistência visual entre canais' },", "{ valor: 'Canais', label: 'Peças digitais, apresentações e materiais de comunicação' },")
+r("{ valor: '1', label: 'Arquitetura de mensagens estruturada' },", "{ valor: 'Posicionamento', label: 'Narrativa institucional e arquitetura de mensagens' },")
+r("{ valor: '3', label: 'Públicos mapeados' },", "{ valor: 'Materiais', label: 'Apresentações, One-Page, sumário executivo e conteúdos ASG/ESG' },")
+r("{ valor: '2', label: 'Campanhas de captação executadas' },", "{ valor: 'Campanhas', label: 'Captação, rematrícula e comunicação de eventos' },")
+r("{ valor: '1', label: 'Identidade editorial estruturada' },", "{ valor: 'Produção', label: 'Peças gráficas, fotografia, vídeo, redes e atualizações de site' },")
+
+// Os quatro cases usam a mesma nomenclatura de leitura, reduzindo a sensação de texto fragmentado.
+r("<MiniLabel cor={c.cor}>O contexto</MiniLabel>", "<MiniLabel cor={c.cor}>Contexto</MiniLabel>")
+r("<MiniLabel cor={c.cor}>O desafio</MiniLabel>", "<MiniLabel cor={c.cor}>Desafio</MiniLabel>")
+r("<MiniLabel cor={c.cor}>Estratégia</MiniLabel>", "<MiniLabel cor={c.cor}>Atuação</MiniLabel>")
+r("<MiniLabel cor={c.cor}>Execução</MiniLabel>", "<MiniLabel cor={c.cor}>Entregas</MiniLabel>")
+
+// Evita que blocos curtos sejam apresentados como grandes paredes de indicadores.
+r("<MiniLabel cor={c.cor}>Resultados</MiniLabel>", "<MiniLabel cor={c.cor}>Evidências e entregas</MiniLabel>")
+
+fs.writeFileSync(file, s)
+console.log('Régua comum de hierarquia, densidade e entregas aplicada aos quatro cases.')
