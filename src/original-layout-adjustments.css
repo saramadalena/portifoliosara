@@ -1,0 +1,33 @@
+/* Ajustes de revisão sobre o layout original. A identidade visual permanece intacta. */
+
+/* A seção genérica "Minha forma de trabalhar" foi retirada da revisão editorial. */
+#forma {
+  display: none !important;
+}
+
+/* Mantém peças de portfólio legíveis e sem recortes agressivos nas galerias. */
+img[alt*="Rematrícula"],
+img[alt*="Campanha"],
+img[alt*="SPDATA"],
+img[alt*="Crachá"],
+img[alt*="Ciências Naturais"] {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Padronização dos mosaicos internos de SADA e Intermodal sem alterar a composição do case. */
+img[alt*="SIPAT"],
+img[alt*="Programa Na Mão Certa"],
+img[alt*="Grupo SADA na Mídia"],
+img[alt*="Prêmio Voluntária"],
+img[alt*="SADA Vôlei"],
+img[alt*="Conecta"],
+img[alt="Trend"],
+img[alt="Conteúdo institucional"] {
+  object-position: center !important;
+}
+
+/* Evita que imagens quebrem o fluxo visual enquanto carregam. */
+img {
+  max-width: 100%;
+}
