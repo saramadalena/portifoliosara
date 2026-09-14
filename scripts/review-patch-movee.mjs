@@ -45,5 +45,26 @@ s = s.replace(
   "      {/* ── NAVEGAÇÃO ── */}\n      <div style={{ padding:'20px 36px', backgroundColor:T.bg"
 )
 
+// Mantém o texto do relatório ESG, mas remove o quadro escuro e os indicadores que não agregam ao case.
+const esgStart = s.indexOf("      {/* ── RELATÓRIO ESG ── */}")
+const esgEnd = s.indexOf("      {/* ── NAVEGAÇÃO ── */}", esgStart + 1)
+if (esgStart !== -1 && esgEnd !== -1) {
+  const esgBlock = `      {/* ── RELATÓRIO ESG ── */}
+      <div style={{ borderTop:\`1px solid \${T.rule}\`, backgroundColor:T.white }}>
+        <div style={{ padding: isMobile ? '32px 20px 36px' : '40px 36px 44px' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.navy, margin:'0 0 14px' }}>Dentro do projeto · Relatório de Sustentabilidade</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(17px,1.8vw,22px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.navy, margin:'0 0 12px' }}>
+            Economia Circular Fotovoltaica & ESG
+          </h3>
+          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.navy, margin:0, maxWidth:'520px' }}>
+            Transformei dados densos de sustentabilidade, legislação e regionalização em um material visual simples de ler, com rigor técnico, clareza executiva e proteção das informações sensíveis do cliente do setor de energia.
+          </p>
+        </div>
+      </div>
+
+`
+  s = s.slice(0, esgStart) + esgBlock + s.slice(esgEnd)
+}
+
 fs.writeFileSync(file, s)
-console.log('Case move.e revisado com resultados qualitativos e materiais ASG/ESG liberados.')
+console.log('Case move.e revisado com materiais ASG/ESG liberados e bloco ESG integrado ao layout.')
