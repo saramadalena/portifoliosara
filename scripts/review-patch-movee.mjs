@@ -10,7 +10,8 @@ s = s.replaceAll('Projeto sob confidencialidade', 'Projeto de comunicação')
 // Recupera a especificidade do case sem atribuir resultados ou autoria além do que está documentado.
 s = s.replaceAll("empresa: 'Freelance de Marketing, Branding e Conteúdo'", "empresa: 'move.e'")
 s = s.replaceAll("subtitulo: 'Do posicionamento de startups ao relatório de ESG: comunicação que serve pra quem decide.'", "subtitulo: 'Posicionamento, materiais estratégicos e comunicação para uma startup de tecnologia voltada à gestão ASG.'")
-s = s.replaceAll("periodo: '2024–2025'", "periodo: '2025'")
+s = s.replaceAll("periodo: '2024–2025'", "periodo: 'jul–out/2025'")
+s = s.replaceAll("periodo: '2025'", "periodo: 'jul–out/2025'")
 s = s.replaceAll(
   "contexto: 'Startup de tecnologia com solução voltada à gestão e mensuração de indicadores ASG para empresas de médio e grande porte. Com produto em estágio de validação, a empresa não tinha posicionamento institucional definido nem narrativa estruturada para o mercado.'",
   "contexto: 'Na move.e, atuei em projetos de comunicação ligados a uma startup de tecnologia voltada à gestão e mensuração de indicadores ASG. O trabalho envolveu posicionamento, organização de mensagens e desenvolvimento de materiais para apresentar a solução a diferentes stakeholders.'"
@@ -34,6 +35,8 @@ s = s.replaceAll(
 s = s.replaceAll('Consultoria Estratégica · move.e', 'Comunicação e posicionamento · move.e')
 s = s.replaceAll('Consultoria Estratégica<br/>', 'Comunicação e posicionamento<br/>')
 s = s.replaceAll('Cobertura da Expo Favela 2025.', 'move.e na Expo Favela 2025.')
+s = s.replaceAll('Freelance de Marketing, Branding e Conteúdo · 2024–2025', 'move.e · jul–out/2025')
+s = s.replaceAll('move.e · 2025', 'move.e · jul–out/2025')
 
 // Reverte a ocultação criada pelo patch editorial antigo e devolve o bloco ESG ao layout.
 s = s.replace(
@@ -67,4 +70,4 @@ if (esgStart !== -1 && esgEnd !== -1) {
 }
 
 fs.writeFileSync(file, s)
-console.log('Case move.e revisado com materiais ASG/ESG liberados e bloco ESG integrado ao layout.')
+console.log('Case move.e revisado com período jul–out/2025, materiais ASG/ESG liberados e bloco ESG integrado ao layout.')
