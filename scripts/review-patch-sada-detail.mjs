@@ -5,5 +5,6 @@ s = s.replaceAll('Uma estratégia, diferentes pontos de contato.', 'Diferentes f
 s = s.replaceAll('Da estratégia à execução, cada entrega buscou manter consistência editorial, clareza de mensagem e alinhamento com a marca.', 'As entregas combinaram conteúdo, canais, processos e acompanhamento de indicadores dentro da rotina da área.')
 s = s.replaceAll("{n:'+10',l:'anos de experiência, buscando consistência e assertividade na comunicação',cor:T.navy},", "{n:'Conteúdo',l:'produção textual, visual, editorial e audiovisual em diferentes contextos',cor:T.navy},")
 s = s.replaceAll('Aberta a projetos de <strong style={{ fontWeight:500,color:T.ink }}>marketing</strong>, <strong style={{ fontWeight:500,color:T.ink }}>branding</strong>, produção de conteúdo, comunicação corporativa e consultoria estratégica.', 'Aberta a projetos e oportunidades em <strong style={{ fontWeight:500,color:T.ink }}>Comunicação e Marketing</strong>, com atuação em Branding, conteúdo, canais e comunicação corporativa.')
+s = s.replace('>Indicadores</span>', '>Repertório</span>')
 fs.writeFileSync(file, s)
-console.log('Detalhamento SADA, Sobre e contato revisados.')
+console.log('Detalhamento SADA, Sobre, repertório e contato revisados.')
