@@ -5,17 +5,18 @@
   display: none !important;
 }
 
-/* Mantém peças de portfólio legíveis e sem recortes agressivos nas galerias. */
+/* Peças gráficas precisam aparecer inteiras. Fotos continuam usando o enquadramento original. */
 img[alt*="Rematrícula"],
 img[alt*="Campanha"],
 img[alt*="SPDATA"],
 img[alt*="Crachá"],
-img[alt*="Ciências Naturais"] {
+img[alt*="Ciências Naturais"],
+img[alt="Convite Intermodal 2024"] {
   object-fit: contain !important;
   object-position: center !important;
 }
 
-/* Padronização dos mosaicos internos de SADA e Intermodal sem alterar a composição do case. */
+/* Padronização dos mosaicos internos de SADA sem descaracterizar as peças. */
 img[alt*="SIPAT"],
 img[alt*="Programa Na Mão Certa"],
 img[alt*="Grupo SADA na Mídia"],
@@ -27,7 +28,40 @@ img[alt="Conteúdo institucional"] {
   object-position: center !important;
 }
 
-/* Evita que imagens quebrem o fluxo visual enquanto carregam. */
-img {
+/* Os retratos verticais da Intermodal mantêm o rosto e a identificação visíveis. */
+img[alt="Marcela Araujo"],
+img[alt="Michel Veloso"],
+img[alt="Rafael Torres"],
+img[alt="Murillo Esperandio"] {
+  object-position: center top !important;
+}
+
+/* Evita estouro horizontal e preserva o carregamento das imagens. */
+img,
+iframe {
   max-width: 100%;
+}
+
+/* Ajuste apenas dos mosaicos de cases em telas menores. Não altera cards ou navegação do site. */
+@media (max-width: 700px) {
+  div:has(> div > img[alt="SADA Vôlei"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  div:has(> a > img[alt="Marcela Araujo"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  div:has(> div > img[alt="Equipe Grupo SADA — Intermodal 2024"]) {
+    grid-template-columns: 1fr !important;
+  }
+
+  div:has(> div > img[alt="Convite Intermodal 2024"]) > div {
+    width: 100% !important;
+    min-height: 220px;
+  }
+
+  img[alt="Convite Intermodal 2024"] {
+    background: #f5f5f3;
+  }
 }
