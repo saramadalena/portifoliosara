@@ -7,5 +7,15 @@ let s = fs.readFileSync(file, 'utf8')
 s = s.replaceAll('Material estratégico · Projeto sob confidencialidade', 'Material estratégico · Projeto de comunicação')
 s = s.replaceAll('Projeto sob confidencialidade', 'Projeto de comunicação')
 
+// Reverte a ocultação criada pelo patch editorial antigo e devolve o bloco ESG ao layout.
+s = s.replace(
+  "{/* Bloco reservado para projeto ainda não publicado */}\n      {false && <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:'#060f08' }}>",
+  "{/* ── RELATÓRIO ESG ── */}\n      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:'#060f08' }}>"
+)
+s = s.replace(
+  "      }\n\n      {/* ── NAVEGAÇÃO ── */}\n      <div style={{ padding:'20px 36px', backgroundColor:T.bg",
+  "      {/* ── NAVEGAÇÃO ── */}\n      <div style={{ padding:'20px 36px', backgroundColor:T.bg"
+)
+
 fs.writeFileSync(file, s)
-console.log('Revisão pública dos materiais move.e aplicada.')
+console.log('Materiais move.e e bloco ESG liberados para exibição.')
