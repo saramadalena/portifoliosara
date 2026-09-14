@@ -1,8 +1,8 @@
 {
-  "title": "saramadalena",
-  "description": "Guides marketing and communication professionals in updating portfolios with tailored advice and resources to showcase their expertise effectively.",
+  "title": "Sara Madalena | Comunicação e Marketing",
+  "description": "Portfólio de Sara Madalena, publicitária e especialista em Comunicação e Marketing. Cases de branding, conteúdo multimídia, canais e comunicação corporativa.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
