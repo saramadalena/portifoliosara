@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs",
+    "predev": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs && node scripts/review-patch-trajectory.mjs",
     "dev": "vite --host 0.0.0.0",
-    "prebuild": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs",
+    "prebuild": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs && node scripts/review-patch-trajectory.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "format": "oxfmt"
