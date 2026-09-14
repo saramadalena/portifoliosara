@@ -51,7 +51,6 @@ iframe {
 
 /* Ajustes responsivos sobre o layout original. */
 @media (max-width: 700px) {
-  /* Evita que títulos e textos longos escapem da largura útil do celular. */
   h1,
   h2,
   h3,
@@ -63,13 +62,11 @@ iframe {
     overflow-wrap: anywhere;
   }
 
-  /* Cards e blocos editoriais não podem ultrapassar a viewport. */
   section > div,
   main > div {
     max-width: 100%;
   }
 
-  /* Tags de competências passam a respeitar a largura disponível. */
   #competencias span,
   #competencias li,
   #competencias button {
@@ -77,13 +74,14 @@ iframe {
     white-space: normal !important;
   }
 
-  /* Mosaicos de cases: duas colunas consistentes no mobile, uma coluna para blocos largos. */
-  div:has(> div > img[alt="SADA Vôlei"]),
-  div:has(> a > img[alt="Marcela Araujo"]) {
+  /* Qualquer mosaico interno de projeto com imagens em wrappers vira grade de duas colunas. */
+  div[style*="display: grid"]:has(> div > img),
+  div[style*="display: grid"]:has(> a > img) {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
+    gap: 6px !important;
   }
 
+  /* Blocos panorâmicos e de equipe permanecem em uma única coluna. */
   div:has(> div > img[alt="Equipe Grupo SADA — Intermodal 2024"]),
   div:has(> div > img[alt="Convite Intermodal 2024"]) {
     grid-template-columns: 1fr !important;
@@ -94,7 +92,9 @@ iframe {
     min-height: 220px;
   }
 
-  /* Imagens dos mosaicos mantêm proporção e não geram faixas escuras por enquadramento. */
+  /* Dentro de mosaicos, a peça inteira aparece sem crop forçado. */
+  div[style*="display: grid"]:has(> div > img) > div > img,
+  div[style*="display: grid"]:has(> a > img) > a > img,
   #cases img,
   [id^="case-"] img {
     width: 100% !important;
@@ -109,7 +109,29 @@ iframe {
     background: #f5f5f3 !important;
   }
 
-  /* Sobre: garante quebra natural dos títulos e do texto em telas estreitas. */
+  /* O visualizador de imagens deixa de ser uma tela preta no celular. */
+  div[style*="position: fixed"][style*="z-index: 999"] {
+    background-color: rgba(245, 245, 243, 0.98) !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  div[style*="position: fixed"][style*="z-index: 999"] > img {
+    max-width: 100% !important;
+    max-height: 82vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    box-shadow: none !important;
+  }
+
+  div[style*="position: fixed"][style*="z-index: 999"] > button {
+    color: #1a1a1a !important;
+    top: 14px !important;
+    right: 14px !important;
+    z-index: 2 !important;
+  }
+
   #sobre h2,
   #sobre h3,
   #sobre p {
