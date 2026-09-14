@@ -16,7 +16,7 @@ const trajectoryDetails = {
 }
 
 const marker = '// ─── GRAPHIC PRIMITIVES'
-if (!s.includes('const trajectoryDetails =')) {
+if (!s.includes('const trajectoryDetails')) {
   s = s.replace(marker, `const trajectoryDetails: Record<string, string> = ${JSON.stringify(trajectoryDetails, null, 2)}\n\n${marker}`)
 }
 
@@ -24,7 +24,6 @@ r('Auxiliar de Comunicação', 'Assistente de Comunicação')
 r('PolyCare', 'Polycare')
 r('QualityCert', 'Qualitycert')
 
-// Expande a trajetória no próprio layout, sem criar uma nova seção ou redesenhar a página.
 const oldCompany = `<p style={{ fontSize: '12px', fontWeight: 300, color: T.inkLight, margin: 0 }}>{item.empresa}</p>`
 const newCompany = `<p style={{ fontSize: '12px', fontWeight: 300, color: T.inkLight, margin: 0 }}>{item.empresa}</p>
                       {trajectoryDetails[item.empresa] && (
@@ -35,7 +34,6 @@ const newCompany = `<p style={{ fontSize: '12px', fontWeight: 300, color: T.inkL
                       )}`
 r(oldCompany, newCompany)
 
-// Retira Método da navegação porque a seção foi removida da revisão editorial.
 r("          {item('Método', () => onNav('forma'))}\n", '')
 s = s.replace(/\s*<NavLink href="#forma"[^\n]*>Método<\/NavLink>\n/, '\n')
 
