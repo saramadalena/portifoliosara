@@ -18,6 +18,13 @@
 *.ai                 filter=lfs diff=lfs merge=lfs -text
 *.sketch             filter=lfs diff=lfs merge=lfs -text
 
+# Peças SPDATA previstas para upload pelo editor web do GitHub.
+# Exceções específicas, sem alterar o tratamento LFS dos demais assets.
+src/imports/spdata-minha-clinica-5-motivos.png -filter -diff -merge binary
+src/imports/spdata-minha-clinica-acesse-onde-estiver.png -filter -diff -merge binary
+src/imports/spdata-minha-clinica-consulta-em-casa.png -filter -diff -merge binary
+src/imports/spdata-capa.png -filter -diff -merge binary
+
 # ---------------------------------------------------------------------------
 # Video
 # ---------------------------------------------------------------------------

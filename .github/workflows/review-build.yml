@@ -1,8 +1,8 @@
 name: Validate review branch
 
 on:
-  push:
-    branches: ["revisao-editorial-portfolio"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -20,13 +20,28 @@ jobs:
       - name: Pull Git LFS files
         run: git lfs pull
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
+
+      - name: Upload review build
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-review-build
+          path: dist
+          if-no-files-found: error
+          retention-days: 7
