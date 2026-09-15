@@ -1,8 +1,6 @@
 name: Validate review branch
 
 on:
-  push:
-    branches: ["revisao-portfolio-2026"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
