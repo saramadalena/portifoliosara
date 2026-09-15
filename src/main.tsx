@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import './original-layout-adjustments.css'
 import './arnaldo.css'
 import PortfolioApp from './PortfolioApp'
 
