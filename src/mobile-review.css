@@ -1,0 +1,111 @@
+/* Acabamento responsivo da arquitetura revisada. */
+@media (max-width: 600px) {
+  .portfolio-topbar-inner {
+    min-height: auto;
+    padding: 10px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .portfolio-brand {
+    font-size: 15px;
+  }
+
+  .portfolio-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+  }
+
+  .portfolio-nav a,
+  .portfolio-nav a:not(.portfolio-nav-projects):not(.portfolio-nav-contact) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 9px 4px;
+    font-size: 8px;
+    letter-spacing: .04em;
+    text-align: center;
+  }
+
+  .portfolio-hero-copy {
+    padding-top: 58px;
+  }
+
+  .portfolio-project-link {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-project-image {
+    min-height: 230px;
+  }
+
+  .portfolio-project-copy {
+    padding: 24px;
+  }
+
+  .portfolio-project-context {
+    gap: 26px;
+    margin-bottom: 52px;
+  }
+
+  .portfolio-work-block {
+    padding: 52px 0;
+  }
+
+  .portfolio-mosaic,
+  .portfolio-metrics,
+  .portfolio-editorial-list,
+  .portfolio-movee-deliverables,
+  .portfolio-movee-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-mosaic img {
+    aspect-ratio: auto;
+    max-height: 440px;
+    object-fit: contain;
+    background: #F5F5F3;
+  }
+
+  .portfolio-metric {
+    min-height: 96px;
+  }
+
+  .portfolio-movee-gallery img {
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+  }
+
+  .portfolio-project-nav {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+  .portfolio-project-nav a {
+    flex: 1 1 42%;
+    line-height: 1.5;
+  }
+
+  .portfolio-project-nav a:nth-child(2) {
+    text-align: center;
+  }
+
+  .portfolio-project-nav a:last-child {
+    text-align: right;
+  }
+
+  .portfolio-contact .portfolio-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-contact .portfolio-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
