@@ -1,4 +1,8 @@
 /* Acabamento responsivo da arquitetura revisada. */
+.portfolio-hero-image {
+  background: #1A1A1A;
+}
+
 @media (max-width: 600px) {
   .portfolio-topbar-inner {
     min-height: auto;
@@ -33,6 +37,15 @@
 
   .portfolio-hero-copy {
     padding-top: 58px;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(42px, 14vw, 52px);
+  }
+
+  .portfolio-section-head,
+  .portfolio-work-head {
+    margin-bottom: 30px;
   }
 
   .portfolio-project-link {
@@ -75,10 +88,26 @@
     min-height: 96px;
   }
 
+  .portfolio-evidence {
+    padding: 28px;
+  }
+
+  .portfolio-feedback {
+    padding: 28px;
+  }
+
+  .portfolio-feedback > p:not(.portfolio-project-label) {
+    font-size: 20px;
+  }
+
   .portfolio-movee-gallery img {
     height: auto;
     max-height: 520px;
     object-fit: contain;
+  }
+
+  .portfolio-project-tags {
+    padding-top: 30px;
   }
 
   .portfolio-project-nav {
