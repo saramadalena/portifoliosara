@@ -1,0 +1,6 @@
+/* Revisão de evidências visuais
+   O bloco Minha Clínica permanece no conteúdo, mas a galeria atual não é exibida
+   porque os três assets CI disponíveis não correspondem às peças do projeto. */
+.portfolio-spdata .portfolio-work-block:nth-of-type(3) .portfolio-mosaic {
+  display: none;
+}
