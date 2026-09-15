@@ -29,6 +29,12 @@ export const arnaldo = {
 }
 
 export const movee = {
- subtitle:'Experiência guarda-chuva para projetos recentes de comunicação, Branding, conteúdo e eventos.',
- expo:'Atuei na produção de conteúdo e cobertura digital durante a Expo Favela 2025, em um projeto contratado e administrado pela move.e. O trabalho envolveu registros e conteúdos produzidos a partir da dinâmica do evento e das necessidades de comunicação do projeto.'
+ subtitle:'Comunicação, Branding, conteúdo e materiais estratégicos para uma startup de tecnologia voltada à gestão ASG.',
+ contexto:'Entre julho e outubro de 2025, desenvolvi projetos de comunicação contratados e administrados pela move.e. A experiência reuniu Branding, conteúdo, materiais corporativos, apresentações, comunicação institucional e projetos relacionados a eventos.',
+ desafio:'Traduzir uma solução de tecnologia e gestão ASG em uma narrativa institucional clara, organizando mensagens e materiais capazes de apoiar conversas com investidores, clientes corporativos, parceiros e outros públicos de relacionamento.',
+ atuacao:'O trabalho reuniu posicionamento, arquitetura de mensagens por público e desenvolvimento de narrativa institucional. Entre as entregas estiveram materiais de síntese e apresentação, como One-Page Institucional e Sumário Executivo, além de conteúdos relacionados à agenda ASG e ESG.',
+ materiais:'Desenvolvi materiais de comunicação e posicionamento para apoiar a apresentação da solução e o relacionamento com diferentes públicos. A organização visual e a diagramação precisavam favorecer a leitura de conteúdos complexos sem perder a consistência institucional.',
+ expo:'Na Expo Favela 2025, participei da representação institucional da move.e e produzi conteúdos de cobertura e bastidores para os canais digitais.',
+ esg:'Em um dos materiais relacionados à sustentabilidade, o trabalho envolveu transformar informações densas em uma apresentação visual mais clara, organizando conteúdo técnico e favorecendo a leitura executiva.',
+ retorno:'As propostas visuais foram bem recebidas pela equipe por traduzirem a complexidade do projeto de forma clara e favorecerem a leitura das informações. A solução também teve retorno positivo da ONG contratante.'
 }
