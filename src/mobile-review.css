@@ -29,9 +29,10 @@
     align-items: center;
     justify-content: center;
     min-width: 0;
-    padding: 9px 4px;
-    font-size: 8px;
-    letter-spacing: .04em;
+    padding: 10px 3px;
+    font-size: 9px;
+    line-height: 1.25;
+    letter-spacing: .03em;
     text-align: center;
   }
 
@@ -111,21 +112,24 @@
   }
 
   .portfolio-project-nav {
-    flex-wrap: wrap;
-    row-gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .portfolio-project-nav a {
-    flex: 1 1 42%;
-    line-height: 1.5;
+    padding: 12px 0;
+    line-height: 1.4;
+    border-bottom: 1px solid #D8D8D6;
   }
 
-  .portfolio-project-nav a:nth-child(2) {
-    text-align: center;
+  .portfolio-project-nav a:nth-child(2),
+  .portfolio-project-nav a:last-child {
+    text-align: left;
   }
 
   .portfolio-project-nav a:last-child {
-    text-align: right;
+    border-bottom: 0;
   }
 
   .portfolio-contact .portfolio-buttons {
@@ -136,5 +140,12 @@
   .portfolio-contact .portfolio-button {
     width: 100%;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 360px) {
+  .portfolio-nav a,
+  .portfolio-nav a:not(.portfolio-nav-projects):not(.portfolio-nav-contact) {
+    font-size: 8px;
   }
 }
