@@ -8,8 +8,7 @@
     "dev": "vite --host 0.0.0.0",
     "prebuild": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs && node scripts/review-patch-trajectory.mjs && node scripts/review-patch-skills.mjs && node scripts/review-patch-movee.mjs && node scripts/review-patch-sada-detail.mjs && node scripts/review-patch-recognition.mjs && node scripts/review-patch-final-copy.mjs && node scripts/review-patch-case-consistency.mjs && node scripts/review-patch-visual-balance.mjs && node scripts/review-patch-reading-flow.mjs && node scripts/review-patch-intermodal-density.mjs && node scripts/review-patch-home-cleanup.mjs",
     "build": "vite build",
-    "preview": "vite preview",
-    "format": "oxfmt"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -22,7 +21,6 @@
     "@vitejs/plugin-react": "^6.0.0",
     "tailwindcss": "^4.0.0",
     "@tailwindcss/vite": "^4.0.0",
-    "oxfmt": "^0.2.0",
     "typescript": "^5.7.0",
     "vite": "^8.0.0"
   }
