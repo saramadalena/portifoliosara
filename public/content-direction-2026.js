@@ -85,9 +85,53 @@
     })
   }
 
+  function addPersonalPortfolioToTimeline() {
+    const sobre = document.querySelector('#sobre')
+    if (!sobre || sobre.querySelector('[data-personal-portfolio="true"]')) return
+
+    const paragraphs = Array.from(sobre.querySelectorAll('p'))
+    const moveeTitle = paragraphs.find((p) => (p.textContent || '').trim() === 'move.e')
+    if (!moveeTitle || !moveeTitle.parentElement || !moveeTitle.parentElement.parentElement) return
+
+    const firstItem = moveeTitle.parentElement.parentElement
+    const timelineContainer = firstItem.parentElement
+    if (!timelineContainer) return
+
+    const item = firstItem.cloneNode(true)
+    if (!(item instanceof HTMLElement)) return
+    item.dataset.personalPortfolio = 'true'
+
+    const itemParagraphs = item.querySelectorAll('p')
+    if (itemParagraphs[0]) itemParagraphs[0].textContent = '2026 · atual'
+    if (itemParagraphs[1]) itemParagraphs[1].textContent = 'Projeto pessoal · Portfólio digital'
+    if (itemParagraphs[2]) itemParagraphs[2].textContent = 'Figma · GitHub · IA'
+
+    const textColumn = itemParagraphs[1]?.parentElement
+    if (textColumn) {
+      const summary = document.createElement('p')
+      summary.textContent = 'Concepção e desenvolvimento do portfólio para apresentar meus projetos com mais estrutura e autonomia. Organizei conteúdo e experiência no Figma, levei o projeto para o GitHub e usei IA como apoio no desenvolvimento, revisão e evolução do site, mantendo autoria sobre as decisões, o conteúdo e a produção.'
+      summary.style.fontSize = '11px'
+      summary.style.fontWeight = '300'
+      summary.style.color = '#909090'
+      summary.style.margin = '7px 0 0'
+      summary.style.lineHeight = '1.65'
+      summary.style.maxWidth = '420px'
+      textColumn.appendChild(summary)
+    }
+
+    const marker = item.querySelector('svg circle:nth-of-type(2)')
+    if (marker) marker.setAttribute('fill', '#FF007F')
+
+    timelineContainer.insertBefore(item, firstItem)
+
+    const oldYear = firstItem.querySelector('p')
+    if (oldYear && oldYear.textContent) oldYear.textContent = oldYear.textContent.replace(' · atual', '')
+  }
+
   function apply() {
     adjustHeroTitle()
     renameCaseLanguage()
+    addPersonalPortfolioToTimeline()
   }
 
   let scheduled = false
