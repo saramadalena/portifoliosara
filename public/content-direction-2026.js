@@ -31,6 +31,14 @@
     ['Da estratégia à execução, cada entrega buscou manter consistência editorial, clareza de mensagem e alinhamento com a marca.', 'Na SADA, a atuação visual esteve ligada a desdobramentos de peças e adaptação de materiais para canais, sem autoria principal de design.']
   ]
 
+  const portfolioAssets = {
+    spdataCover: '/assets/portfolio/spdata/spdata-voce-capa.jpg',
+    spdataBatePapo: '/assets/portfolio/spdata/spdata&voce-bate-papo.png',
+    minhaClinicaMotivos: '/assets/portfolio/spdata/spdata-minha-clinica-5-motivos.png.jpg',
+    minhaClinicaAcesse: '/assets/portfolio/spdata/spdata-minha-clinica-acesse-onde-estiver.png.jpg',
+    minhaClinicaCasa: '/assets/portfolio/spdata/spdata-minha-clinica-consulta-em-casa.png.jpg'
+  }
+
   function replaceTextNodes(root) {
     if (!root) return
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
@@ -128,10 +136,121 @@
     if (oldYear && oldYear.textContent) oldYear.textContent = oldYear.textContent.replace(' · atual', '')
   }
 
+  function openPortfolioImage(src) {
+    if (document.querySelector('[data-portfolio-lightbox="true"]')) return
+    const overlay = document.createElement('div')
+    overlay.dataset.portfolioLightbox = 'true'
+    Object.assign(overlay.style, {
+      position: 'fixed', inset: '0', zIndex: '9999', background: 'rgba(0,0,0,0.92)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out', padding: '24px'
+    })
+    const img = document.createElement('img')
+    img.src = src
+    img.alt = ''
+    Object.assign(img.style, { maxWidth: '92vw', maxHeight: '90vh', objectFit: 'contain', display: 'block' })
+    overlay.appendChild(img)
+    overlay.addEventListener('click', () => overlay.remove())
+    document.body.appendChild(overlay)
+  }
+
+  function removeSadaInstitutionalBoard() {
+    document.querySelectorAll('img').forEach((img) => {
+      const src = img.getAttribute('src') || ''
+      if (!src.includes('rs-sada-0001')) return
+      const tile = img.parentElement
+      if (!tile || tile.dataset.sadaInstitutionalExcluded === 'true') return
+      tile.dataset.sadaInstitutionalExcluded = 'true'
+      const grid = tile.parentElement
+      tile.remove()
+      if (grid instanceof HTMLElement) grid.style.gridTemplateColumns = '1fr'
+    })
+  }
+
+  function addSpdataAssets() {
+    const spdataDetailMarker = Array.from(document.querySelectorAll('h2, h3')).find((el) =>
+      (el.textContent || '').includes('SPDATA') || (el.textContent || '').includes('SPDATA&Você')
+    )
+    if (!spdataDetailMarker) return
+
+    const hero = document.querySelector('img[alt="SPDATA&Você — Juntos, Somos Melhores"]')
+    if (hero && hero.getAttribute('src') !== portfolioAssets.spdataCover) {
+      hero.setAttribute('src', portfolioAssets.spdataCover)
+      hero.setAttribute('alt', 'SPDATA&Você · capa do projeto')
+      hero.style.objectFit = 'cover'
+      hero.style.objectPosition = 'center'
+    }
+
+    const firstCampaignImage = document.querySelector('img[alt="Juntos, Somos Melhores"]')
+    const campaignTile = firstCampaignImage?.parentElement
+    const campaignGrid = campaignTile?.parentElement
+    if (campaignGrid instanceof HTMLElement) {
+      campaignGrid.style.gridTemplateColumns = window.innerWidth < 700 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)'
+      if (!campaignGrid.querySelector('[data-spdata-bate-papo="true"]') && campaignTile) {
+        const tile = campaignTile.cloneNode(true)
+        if (tile instanceof HTMLElement) {
+          tile.dataset.spdataBatePapo = 'true'
+          const image = tile.querySelector('img')
+          const label = tile.querySelector('p')
+          if (image) {
+            image.setAttribute('src', portfolioAssets.spdataBatePapo)
+            image.setAttribute('alt', 'SPDATA&Você · Bate-papo com Mário')
+          }
+          if (label) label.textContent = 'Bate-papo com Mário'
+          tile.onclick = () => openPortfolioImage(portfolioAssets.spdataBatePapo)
+          campaignGrid.appendChild(tile)
+        }
+      }
+    }
+
+    const footerLabel = Array.from(document.querySelectorAll('p')).find((p) => (p.textContent || '').trim() === 'Identidade Digital')
+    const footer = footerLabel?.parentElement
+    const section = footer?.parentElement
+    if (footer && section && !section.querySelector('[data-minha-clinica-gallery="true"]')) {
+      const block = document.createElement('div')
+      block.dataset.minhaClinicaGallery = 'true'
+      block.style.padding = '0 20px 3px'
+
+      const heading = document.createElement('div')
+      heading.style.padding = '14px 0 12px'
+      heading.innerHTML = '<p style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#FF007F;margin:0 0 5px">Minha Clínica</p><p style="font-size:10px;font-weight:300;color:#909090;margin:0">Autoria de design e produção das peças de comunicação do produto</p>'
+      block.appendChild(heading)
+
+      const grid = document.createElement('div')
+      Object.assign(grid.style, {
+        display: 'grid', gridTemplateColumns: window.innerWidth < 700 ? '1fr' : 'repeat(3, 1fr)', gap: '3px'
+      })
+
+      const items = [
+        [portfolioAssets.minhaClinicaMotivos, '5 motivos para usar o SPDATA Minha Clínica'],
+        [portfolioAssets.minhaClinicaAcesse, 'Acesse quando e onde estiver'],
+        [portfolioAssets.minhaClinicaCasa, 'Sua consulta sem sair de casa']
+      ]
+
+      items.forEach(([src, alt]) => {
+        const tile = document.createElement('div')
+        Object.assign(tile.style, {
+          position: 'relative', overflow: 'hidden', aspectRatio: '1 / 1', cursor: 'zoom-in', background: '#f0f0f0'
+        })
+        const image = document.createElement('img')
+        image.src = src
+        image.alt = alt
+        Object.assign(image.style, { width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' })
+        tile.appendChild(image)
+        tile.addEventListener('click', () => openPortfolioImage(src))
+        grid.appendChild(tile)
+      })
+
+      block.appendChild(grid)
+      section.insertBefore(block, footer)
+    }
+  }
+
   function apply() {
     adjustHeroTitle()
     renameCaseLanguage()
     addPersonalPortfolioToTimeline()
+    removeSadaInstitutionalBoard()
+    addSpdataAssets()
   }
 
   let scheduled = false
@@ -156,6 +275,7 @@
     characterData: true
   })
 
+  window.addEventListener('resize', scheduleApply)
   setTimeout(apply, 300)
   setTimeout(apply, 1200)
 })()
