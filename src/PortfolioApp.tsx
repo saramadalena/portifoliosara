@@ -13,6 +13,9 @@ import conviteIntermodal from './imports/Convite-inter.jpg'
 import entrevista1 from './imports/Entrev-1.png'
 import entrevista2 from './imports/Entrev-2.png'
 import entrevista3 from './imports/Entrevi-3.png'
+import sadaDesdobramento1 from './imports/Prancheta_1.png'
+import sadaDesdobramento2 from './imports/Prancheta_2.png'
+import sadaDesdobramento3 from './imports/Prancheta_3.png'
 import spdataCover from './imports/spdata_voce__5_.png'
 import spdata1 from './imports/spdata_voce__1_.png'
 import spdata2 from './imports/spdata_voce__2_.png'
@@ -46,9 +49,9 @@ export default function PortfolioApp(){return <div className="portfolio-shell">
 <div className="portfolio-case-lead"><p>{sada.contexto}</p><p>{sada.atuacao}</p></div>
 <div className="portfolio-metrics portfolio-metrics-featured">{sada.metricas.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div>
 <Expandable title="Gestão de canais e performance"><p>{sada.canais}</p><h4>Instagram | 2024</h4><p>{sada.instagram}</p><h4>LinkedIn | jan–jul/2024</h4><p>{sada.linkedin}</p><h4>RD Station | 1º semestre/2024</h4><p>{sada.rd}</p><h4>GOintegro | 1º semestre/2024</h4><p>{sada.gointegro}</p></Expandable>
-<Expandable title="Campanhas, comunicação integrada e design de desdobramento"><p>{sada.campanhas}</p><p>{sada.design}</p><p><strong>Fluxo:</strong> {sada.fluxo}</p><p>{sada.processos}</p></Expandable>
+<Expandable title="Campanhas, comunicação integrada e design de desdobramento"><p>{sada.campanhas}</p><p>{sada.design}</p><div className="portfolio-evidence"><div className="portfolio-evidence-copy"><small>Evidência visual</small><strong>Desdobramento de campanha</strong><span>Aplicações e adaptações visuais dentro de identidade e direcionamento previamente definidos.</span></div><Mosaic images={[sadaDesdobramento1,sadaDesdobramento2,sadaDesdobramento3]}/></div><p><strong>Fluxo:</strong> {sada.fluxo}</p><p>{sada.processos}</p></Expandable>
 <Expandable title="Comunicação interna, engajamento e lives"><p>{sada.interna}</p></Expandable>
-<Expandable title="Intermodal 2024 | campanha e cobertura multimídia"><p>{sada.intermodal}</p><Mosaic images={[intermodalCover,equipeIntermodal,conviteIntermodal,entrevista1,entrevista2,entrevista3]}/><div className="portfolio-metrics">{sada.metricasIntermodal.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div><p className="portfolio-note">{sada.nota}</p></Expandable>
+<Expandable title="Intermodal 2024 | campanha e cobertura multimídia"><p>{sada.intermodal}</p><div className="portfolio-evidence"><div className="portfolio-evidence-copy"><small>Evidência visual</small><strong>Planejamento + cobertura + conteúdo</strong><span>Registros e peças mostram a articulação entre calendário, canais, formatos e produção multimídia.</span></div><Mosaic images={[intermodalCover,equipeIntermodal,conviteIntermodal,entrevista1,entrevista2,entrevista3]}/></div><div className="portfolio-metrics">{sada.metricasIntermodal.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div><p className="portfolio-note">{sada.nota}</p></Expandable>
 <Expandable title="Análise e direcionamento de Redes Sociais | 2025"><p>{sada.analise2025}</p></Expandable>
 <div className="portfolio-case-signature"><strong>Estratégia + execução</strong><span>Campanhas · liderança transversal · conteúdo multimídia · canais · indicadores · design de desdobramento</span></div>
 </Case>
