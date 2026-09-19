@@ -527,7 +527,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
   const [lightbox, setLightbox] = useState<string | null>(null)
 
   return (
-    <div style={{ backgroundColor: T.white }}>
+    <div className="sada-case-detail" style={{ backgroundColor: T.white }}>
 
       {/* Barra de retorno */}
       <div style={{ padding: '14px 28px', borderBottom: `1px solid ${T.ruleLight}`, display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: T.bg }}>
@@ -576,13 +576,13 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </p>
 
         {/* Texto principal */}
-        <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: 1.82, color: T.inkMid, margin: '0 0 28px', maxWidth: '520px' }}>
+        <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.75, color: T.inkMid, margin: '0 0 28px', maxWidth: '620px' }}>
           Atuação em Comunicação e Marketing conectando planejamento, conteúdo, campanhas, canais, comunicação interna e acompanhamento de performance em uma estrutura corporativa de múltiplos públicos e áreas.
         </p>
 
         {/* Contexto */}
-        <div style={{ borderLeft: `2px solid ${T.ruleLight}`, paddingLeft: '16px', marginBottom: '32px', maxWidth: '480px' }}>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkLight, margin: 0 }}>
+        <div style={{ borderLeft: `2px solid ${T.ruleLight}`, paddingLeft: '16px', marginBottom: '32px', maxWidth: '600px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkLight, margin: 0 }}>
             Minha atuação acontecia de forma transversal e em equipe, com interface entre áreas internas, fornecedores, stakeholders e profissionais da equipe de Comunicação e Marketing, em frentes com responsabilidades distribuídas entre os envolvidos.
           </p>
         </div>
@@ -612,7 +612,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 12px' }}>
             Uma estratégia, diferentes pontos de contato.
           </h3>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '480px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: 0, maxWidth: '600px' }}>
             Planejamento, redação e produção de conteúdo, gestão de canais, campanhas, comunicação interna, desdobramentos visuais e acompanhamento de indicadores em diferentes frentes da comunicação.
           </p>
         </div>
@@ -634,7 +634,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                 onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.04) 42%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '8px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 300, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
+                <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
               </div>
             </div>
           ))}
@@ -655,7 +655,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                 onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.04) 42%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '8px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 300, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
+                <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
               </div>
             </div>
           ))}
@@ -667,13 +667,13 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         <div style={{ padding: '10px 20px', backgroundColor: T.bg, borderTop: `1px solid ${T.ruleLight}`, display: 'flex', alignItems: 'baseline', gap: '12px' }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: T.navy, margin: 0 }}>Comunicação corporativa</p>
           <span style={{ width: '1px', height: '10px', backgroundColor: T.rule, display: 'inline-block' }} />
-          <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Diversas frentes, uma narrativa integrada</p>
+          <p style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, margin: 0 }}>Diversas frentes, uma narrativa integrada</p>
         </div>
 
         {/* Fluxo de atuação */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Como eu atuava</p>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '520px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 16px', maxWidth: '620px' }}>
             O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. Em campanhas e projetos, essa lógica era aplicada a temas institucionais, de negócios, sustentabilidade, responsabilidade social, diversidade e marca empregadora. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
@@ -689,7 +689,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Design de desdobramento */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Design aplicado à comunicação</p>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '520px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: 0, maxWidth: '620px' }}>
             Na SADA, minha atuação em design esteve principalmente nos desdobramentos. A partir de identidades, conceitos e direcionamentos já definidos para campanhas e projetos, desenvolvia e adaptava peças para diferentes formatos, canais e necessidades de comunicação, preservando consistência visual e adequação ao contexto de cada entrega.
           </p>
         </div>
@@ -697,7 +697,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Canais, processos e comunicação interna */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Canais e operação</p>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 14px', maxWidth: '520px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 14px', maxWidth: '620px' }}>
             Além das redes sociais, atuei em comunicações via RD Station para bases com mais de 2,4 mil destinatários e no ecossistema interno do GOintegro, com mais de 3 mil usuários cadastrados. A rotina também envolvia triagem, priorização e acompanhamento de demandas e participação na criação e melhoria de processos da área.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
@@ -705,7 +705,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <span key={item} style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{item}</span>
             ))}
           </div>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 12px', maxWidth: '520px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 12px', maxWidth: '620px' }}>
             Na comunicação interna, participei de campanhas, produção de textos e conteúdos, interface com áreas e suporte às lives corporativas, conectando conteúdo, organização e execução.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -729,7 +729,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.8vw, 22px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 10px' }}>
               Intermodal South America 2024
             </h3>
-            <p style={{ fontSize: '12px', fontWeight: 300, color: T.inkMid, margin: 0, lineHeight: 1.75, maxWidth: '400px' }}>
+            <p style={{ fontSize: '13px', fontWeight: 400, color: T.inkMid, margin: 0, lineHeight: 1.72, maxWidth: '560px' }}>
               Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento. O planejamento contemplou Feed, Stories e Reels, além de pautas e roteiros para vídeos com profissionais da empresa, liderança e cliente.
             </p>
           </div>
@@ -749,7 +749,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.34) 0%, transparent 42%)' }} />
             <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px' }}>
-              <p style={{ fontSize: '9px', fontWeight: 300, color: 'rgba(255,255,255,0.88)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
+              <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.88)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
             </div>
           </div>
           <div onClick={() => setLightbox(imgConviteInter)}
@@ -805,7 +805,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                 <div style={{ position: 'absolute', bottom: '12px', left: '12px', right: '12px' }}>
                   <p style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.50)', margin: '0 0 4px' }}>{v.label}</p>
                   <p style={{ fontSize: '11px', fontWeight: 600, color: '#fff', margin: '0 0 2px', lineHeight: 1.25 }}>{v.name}</p>
-                  <p style={{ fontSize: '9px', fontWeight: 300, color: 'rgba(255,255,255,0.65)', margin: '0 0 5px', lineHeight: 1.35 }}>{v.role}</p>
+                  <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.65)', margin: '0 0 5px', lineHeight: 1.35 }}>{v.role}</p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/><polygon points="4,3 7.5,5 4,7" fill="rgba(255,255,255,0.6)"/></svg>
                     <span style={{ fontSize: '8px', fontWeight: 400, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em' }}>YouTube Shorts</span>
@@ -829,14 +829,14 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           ].map(([valor, label]) => (
             <div key={label} style={{ padding: '20px', backgroundColor: T.white }}>
               <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 7px' }}>{valor}</p>
-              <p style={{ fontSize: '10px', fontWeight: 300, lineHeight: 1.5, color: T.inkMid, margin: 0 }}>{label}</p>
+              <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.5, color: T.inkMid, margin: 0 }}>{label}</p>
             </div>
           ))}
         </div>
-        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.6, color: T.inkMid, margin: '14px 0 6px', maxWidth: '540px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.6, color: T.inkMid, margin: '14px 0 6px', maxWidth: '620px' }}>
           Média de 1.559 interações por Story.
         </p>
-        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
+        <p style={{ fontSize: '10px', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '620px' }}>
           Resultados da cobertura digital da Intermodal 2024. A variação de alcance compara março de 2024 com janeiro de 2024, referência utilizada pela área.
         </p>
       </div>
@@ -864,7 +864,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)' }} />
               <div style={{ position: 'absolute', bottom: '14px', left: '16px' }}>
                 <p style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', margin: '0 0 3px' }}>ESG · Voluntariado</p>
-                <p style={{ fontSize: '11px', fontWeight: 300, color: 'rgba(255,255,255,0.85)', margin: 0 }}>Dia V (Ação nos territórios)</p>
+                <p style={{ fontSize: '11px', fontWeight: 400, color: 'rgba(255,255,255,0.85)', margin: 0 }}>Dia V (Ação nos territórios)</p>
               </div>
             </div>
 
@@ -877,12 +877,12 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                   letterSpacing: '-0.04em', color: T.navy, margin: '0 0 10px',
                 }}>+23%</p>
                 <p style={{ fontSize: '12px', fontWeight: 400, color: T.ink, margin: '0 0 5px', lineHeight: 1.45 }}>Evolução do engajamento no Instagram em 2024, na comparação com o período anterior.</p>
-                <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Período com 27% menos publicações</p>
+                <p style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, margin: 0 }}>Período com 27% menos publicações</p>
               </div>
               <div style={{ padding: '24px 22px', backgroundColor: T.bg, borderTop: `2px solid ${T.ruleLight}`, flex: 1 }}>
                 <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '34px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.04em', color: T.navy, margin: '0 0 8px' }}>+18%</p>
                 <p style={{ fontSize: '12px', fontWeight: 500, color: T.ink, margin: '0 0 6px', lineHeight: 1.45 }}>Crescimento da comunidade no LinkedIn entre janeiro e julho de 2024.</p>
-                <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>108,8 mil → 128,4 mil seguidores</p>
+                <p style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, margin: 0 }}>108,8 mil → 128,4 mil seguidores</p>
               </div>
             </div>
           </div>
@@ -903,14 +903,14 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           ].map(([valor, label]) => (
             <div key={label} style={{ padding: '22px', backgroundColor: T.bg }}>
               <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 8px' }}>{valor}</p>
-              <p style={{ fontSize: '10px', fontWeight: 300, lineHeight: 1.55, color: T.inkMid, margin: 0 }}>{label}</p>
+              <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.55, color: T.inkMid, margin: 0 }}>{label}</p>
             </div>
           ))}
         </div>
-        <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkMid, margin: '14px 0 8px', maxWidth: '540px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.7, color: T.inkMid, margin: '14px 0 8px', maxWidth: '620px' }}>
           Como leitura complementar, o LinkedIn registrou alcance mensal de até 76,8 mil e engajamento mensal de até 9,14%. No RD Station, campanhas chegaram a 39,1% de abertura, e o GOintegro alcançou até 1,8 mil usuários ativos por mês.
         </p>
-        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
+        <p style={{ fontSize: '10px', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '620px' }}>
           Os indicadores apresentam a evolução e o alcance dos canais no período e não são atribuídos a uma única ação ou pessoa.
         </p>
       </div>
@@ -919,7 +919,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
       <div style={{ padding: '36px', backgroundColor: T.bg, borderTop: `1px solid ${T.rule}` }}>
         <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Estudo estratégico · 2025</p>
         <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 12px' }}>Análise e direcionamento de Redes Sociais</h3>
-        <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 14px', maxWidth: '540px' }}>
+        <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 14px', maxWidth: '620px' }}>
           A partir do histórico e dos dados dos canais, desenvolvi uma análise e uma proposta de direcionamento para as redes sociais em 2025, reunindo leitura de públicos e desempenho, análise de concorrentes e definição de direcionadores editoriais.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
@@ -934,7 +934,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             }}>{item}</span>
           ))}
         </div>
-        <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '620px' }}>
           Os dados foram extraídos dos próprios canais e de ferramentas de apoio. O planejamento apresentado nesse material não chegou à etapa de implementação.
         </p>
       </div>
@@ -1359,7 +1359,7 @@ function PieceCarousel({ items, cor }: { items: GalleryItem[]; cor: string }) {
 
       {/* Controles */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 0 4px', borderTop: `1px solid ${T.ruleLight}`, marginTop: '3px' }}>
-        <span style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, letterSpacing: '0.04em' }}>
+        <span style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, letterSpacing: '0.04em' }}>
           {page * perPage + 1}–{Math.min((page + 1) * perPage, items.length)}&nbsp;
           <span style={{ color: T.ruleLight }}>/ {items.length}</span>
         </span>
