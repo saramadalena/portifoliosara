@@ -786,9 +786,14 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
 
             <article style={{ padding: '18px', backgroundColor: T.bg, borderTop: `2px solid ${T.rule}` }}>
               <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: T.navy, margin: '0 0 9px' }}>Design aplicado à comunicação</p>
-              <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.58, color: T.ink, margin: 0 }}>
+              <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.58, color: T.ink, margin: '0 0 12px' }}>
                 Atuei principalmente nos desdobramentos, adaptando identidades, conceitos e direcionamentos já definidos para diferentes formatos, canais e necessidades, com atenção à consistência visual de cada entrega.
               </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                {['Adobe Photoshop', 'Adobe InDesign', 'Canva', 'Adobe Premiere Pro', 'CapCut', 'Fotografia', 'Vídeo'].map(item => (
+                  <span key={item} style={{ fontSize: '9px', fontWeight: 500, color: T.inkMid, padding: '4px 8px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{item}</span>
+                ))}
+              </div>
             </article>
 
             <article style={{ padding: '18px', backgroundColor: T.bg, borderTop: `2px solid ${T.rule}` }}>
