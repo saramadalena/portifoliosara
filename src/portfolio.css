@@ -146,3 +146,7 @@
 .portfolio-analysis-scope{margin:2px 0 16px}
 .portfolio-analysis-scope>small{display:block;margin-bottom:9px;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#000080;font-weight:700}
 .portfolio-analysis-scope .portfolio-scope-tags{margin:0}
+
+/* Variação compacta para explicitar autoria sem repetir o texto do capítulo */
+.portfolio-responsibility-note-compact{grid-template-columns:110px 220px 1fr;margin-bottom:14px;padding-top:4px}
+@media(max-width:700px){.portfolio-responsibility-note-compact{grid-template-columns:1fr}}
