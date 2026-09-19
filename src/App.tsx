@@ -683,6 +683,17 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
           <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Diversas frentes, uma narrativa integrada</p>
         </div>
 
+        {/* Canais, processos e comunicação interna */}
+        <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
+          <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Canais e operação</p>
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 18px', maxWidth: '520px' }}>
+            Além das redes sociais, atuei em comunicações via RD Station para bases com mais de 2,4 mil destinatários e no ecossistema interno do GOintegro, com mais de 3 mil usuários cadastrados. A rotina também envolvia Salesforce para triagem e acompanhamento de demandas, trabalho com SLAs e participação na criação e melhoria de fluxos e POPs.
+          </p>
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '520px' }}>
+            Na comunicação interna, participei de campanhas, produção de textos e conteúdos, interface com áreas e suporte às lives corporativas, conectando conteúdo, organização e execução.
+          </p>
+        </div>
+
         {/* Frase de fechamento */}
         <div style={{ padding: '20px 36px 32px' }}>
           <p style={{ fontSize: '11px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '480px' }}>
