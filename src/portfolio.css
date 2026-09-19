@@ -126,3 +126,11 @@
 .portfolio-role-head small{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#000080}
 .portfolio-role-head span{max-width:520px;font-size:10px;line-height:1.55;color:#868686;text-align:right}
 @media(max-width:600px){.portfolio-role-head{align-items:flex-start;flex-direction:column;gap:5px;margin-bottom:-14px}.portfolio-role-head span{text-align:left}}
+
+/* Processo também é evidência de senioridade: organização sem transformar ferramenta em protagonista */
+.portfolio-process-proof{margin:0 0 22px;padding:16px 18px;background:#F5F5F3}
+.portfolio-process-proof>div:first-child{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
+.portfolio-process-proof small{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#000080;font-weight:700}
+.portfolio-process-proof p{margin:0!important;font-size:11px!important;line-height:1.7!important}
+.portfolio-process-proof .portfolio-scope-tags{margin:14px 0 0 168px}
+@media(max-width:600px){.portfolio-process-proof>div:first-child{grid-template-columns:1fr;gap:7px}.portfolio-process-proof .portfolio-scope-tags{margin:14px 0 0}}
