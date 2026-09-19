@@ -156,6 +156,18 @@ iframe {
   min-width: 0;
 }
 
+.sada-channel-visual {
+  height: 100%;
+  min-height: 110px;
+}
+
+.sada-channel-visual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* A hierarquia da SADA privilegia leitura e explicação, não apenas imagem. */
 .sada-case-detail p[style*="font-weight: 400"] {
   text-rendering: optimizeLegibility;
@@ -187,6 +199,10 @@ iframe {
 
   .sada-secondary-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .sada-channel-heading {
+    grid-template-columns: minmax(0, 1fr) 130px !important;
   }
 }
 
@@ -354,6 +370,15 @@ iframe {
 
   .sada-channel-panel {
     padding: 16px !important;
+  }
+
+  .sada-channel-heading {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sada-channel-visual {
+    height: 150px !important;
+    min-height: 0 !important;
   }
 
   .sada-featured-metrics {
