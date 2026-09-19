@@ -935,7 +935,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           ))}
         </div>
         <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
-          Os dados foram extraídos dos próprios canais e de ferramentas de apoio, incluindo MLabs. O planejamento apresentado nesse material não chegou à etapa de implementação.
+          Os dados foram extraídos dos próprios canais e de ferramentas de apoio. O planejamento apresentado nesse material não chegou à etapa de implementação.
         </p>
       </div>
 
