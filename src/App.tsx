@@ -736,49 +736,34 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </div>
         </div>
 
-        {/* Foto da equipe + convite */}
-        <div className="sada-intermodal-media" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2.2fr) minmax(150px, 0.8fr)', gap: '10px', maxWidth: '720px', margin: '0 auto 12px', alignItems: 'stretch' }}>
-          <div onClick={() => setLightbox(imgEquipeIntermodal)}
-            style={{ position: 'relative', overflow: 'hidden', height: '180px', cursor: 'zoom-in', backgroundColor: T.bg, border: `1px solid ${T.ruleLight}` }}>
-            <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA (Intermodal 2024)"
-              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block', transition: 'transform 0.55s ease' }}
-              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.02)')}
-              onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.34) 0%, transparent 42%)' }} />
-            <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px' }}>
-              <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.88)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
+        {/* Conteúdo audiovisual e registros em uma única linha */}
+        <div className="sada-horizontal-shell sada-intermodal-shell" style={{ padding: '10px 36px 34px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '14px' }}>
+            <div>
+              <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase', color: T.navy, margin: '0 0 4px' }}>Conteúdo audiovisual · Intermodal 2024</p>
+              <p style={{ fontSize: '11px', fontWeight: 400, color: T.inkMid, margin: 0 }}>Vídeos em destaque, seguidos pelos registros de apoio. Arraste para navegar.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '4px', flexShrink: 0 }}>
+              <button aria-label="Voltar mídia da Intermodal" onClick={() => document.getElementById('sada-intermodal-track')?.scrollBy({ left: -360, behavior: 'smooth' })}
+                style={{ width: '32px', height: '32px', border: `1px solid ${T.rule}`, backgroundColor: T.white, color: T.inkMid, cursor: 'pointer', fontSize: '15px' }}>←</button>
+              <button aria-label="Avançar mídia da Intermodal" onClick={() => document.getElementById('sada-intermodal-track')?.scrollBy({ left: 360, behavior: 'smooth' })}
+                style={{ width: '32px', height: '32px', border: `1px solid ${T.navy}`, backgroundColor: T.navy, color: T.white, cursor: 'pointer', fontSize: '15px' }}>→</button>
             </div>
           </div>
-          <div onClick={() => setLightbox(imgConviteInter)}
-            style={{ minWidth: 0, position: 'relative', overflow: 'hidden', height: '180px', cursor: 'zoom-in', backgroundColor: T.bg, border: `1px solid ${T.ruleLight}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={imgConviteInter} alt="Convite Intermodal 2024"
-              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block', transition: 'transform 0.45s ease' }}
-              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.02)')}
-              onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-          </div>
-        </div>
 
-        {/* 4 vídeos — entrevistas */}
-        <div className="sada-video-section" style={{ padding: '16px 36px 36px', maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-            <div style={{ width: '16px', height: '1px', backgroundColor: T.navy }} />
-            <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase', color: T.navy }}>Conteúdo audiovisual · YouTube Shorts</span>
-            <div style={{ flex: 1, height: '1px', backgroundColor: T.ruleLight }} />
-          </div>
-
-          <div className="sada-video-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+          <div id="sada-intermodal-track" className="sada-scroll-track sada-intermodal-track">
             {[
-              { src: imgEntrev1, label: 'Entrevista 01', name: 'Marcela Araujo', role: 'Analista Comercial', desc: 'Experiência na feira', url: 'https://youtube.com/shorts/uFWPXXPHZvI' },
-              { src: imgEntrev2, label: 'Entrevista 02', name: 'Michel Veloso', role: 'Gerente de Logística', desc: 'Visão de mercado na feira', url: 'https://youtube.com/shorts/bI0RPlr1sBI' },
-              { src: imgEntrev3, label: 'Entrevista 03', name: 'Rafael Torres', role: 'Gestor de Comunicação e Marketing', desc: 'Importância da feira para o Grupo', url: 'https://youtube.com/shorts/qd37imNmO0U' },
-              { src: imgEntrev4, label: 'Aftermovie 04', name: 'Murillo Esperandio', role: 'Executivo de Carga Geral', desc: 'Experiência gerada na feira', url: 'https://youtube.com/shorts/Zorb3uOKYn4' },
+              { src: imgEntrev1, label: 'Entrevista 01', name: 'Marcela Araujo', role: 'Analista Comercial', url: 'https://youtube.com/shorts/uFWPXXPHZvI' },
+              { src: imgEntrev2, label: 'Entrevista 02', name: 'Michel Veloso', role: 'Gerente de Logística', url: 'https://youtube.com/shorts/bI0RPlr1sBI' },
+              { src: imgEntrev3, label: 'Entrevista 03', name: 'Rafael Torres', role: 'Gestor de Comunicação e Marketing', url: 'https://youtube.com/shorts/qd37imNmO0U' },
+              { src: imgEntrev4, label: 'Aftermovie 04', name: 'Murillo Esperandio', role: 'Executivo de Carga Geral', url: 'https://youtube.com/shorts/Zorb3uOKYn4' },
             ].map(v => (
               <a key={v.url} href={v.url} target="_blank" rel="noopener noreferrer" className="sada-video-card"
-                style={{ textDecoration: 'none', display: 'block', position: 'relative', overflow: 'hidden', aspectRatio: '9/16', backgroundColor: '#111', flexShrink: 0 }}
+                style={{ textDecoration: 'none', display: 'block', position: 'relative', overflow: 'hidden', aspectRatio: '9/16', backgroundColor: '#111', flex: '0 0 auto', scrollSnapAlign: 'start' }}
                 onMouseEnter={e => {
                   const img = e.currentTarget.querySelector('img') as HTMLImageElement
                   const play = e.currentTarget.querySelector('.play-btn') as HTMLElement
-                  if (img) img.style.transform = 'scale(1.05)'
+                  if (img) img.style.transform = 'scale(1.04)'
                   if (play) play.style.opacity = '1'
                 }}
                 onMouseLeave={e => {
@@ -788,31 +773,36 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                   if (play) play.style.opacity = '0.72'
                 }}>
                 <img src={v.src} alt={v.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', transition: 'transform 0.45s ease' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.15) 45%, transparent 100%)' }} />
-                {/* Botão play */}
-                <div className="play-btn" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.72, transition: 'opacity 0.22s' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(6px)', border: '1.5px solid rgba(255,255,255,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
-                      <polygon points="2,1 13,8 2,15" fill="white" />
-                    </svg>
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', transition: 'transform 0.4s ease' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.12) 48%, transparent 100%)' }} />
+                <div className="play-btn" style={{ position: 'absolute', top: '48%', left: '50%', transform: 'translate(-50%,-50%)', opacity: 0.72, transition: 'opacity 0.22s' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(6px)', border: '1.5px solid rgba(255,255,255,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg width="13" height="15" viewBox="0 0 14 16" fill="none"><polygon points="2,1 13,8 2,15" fill="white" /></svg>
                   </div>
                 </div>
-                {/* Info */}
-                <div style={{ position: 'absolute', bottom: '12px', left: '12px', right: '12px' }}>
-                  <p style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.50)', margin: '0 0 4px' }}>{v.label}</p>
+                <div style={{ position: 'absolute', bottom: '11px', left: '11px', right: '11px' }}>
+                  <p style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.58)', margin: '0 0 4px' }}>{v.label}</p>
                   <p style={{ fontSize: '11px', fontWeight: 600, color: '#fff', margin: '0 0 2px', lineHeight: 1.25 }}>{v.name}</p>
-                  <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.65)', margin: '0 0 5px', lineHeight: 1.35 }}>{v.role}</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1"/><polygon points="4,3 7.5,5 4,7" fill="rgba(255,255,255,0.6)"/></svg>
-                    <span style={{ fontSize: '8px', fontWeight: 400, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em' }}>YouTube Shorts</span>
-                  </div>
+                  <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.72)', margin: 0, lineHeight: 1.35 }}>{v.role}</p>
                 </div>
               </a>
             ))}
+
+            <button onClick={() => setLightbox(imgEquipeIntermodal)} className="sada-intermodal-support-card sada-intermodal-team-card"
+              style={{ position: 'relative', overflow: 'hidden', cursor: 'zoom-in', border: `1px solid ${T.ruleLight}`, padding: 0, backgroundColor: T.bg, flex: '0 0 auto', scrollSnapAlign: 'start' }}>
+              <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA (Intermodal 2024)"
+                style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.36) 0%, transparent 45%)', pointerEvents: 'none' }} />
+              <p style={{ position: 'absolute', left: '10px', right: '10px', bottom: '9px', fontSize: '9px', fontWeight: 500, lineHeight: 1.35, color: '#fff', margin: 0, textAlign: 'left', pointerEvents: 'none' }}>Equipe no estande</p>
+            </button>
+
+            <button onClick={() => setLightbox(imgConviteInter)} className="sada-intermodal-support-card sada-intermodal-invite-card"
+              style={{ position: 'relative', overflow: 'hidden', cursor: 'zoom-in', border: `1px solid ${T.ruleLight}`, padding: 0, backgroundColor: T.bg, flex: '0 0 auto', scrollSnapAlign: 'start' }}>
+              <img src={imgConviteInter} alt="Convite Intermodal 2024"
+                style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }} />
+            </button>
           </div>
         </div>
-      </div>
 
       {/* Resultados da cobertura digital da Intermodal */}
       <div style={{ padding: '28px 36px 36px', borderTop: `1px solid ${T.ruleLight}`, backgroundColor: T.bg }}>
