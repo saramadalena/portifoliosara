@@ -640,7 +640,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           {[
             { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
             { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
-            { src: imgMidia, alt: 'Grupo SADA na Mídia', label: 'Assessoria e PR', pos: 'center 15%' },
+            { src: imgMidia, alt: 'Grupo SADA na Mídia', label: 'Presença na mídia', pos: 'center 15%' },
             { src: imgPremio, alt: 'Prêmio Voluntária Elisa', label: 'Prêmio Voluntária Elisa', pos: 'center' },
           ].map(item => (
             <div key={item.alt} onClick={() => setLightbox(item.src)} style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', cursor: 'zoom-in' }}>
@@ -690,7 +690,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Como eu atuava</p>
           <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '520px' }}>
-            O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
+            O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
             {['Contexto e demandas', 'Planejamento', 'Conteúdo e produção', 'Canais e campanhas', 'Públicos', 'Indicadores e aprendizados'].map((etapa, i, arr) => (
@@ -919,7 +919,10 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             </div>
           ))}
         </div>
-        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: '14px 0 0', maxWidth: '540px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkMid, margin: '14px 0 8px', maxWidth: '540px' }}>
+          Como leitura complementar, o LinkedIn registrou alcance mensal de até 76,8 mil e engajamento mensal de até 9,14%. No RD Station, campanhas chegaram a 39,1% de abertura, e o GOintegro alcançou até 1,8 mil usuários ativos por mês.
+        </p>
+        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
           Os indicadores apresentam a evolução e o alcance dos canais no período e não são atribuídos a uma única ação ou pessoa.
         </p>
       </div>
