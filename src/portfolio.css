@@ -152,7 +152,7 @@
 @media(max-width:700px){.portfolio-responsibility-note-compact{grid-template-columns:1fr}}
 
 /* Função profissional visível antes do aprofundamento do case */
-.portfolio-case-role{display:flex;align-items:baseline;gap:14px;padding:18px 0 0}
+.portfolio-case-role{display:flex;align-items:baseline;gap:14px;padding:18px 0 0;border-bottom:1px solid #EBEBEA;padding-bottom:16px}
 .portfolio-case-role small{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#FF007F;font-weight:700}
-.portfolio-case-role strong{font-size:11px;letter-spacing:.04em;color:#000080;font-weight:600}
-@media(max-width:600px){.portfolio-case-role{align-items:flex-start;flex-direction:column;gap:4px}}
+.portfolio-case-role strong{font-size:11px;letter-spacing:.04em;color:#000080;font-weight:600}.portfolio-case-role span{margin-left:auto;font-size:9px;letter-spacing:.05em;color:#868686}
+@media(max-width:600px){.portfolio-case-role{align-items:flex-start;flex-direction:column;gap:4px}.portfolio-case-role span{margin-left:0}}
