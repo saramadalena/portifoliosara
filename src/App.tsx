@@ -78,13 +78,13 @@ type CaseItem = {
 const cases: CaseItem[] = [
   {
     id: 1, num: '01', empresa: 'Grupo SADA',
-    subtitulo: 'Colocando ordem nos canais internos e mostrando a força da marca no mercado.',
+    subtitulo: 'Comunicação e Marketing em uma estrutura corporativa de múltiplos públicos, áreas e negócios.',
     periodo: '2022–2025', cor: T.navy,
     imagens: [caseSadaRedes, caseSadaIntermodal, caseDiaV1, caseDiaV2, caseDiaV3],
-    contexto: 'O Grupo SADA reúne mais de 30 marcas e é o maior grupo de logística e transporte de veículos da América Latina, com operações em 4 estados e +8.000 colaboradores. A área de comunicação estava em processo de estruturação, sem processos definidos, sem padronização editorial e com presença digital incipiente.',
-    desafio: 'Unificar a comunicação institucional de um grupo diversificado, fortalecer a presença digital das marcas, dar visibilidade às iniciativas ESG e criar processos sustentáveis de comunicação — com equipe enxuta e múltiplos públicos simultâneos: colaboradores, lideranças, clientes e comunidade.',
-    estrategia: 'Desenvolvimento de identidade editorial para canais institucionais (Instagram e LinkedIn), estratégia de cobertura de eventos com foco em autoridade e pertencimento, campanha de voluntariado corporativo integrada entre canais internos e externos, e padronização de fluxos, POPs e processos de comunicação.',
-    execucao: 'Toquei a comunicação interna, o e-mail marketing e a presença nas redes sociais. Na Intermodal 2024, coloquei os próprios colaboradores como porta-vozes do estande no LinkedIn e Instagram, gerando recorde de alcance.',
+    contexto: 'No Grupo SADA, atuei em Comunicação e Marketing em uma estrutura corporativa ampla, formada por diferentes empresas, segmentos, áreas, públicos e necessidades de comunicação. Minha atuação acontecia de forma transversal e em equipe, conectando planejamento, conteúdo, campanhas, canais internos e externos e acompanhamento de performance.',
+    desafio: 'Atender diferentes demandas de comunicação em uma estrutura corporativa complexa, articulando públicos, áreas, canais e formatos com consistência, organização e adequação a cada contexto.',
+    estrategia: 'Planejamento editorial, redação e produção de conteúdo, gestão de canais, participação em campanhas e projetos, comunicação interna, desdobramentos visuais e acompanhamento de indicadores, com interface entre áreas internas, fornecedores, stakeholders e equipe de Comunicação e Marketing.',
+    execucao: 'Atuei no planejamento, redação e produção de textos e conteúdos, publicação e acompanhamento de canais, comunicação interna, suporte a lives corporativas e desdobramentos de design a partir de identidades e direcionamentos já definidos. Na Intermodal 2024, minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital e da cobertura antes, durante e depois do evento.',
     resultados: [
       { valor: '+7%', label: 'Engajamento orgânico (2024)' },
       { valor: '+33%', label: 'Abertura de comunicados internos' },
@@ -93,8 +93,8 @@ const cases: CaseItem[] = [
       { valor: '+800', label: 'Pessoas no Dia V' },
       { valor: '8', label: 'Cidades impactadas' },
     ],
-    resultadoTexto: 'Presença digital reestruturada, processos de comunicação padronizados e iniciativas ESG com alcance mensurável e reconhecimento interno.',
-    narrativa: 'No Grupo SADA, trabalhei na área de Comunicação e Marketing assumindo a responsabilidade pela comunicação interna, institucional, corporativa e pelas frentes de marketing digital. Tive uma vivência bastante ampla e diversa no ecossistema da companhia: em muitas iniciativas atuei diretamente do planejamento à execução operacional (como na criação de campanhas no RD Station, gestão de chamados via Salesforce, desdobramento de pautas de ESG e gestão de redes sociais); em outras frentes corporativas mais amplas, acompanhei de perto o alinhamento de estratégias e processos ao lado de equipes multidisciplinares. Essa bagagem me permitiu compreender a complexidade de uma grande corporação e garantir que a comunicação servisse como uma ponte eficiente entre as diretrizes do negócio, os colaboradores e o mercado.',
+    resultadoTexto: 'Atuação conectando planejamento e execução em diferentes frentes de Comunicação e Marketing, com acompanhamento de canais, processos e indicadores em uma estrutura corporativa ampla.',
+    narrativa: 'No Grupo SADA, atuei em Comunicação e Marketing de forma transversal e em equipe. Minha rotina conectava planejamento editorial, redação e produção de conteúdo, campanhas, canais internos e externos, comunicação interna, desdobramentos visuais, processos e leitura de indicadores. A interface com diferentes áreas, fornecedores, stakeholders e profissionais da equipe fazia parte da construção e execução das entregas.',
   },
   {
     id: 2, num: '02', empresa: 'SPDATA',
@@ -574,7 +574,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
 
         {/* Texto principal */}
         <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: 1.82, color: T.inkMid, margin: '0 0 28px', maxWidth: '520px' }}>
-          Atuação integrada para fortalecer a presença institucional, organizar a comunicação dos canais e ampliar a consistência da marca em diferentes pontos de contato.
+          Atuação em Comunicação e Marketing conectando planejamento, conteúdo, campanhas, canais, comunicação interna e acompanhamento de performance em uma estrutura corporativa de múltiplos públicos e áreas.
         </p>
 
         {/* Contexto */}
