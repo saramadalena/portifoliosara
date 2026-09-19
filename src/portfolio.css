@@ -84,3 +84,10 @@
 .portfolio-evidence .portfolio-mosaic img:first-child{max-height:300px}
 @media(max-width:900px){.portfolio-evidence .portfolio-mosaic{max-width:760px}.portfolio-evidence .portfolio-mosaic img,.portfolio-evidence .portfolio-mosaic img:first-child{max-height:200px}}
 @media(max-width:600px){.portfolio-evidence .portfolio-mosaic{max-width:100%}.portfolio-evidence .portfolio-mosaic img,.portfolio-evidence .portfolio-mosaic img:first-child{max-height:175px}}
+
+/* Metadados compactos para projetos dentro do case */
+.portfolio-project-meta{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #D8D8D6;border-bottom:1px solid #D8D8D6;margin:2px 0 20px}
+.portfolio-project-meta span{font-size:10px;line-height:1.45;padding:12px 14px;border-right:1px solid #D8D8D6;color:#1A1A1A}
+.portfolio-project-meta span:last-child{border-right:0}
+.portfolio-project-meta small{display:block;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#FF007F;font-weight:700;margin-bottom:5px}
+@media(max-width:600px){.portfolio-project-meta{grid-template-columns:1fr}.portfolio-project-meta span{border-right:0;border-bottom:1px solid #D8D8D6}.portfolio-project-meta span:last-child{border-bottom:0}}
