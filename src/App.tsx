@@ -835,6 +835,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
             ['+93%', 'alcance no LinkedIn'],
             ['59.246', 'interações'],
             ['38', 'Stories publicados'],
+            ['1.559', 'média de interações por Story'],
           ].map(([valor, label]) => (
             <div key={label} style={{ padding: '20px', backgroundColor: T.white }}>
               <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 7px' }}>{valor}</p>
@@ -934,11 +935,14 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
       {cases[0].narrativa && <NarrativaBlock texto={cases[0].narrativa} cor={T.navy} cargo="Analista de Marketing" />}
 
       {/* ── NAVEGAÇÃO ── */}
-      <div style={{ padding: '20px 36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}` }}>
+      <div style={{ padding: '20px 36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
         <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.18s' }}
           onMouseEnter={e=>{e.currentTarget.style.borderColor=T.navy;e.currentTarget.style.color=T.navy}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor=T.rule;e.currentTarget.style.color=T.inkMid}}>
           ← Todos os cases
+        </button>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.navy,border:`1px solid ${T.navy}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          Próximo case →
         </button>
       </div>
     </div>
