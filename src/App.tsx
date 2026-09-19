@@ -601,22 +601,6 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </div>
         </div>
 
-        {/* Resultado macro */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', paddingTop: '28px', borderTop: `1px solid ${T.ruleLight}` }}>
-          <div>
-            <p style={{
-              fontFamily: 'Playfair Display, serif',
-              fontSize: '44px', fontWeight: 700, lineHeight: 1,
-              letterSpacing: '-0.04em', color: T.navy, margin: '0 0 6px',
-            }}>+23%</p>
-            <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.65, color: T.inkMid, margin: '0 0 8px', maxWidth: '320px' }}>
-              Evolução do engajamento no Instagram em 2024, na comparação com o período anterior.
-            </p>
-            <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0, letterSpacing: '0.02em' }}>
-              Indicador de contexto do canal, acompanhado em conjunto com alcance, interações, cliques e volume de publicações
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
