@@ -683,6 +683,22 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
           <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Diversas frentes, uma narrativa integrada</p>
         </div>
 
+        {/* Fluxo de atuação */}
+        <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
+          <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Como eu atuava</p>
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '520px' }}>
+            O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
+            {['Contexto e demandas', 'Planejamento', 'Conteúdo e produção', 'Canais e campanhas', 'Públicos', 'Indicadores e aprendizados'].map((etapa, i, arr) => (
+              <React.Fragment key={etapa}>
+                <span style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{etapa}</span>
+                {i < arr.length - 1 && <span style={{ fontSize: '10px', color: T.inkLight }}>→</span>}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
         {/* Design de desdobramento */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Design aplicado à comunicação</p>
