@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './original-layout-adjustments.css'
-import App from './App'
+import PortfolioApp from './PortfolioApp'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <PortfolioApp />
   </React.StrictMode>,
 )
