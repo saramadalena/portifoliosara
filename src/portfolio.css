@@ -134,3 +134,10 @@
 .portfolio-process-proof p{margin:0!important;font-size:11px!important;line-height:1.7!important}
 .portfolio-process-proof .portfolio-scope-tags{margin:14px 0 0 168px}
 @media(max-width:600px){.portfolio-process-proof>div:first-child{grid-template-columns:1fr;gap:7px}.portfolio-process-proof .portfolio-scope-tags{margin:14px 0 0}}
+
+/* Responsabilidade explícita em projetos com muitas frentes e pessoas envolvidas */
+.portfolio-responsibility-note{display:grid;grid-template-columns:130px 250px 1fr;gap:16px;align-items:start;margin:2px 0 18px;padding:16px 0;border-bottom:1px solid #D8D8D6}
+.portfolio-responsibility-note small{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#FF007F;font-weight:700}
+.portfolio-responsibility-note strong{font-family:'Playfair Display',serif;font-size:17px;line-height:1.3;color:#000080}
+.portfolio-responsibility-note span{font-size:10px;line-height:1.65;color:#4A4A4A}
+@media(max-width:700px){.portfolio-responsibility-note{grid-template-columns:1fr;gap:6px}.portfolio-responsibility-note strong{font-size:16px}}
