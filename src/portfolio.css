@@ -70,3 +70,10 @@
 .portfolio-scope-tags{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 20px}
 .portfolio-scope-tags span{font-size:9px;letter-spacing:.04em;padding:6px 9px;border:1px solid #D8D8D6;background:#F5F5F3;color:#4A4A4A}
 @media(max-width:600px){.portfolio-proof-head{align-items:start;flex-direction:column;gap:5px}.portfolio-proof-head span{text-align:left}}
+
+/* Ferramentas aparecem como apoio ao raciocínio, não como protagonista */
+.portfolio-analysis-callout{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:12px;margin:4px 0 20px;padding:14px 16px;border:1px solid #D8D8D6;background:#fff}
+.portfolio-analysis-callout small{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#868686}
+.portfolio-analysis-callout strong{font-family:'Playfair Display',serif;font-size:19px;color:#000080;padding:0 12px;border-left:2px solid #FF007F}
+.portfolio-analysis-callout span{font-size:10px;line-height:1.55;color:#4A4A4A}
+@media(max-width:600px){.portfolio-analysis-callout{grid-template-columns:1fr;gap:6px}.portfolio-analysis-callout strong{padding:5px 0 5px 10px}}
