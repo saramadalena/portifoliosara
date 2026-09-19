@@ -576,13 +576,13 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </p>
 
         {/* Texto principal */}
-        <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.75, color: T.inkMid, margin: '0 0 28px', maxWidth: '620px' }}>
+        <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.75, color: T.ink, margin: '0 0 28px', maxWidth: '620px' }}>
           Atuação em Comunicação e Marketing conectando planejamento, conteúdo, campanhas, canais, comunicação interna e acompanhamento de performance em uma estrutura corporativa de múltiplos públicos e áreas.
         </p>
 
         {/* Contexto */}
         <div style={{ borderLeft: `2px solid ${T.ruleLight}`, paddingLeft: '16px', marginBottom: '32px', maxWidth: '600px' }}>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkLight, margin: 0 }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: 0 }}>
             Minha atuação acontecia de forma transversal e em equipe, com interface entre áreas internas, fornecedores, stakeholders e profissionais da equipe de Comunicação e Marketing, em frentes com responsabilidades distribuídas entre os envolvidos.
           </p>
         </div>
@@ -612,7 +612,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 12px' }}>
             Uma estratégia, diferentes pontos de contato.
           </h3>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: 0, maxWidth: '600px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: 0, maxWidth: '600px' }}>
             Planejamento, redação e produção de conteúdo, gestão de canais, campanhas, comunicação interna, desdobramentos visuais e acompanhamento de indicadores em diferentes frentes da comunicação.
           </p>
         </div>
@@ -673,7 +673,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Fluxo de atuação */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Como eu atuava</p>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 16px', maxWidth: '620px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: '0 0 16px', maxWidth: '620px' }}>
             O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. Em campanhas e projetos, essa lógica era aplicada a temas institucionais, de negócios, sustentabilidade, responsabilidade social, diversidade e marca empregadora. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
@@ -689,7 +689,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Design de desdobramento */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Design aplicado à comunicação</p>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: 0, maxWidth: '620px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: 0, maxWidth: '620px' }}>
             Na SADA, minha atuação em design esteve principalmente nos desdobramentos. A partir de identidades, conceitos e direcionamentos já definidos para campanhas e projetos, desenvolvia e adaptava peças para diferentes formatos, canais e necessidades de comunicação, preservando consistência visual e adequação ao contexto de cada entrega.
           </p>
         </div>
@@ -697,7 +697,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Canais, processos e comunicação interna */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Canais e operação</p>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 14px', maxWidth: '620px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: '0 0 14px', maxWidth: '620px' }}>
             Além das redes sociais, atuei em comunicações via RD Station para bases com mais de 2,4 mil destinatários e no ecossistema interno do GOintegro, com mais de 3 mil usuários cadastrados. A rotina também envolvia triagem, priorização e acompanhamento de demandas e participação na criação e melhoria de processos da área.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
@@ -705,7 +705,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <span key={item} style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{item}</span>
             ))}
           </div>
-          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 12px', maxWidth: '620px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: '0 0 12px', maxWidth: '620px' }}>
             Na comunicação interna, participei de campanhas, produção de textos e conteúdos, interface com áreas e suporte às lives corporativas, conectando conteúdo, organização e execução.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -729,7 +729,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.8vw, 22px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 10px' }}>
               Intermodal South America 2024
             </h3>
-            <p style={{ fontSize: '13px', fontWeight: 400, color: T.inkMid, margin: 0, lineHeight: 1.72, maxWidth: '560px' }}>
+            <p style={{ fontSize: '13px', fontWeight: 400, color: T.ink, margin: 0, lineHeight: 1.72, maxWidth: '560px' }}>
               Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento. O planejamento contemplou Feed, Stories e Reels, além de pautas e roteiros para vídeos com profissionais da empresa, liderança e cliente.
             </p>
           </div>
@@ -919,7 +919,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
       <div style={{ padding: '36px', backgroundColor: T.bg, borderTop: `1px solid ${T.rule}` }}>
         <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Estudo estratégico · 2025</p>
         <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 12px' }}>Análise e direcionamento de Redes Sociais</h3>
-        <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.inkMid, margin: '0 0 14px', maxWidth: '620px' }}>
+        <p style={{ fontSize: '13px', fontWeight: 400, lineHeight: 1.72, color: T.ink, margin: '0 0 14px', maxWidth: '620px' }}>
           A partir do histórico e dos dados dos canais, desenvolvi uma análise e uma proposta de direcionamento para as redes sociais em 2025, reunindo leitura de públicos e desempenho, análise de concorrentes e definição de direcionadores editoriais.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
