@@ -20,3 +20,18 @@
 .portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 2;max-height:488px}
 @media(max-width:900px){.portfolio-case-image{min-height:260px;max-height:360px}.portfolio-mosaic{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-mosaic img{max-height:210px}.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 1;max-height:210px}}
 @media(max-width:600px){.portfolio-case-image{min-height:220px;max-height:300px}.portfolio-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.portfolio-mosaic img,.portfolio-mosaic img:first-child{grid-column:span 1;grid-row:span 1;max-height:190px;aspect-ratio:4/3}}
+
+/* Hierarquia do mosaico de cases: SADA protagonista, demais como repertório de suporte */
+.portfolio-cases{grid-template-columns:repeat(12,minmax(0,1fr));align-items:start}
+.portfolio-cases>.portfolio-case{grid-column:span 4}
+.portfolio-cases>.portfolio-case:first-child{grid-column:1/-1}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-cover{grid-template-columns:1fr;min-height:0}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-copy{padding:28px 26px 22px}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-copy h3{font-size:clamp(28px,3vw,38px)}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-image{min-height:190px;max-height:230px;order:-1}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-details{padding:0 26px 24px}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-mosaic img,
+.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-mosaic img:first-child{grid-column:span 1;grid-row:span 1;max-height:160px;aspect-ratio:4/3}
+@media(max-width:900px){.portfolio-cases{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-cases>.portfolio-case,.portfolio-cases>.portfolio-case:first-child{grid-column:span 2}}
+@media(max-width:600px){.portfolio-cases{grid-template-columns:1fr}.portfolio-cases>.portfolio-case,.portfolio-cases>.portfolio-case:first-child{grid-column:1}.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-image{min-height:180px;max-height:220px}}
