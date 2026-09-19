@@ -62,12 +62,13 @@ iframe {
   margin-right: auto !important;
 }
 
-.sada-intermodal-media > div:first-child {
-  height: 190px !important;
+.sada-intermodal-media > div {
+  height: 180px !important;
+  min-width: 0 !important;
 }
 
 .sada-intermodal-media > div:last-child {
-  width: 190px !important;
+  width: auto !important;
 }
 
 .sada-video-grid {
@@ -139,14 +140,13 @@ iframe {
 
   .sada-intermodal-media {
     width: calc(100% - 32px) !important;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr) !important;
-    gap: 6px !important;
+    grid-template-columns: minmax(0, 1.45fr) minmax(120px, 0.55fr) !important;
+    gap: 8px !important;
   }
 
-  .sada-intermodal-media > div:first-child,
-  .sada-intermodal-media > div:last-child {
+  .sada-intermodal-media > div {
     width: auto !important;
-    height: 150px !important;
+    height: 132px !important;
     min-height: 0 !important;
   }
 
@@ -155,6 +155,11 @@ iframe {
     height: 100% !important;
     object-fit: contain !important;
     object-position: center !important;
+  }
+
+  .sada-video-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   /* Dentro de mosaicos, a peça inteira aparece sem crop forçado. */
