@@ -851,6 +851,28 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
+      {/* ── INDICADORES DE CANAIS ── */}
+      <div style={{ padding: '36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}` }}>
+        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Indicadores de canais · 2024</p>
+        <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 22px' }}>Leitura de performance como parte da rotina.</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', backgroundColor: T.ruleLight, border: `1px solid ${T.ruleLight}` }}>
+          {[
+            ['1,69 milhão', 'impressões no Instagram · jan–jul/24'],
+            ['531 mil', 'contas alcançadas no Instagram · jan–jul/24'],
+            ['36,2%', 'taxa média de abertura no RD Station · 1º semestre'],
+            ['57,5%', 'média de usuários ativos no GOintegro · 1º semestre'],
+          ].map(([valor, label]) => (
+            <div key={label} style={{ padding: '22px', backgroundColor: T.bg }}>
+              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 8px' }}>{valor}</p>
+              <p style={{ fontSize: '10px', fontWeight: 300, lineHeight: 1.55, color: T.inkMid, margin: 0 }}>{label}</p>
+            </div>
+          ))}
+        </div>
+        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: '14px 0 0', maxWidth: '540px' }}>
+          Os indicadores apresentam a evolução e o alcance dos canais no período e não são atribuídos a uma única ação ou pessoa.
+        </p>
+      </div>
+
       {/* ── ANÁLISE DE REDES SOCIAIS 2025 ── */}
       <div style={{ padding: '36px', backgroundColor: T.bg, borderTop: `1px solid ${T.rule}` }}>
         <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Estudo estratégico · 2025</p>
