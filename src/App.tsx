@@ -690,7 +690,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Como eu atuava</p>
           <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '520px' }}>
-            O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
+            O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. Em campanhas e projetos, essa lógica era aplicada a temas institucionais, de negócios, sustentabilidade, responsabilidade social, diversidade e marca empregadora. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
             {['Planejamento', 'Articulação transversal', 'Execução', 'Performance e aprendizados'].map((etapa, i, arr) => (
@@ -752,7 +752,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               Intermodal South America 2024
             </h3>
             <p style={{ fontSize: '12px', fontWeight: 300, color: T.inkMid, margin: 0, lineHeight: 1.75, maxWidth: '400px' }}>
-              Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento, incluindo Feed, Stories, Reels e vídeos.
+              Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento. O planejamento contemplou Feed, Stories e Reels, além de pautas e roteiros para vídeos com profissionais da empresa, liderança e cliente.
             </p>
           </div>
           <div style={{ flexShrink: 0, display: 'flex', gap: '6px', paddingTop: '4px' }}>
