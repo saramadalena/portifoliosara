@@ -867,75 +867,72 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
       {/* ══════════════════════════════════════════════════════════════════════
           TELA 3 — RESULTADOS E DESTAQUE
       ══════════════════════════════════════════════════════════════════════ */}
-      <div style={{ borderTop: `1px solid ${T.rule}`, backgroundColor: T.white }}>
-        <div style={{ padding: '40px 36px 36px' }}>
-          {/* Eyebrow */}
+      <div className="sada-results-section" style={{ borderTop: `1px solid ${T.rule}`, backgroundColor: T.white }}>
+        <div className="sada-results-wrap" style={{ padding: '40px 36px 38px', maxWidth: '1040px', margin: '0 auto' }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Resultados</p>
-          {/* Título */}
-          <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 32px' }}>
+          <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 26px' }}>
             Comunicação orientada por consistência e desempenho.
           </h3>
 
-          {/* Layout: foto pequena à esquerda + cards empilhados à direita */}
-          <div className="sada-results-media" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px', alignItems: 'stretch' }}>
-
-            {/* Foto Dia V — ação */}
-            <div onClick={() => setLightbox(imgDiaVAcao)}
-              style={{ overflow: 'hidden', position: 'relative', aspectRatio: '3/4', cursor: 'zoom-in' }}>
+          <div className="sada-results-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(240px, 0.78fr) minmax(0, 1.7fr)', gap: '18px', alignItems: 'stretch' }}>
+            <div onClick={() => setLightbox(imgDiaVAcao)} className="sada-results-photo"
+              style={{ overflow: 'hidden', position: 'relative', minHeight: '360px', cursor: 'zoom-in', backgroundColor: T.bg }}>
               <img src={imgDiaVAcao} alt="Dia V em Ação"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block', transition: 'transform 0.55s ease' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)' }} />
-              <div style={{ position: 'absolute', bottom: '14px', left: '16px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', margin: '0 0 3px' }}>ESG · Voluntariado</p>
-                <p style={{ fontSize: '11px', fontWeight: 400, color: 'rgba(255,255,255,0.85)', margin: 0 }}>Dia V (Ação nos territórios)</p>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.48) 0%, transparent 52%)' }} />
+              <div style={{ position: 'absolute', bottom: '14px', left: '16px', right: '14px' }}>
+                <p style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.68)', margin: '0 0 3px' }}>ESG · Voluntariado</p>
+                <p style={{ fontSize: '11px', fontWeight: 500, color: '#fff', margin: 0 }}>Dia V (Ação nos territórios)</p>
               </div>
             </div>
 
-            {/* Cards empilhados */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{ padding: '24px 22px', backgroundColor: T.bg, borderTop: `2px solid ${T.navy}`, flex: 1 }}>
-                <p style={{
-                  fontFamily: 'Playfair Display, serif',
-                  fontSize: '48px', fontWeight: 700, lineHeight: 1,
-                  letterSpacing: '-0.04em', color: T.navy, margin: '0 0 10px',
-                }}>+23%</p>
-                <p style={{ fontSize: '12px', fontWeight: 400, color: T.ink, margin: '0 0 5px', lineHeight: 1.45 }}>Evolução do engajamento no Instagram em 2024, na comparação com o período anterior.</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, margin: 0 }}>Período com 27% menos publicações</p>
+            <div className="sada-channel-panel" style={{ border: `1px solid ${T.ruleLight}`, backgroundColor: T.bg, padding: '22px', minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '14px', marginBottom: '16px', flexWrap: 'wrap' }}>
+                <div>
+                  <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.navy, margin: '0 0 7px' }}>Indicadores de canais · 2024</p>
+                  <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.7vw, 21px)', fontWeight: 600, lineHeight: 1.25, color: T.ink, margin: 0 }}>Leitura de performance como parte da rotina.</h4>
+                </div>
+                <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.55, color: T.inkMid, margin: 0, maxWidth: '245px' }}>
+                  Indicadores acompanhados para orientar análise, ajustes editoriais e evolução dos canais.
+                </p>
               </div>
-              <div style={{ padding: '24px 22px', backgroundColor: T.bg, borderTop: `2px solid ${T.ruleLight}`, flex: 1 }}>
-                <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '34px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.04em', color: T.navy, margin: '0 0 8px' }}>+18%</p>
-                <p style={{ fontSize: '12px', fontWeight: 500, color: T.ink, margin: '0 0 6px', lineHeight: 1.45 }}>Crescimento da comunidade no LinkedIn entre janeiro e julho de 2024.</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: T.inkLight, margin: 0 }}>108,8 mil → 128,4 mil seguidores</p>
+
+              <div className="sada-featured-metrics" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px', marginBottom: '8px' }}>
+                <div style={{ padding: '18px', backgroundColor: T.white, borderTop: `2px solid ${T.navy}` }}>
+                  <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '38px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.04em', color: T.navy, margin: '0 0 8px' }}>+23%</p>
+                  <p style={{ fontSize: '11px', fontWeight: 500, lineHeight: 1.45, color: T.ink, margin: '0 0 4px' }}>Engajamento no Instagram</p>
+                  <p style={{ fontSize: '9px', fontWeight: 400, lineHeight: 1.5, color: T.inkMid, margin: 0 }}>Comparação com o período anterior, com 27% menos publicações.</p>
+                </div>
+                <div style={{ padding: '18px', backgroundColor: T.white, borderTop: `2px solid ${T.rule}` }}>
+                  <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '32px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.04em', color: T.navy, margin: '0 0 8px' }}>+18%</p>
+                  <p style={{ fontSize: '11px', fontWeight: 500, lineHeight: 1.45, color: T.ink, margin: '0 0 4px' }}>Comunidade no LinkedIn</p>
+                  <p style={{ fontSize: '9px', fontWeight: 400, lineHeight: 1.5, color: T.inkMid, margin: 0 }}>108,8 mil para 128,4 mil seguidores entre janeiro e julho.</p>
+                </div>
               </div>
+
+              <div className="sada-secondary-metrics" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '1px', backgroundColor: T.ruleLight, border: `1px solid ${T.ruleLight}` }}>
+                {[
+                  ['1,69 mi', 'impressões no Instagram'],
+                  ['531 mil', 'contas alcançadas'],
+                  ['36,2%', 'abertura média no RD Station'],
+                  ['57,5%', 'média de usuários ativos no GOintegro'],
+                ].map(([valor, label]) => (
+                  <div key={label} style={{ padding: '14px 12px', backgroundColor: T.white, minWidth: 0 }}>
+                    <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '21px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 7px' }}>{valor}</p>
+                    <p style={{ fontSize: '9px', fontWeight: 400, lineHeight: 1.45, color: T.inkMid, margin: 0 }}>{label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.6, color: T.inkMid, margin: '14px 0 5px' }}>
+                Como leitura complementar, o LinkedIn registrou alcance mensal de até 76,8 mil e engajamento mensal de até 9,14%. No RD Station, campanhas chegaram a 39,1% de abertura, e o GOintegro alcançou até 1,8 mil usuários ativos por mês.
+              </p>
+              <p style={{ fontSize: '9px', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.55, color: T.inkLight, margin: 0 }}>
+                Os indicadores apresentam a evolução e o alcance dos canais no período e não são atribuídos a uma única ação ou pessoa.
+              </p>
             </div>
           </div>
-
         </div>
-      </div>
-
-      {/* ── INDICADORES DE CANAIS ── */}
-      <div style={{ padding: '36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}` }}>
-        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Indicadores de canais · 2024</p>
-        <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 22px' }}>Leitura de performance como parte da rotina.</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', backgroundColor: T.ruleLight, border: `1px solid ${T.ruleLight}` }}>
-          {[
-            ['1,69 milhão', 'impressões no Instagram · jan–jul/24'],
-            ['531 mil', 'contas alcançadas no Instagram · jan–jul/24'],
-            ['36,2%', 'taxa média de abertura no RD Station · 1º semestre'],
-            ['57,5%', 'média de usuários ativos no GOintegro · 1º semestre'],
-          ].map(([valor, label]) => (
-            <div key={label} style={{ padding: '22px', backgroundColor: T.bg }}>
-              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 8px' }}>{valor}</p>
-              <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.55, color: T.inkMid, margin: 0 }}>{label}</p>
-            </div>
-          ))}
-        </div>
-        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.7, color: T.inkMid, margin: '14px 0 8px', maxWidth: '620px' }}>
-          Como leitura complementar, o LinkedIn registrou alcance mensal de até 76,8 mil e engajamento mensal de até 9,14%. No RD Station, campanhas chegaram a 39,1% de abertura, e o GOintegro alcançou até 1,8 mil usuários ativos por mês.
-        </p>
-        <p style={{ fontSize: '10px', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '620px' }}>
-          Os indicadores apresentam a evolução e o alcance dos canais no período e não são atribuídos a uma única ação ou pessoa.
-        </p>
       </div>
 
       {/* ── ANÁLISE DE REDES SOCIAIS 2025 ── */}
