@@ -93,15 +93,25 @@ iframe {
     gap: 6px !important;
   }
 
-  /* Blocos panorâmicos e de equipe permanecem em uma única coluna. */
-  div:has(> div > img[alt="Equipe Grupo SADA — Intermodal 2024"]),
+  /* Evidências da Intermodal ficam em tamanho médio no mobile, sem virar imagens gigantes. */
+  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]),
   div:has(> div > img[alt="Convite Intermodal 2024"]) {
     grid-template-columns: 1fr !important;
   }
 
+  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]) > div,
   div:has(> div > img[alt="Convite Intermodal 2024"]) > div {
     width: 100% !important;
-    min-height: 220px;
+    height: 220px !important;
+    min-height: 0 !important;
+  }
+
+  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]) > div > img,
+  div:has(> div > img[alt="Convite Intermodal 2024"]) > div > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 
   /* Dentro de mosaicos, a peça inteira aparece sem crop forçado. */
