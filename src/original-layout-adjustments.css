@@ -188,6 +188,18 @@ iframe {
     width: calc(100% - 40px);
   }
 
+  .sada-intermodal-header {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 20px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .sada-intermodal-intro {
+    max-width: 760px !important;
+    font-size: 14px !important;
+  }
+
   .sada-results-wrap {
     padding-left: 28px !important;
     padding-right: 28px !important;
@@ -208,6 +220,18 @@ iframe {
 
 /* Ajustes responsivos sobre o layout original. */
 @media (max-width: 700px) {
+  .sada-intermodal-header {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 30px 20px 24px !important;
+  }
+
+  .sada-intermodal-intro {
+    max-width: none !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
   h1,
   h2,
   h3,
