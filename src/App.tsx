@@ -525,6 +525,19 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
 
 function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => void }) {
   const [lightbox, setLightbox] = useState<string | null>(null)
+  const { isMobile } = useBreakpoint()
+  const [publicationPage, setPublicationPage] = useState(0)
+  const [intermodalPage, setIntermodalPage] = useState(0)
+  const publicationPages = isMobile ? 4 : 2
+  const intermodalPages = isMobile ? 3 : 2
+
+  const scrollTrackTo = (id: string, page: number, pages: number) => {
+    const el = document.getElementById(id)
+    if (!el) return
+    const maxScroll = Math.max(0, el.scrollWidth - el.clientWidth)
+    const left = pages <= 1 ? 0 : maxScroll * (page / (pages - 1))
+    el.scrollTo({ left, behavior: 'smooth' })
+  }
 
   return (
     <div className="sada-case-detail" style={{ backgroundColor: T.white }}>
@@ -625,14 +638,19 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <p style={{ fontSize: '11px', fontWeight: 400, color: T.inkMid, margin: 0 }}>Arraste para navegar pelas peças.</p>
             </div>
             <div style={{ display: 'flex', gap: '4px', flexShrink: 0 }}>
-              <button aria-label="Voltar publicações" onClick={() => document.getElementById('sada-publications-track')?.scrollBy({ left: -340, behavior: 'smooth' })}
+              <button aria-label="Voltar publicações" onClick={() => { const p = Math.max(0, publicationPage - 1); setPublicationPage(p); scrollTrackTo('sada-publications-track', p, publicationPages) }}
                 style={{ width: '32px', height: '32px', border: `1px solid ${T.rule}`, backgroundColor: T.white, color: T.inkMid, cursor: 'pointer', fontSize: '15px' }}>←</button>
-              <button aria-label="Avançar publicações" onClick={() => document.getElementById('sada-publications-track')?.scrollBy({ left: 340, behavior: 'smooth' })}
+              <button aria-label="Avançar publicações" onClick={() => { const p = Math.min(publicationPages - 1, publicationPage + 1); setPublicationPage(p); scrollTrackTo('sada-publications-track', p, publicationPages) }}
                 style={{ width: '32px', height: '32px', border: `1px solid ${T.navy}`, backgroundColor: T.navy, color: T.white, cursor: 'pointer', fontSize: '15px' }}>→</button>
             </div>
           </div>
 
-          <div id="sada-publications-track" className="sada-scroll-track sada-publications-track">
+          <div id="sada-publications-track" className="sada-scroll-track sada-publications-track"
+            onScroll={e => {
+              const el = e.currentTarget
+              const maxScroll = Math.max(1, el.scrollWidth - el.clientWidth)
+              setPublicationPage(Math.round((el.scrollLeft / maxScroll) * (publicationPages - 1)))
+            }}>
             {[
               { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
               { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
@@ -654,6 +672,12 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                   <p style={{ fontSize: '9px', fontWeight: 500, color: 'rgba(255,255,255,0.9)', margin: 0, lineHeight: 1.35 }}>{item.label}</p>
                 </div>
               </button>
+            ))}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '5px', alignItems: 'center', marginTop: '12px' }} aria-label="Navegação das publicações">
+            {Array.from({ length: publicationPages }).map((_, i) => (
+              <button key={i} aria-label={`Ir para grupo ${i + 1} de publicações`} onClick={() => { setPublicationPage(i); scrollTrackTo('sada-publications-track', i, publicationPages) }}
+                style={{ width: i === publicationPage ? '18px' : '6px', height: '6px', borderRadius: '3px', backgroundColor: i === publicationPage ? T.magenta : T.rule, border: 'none', padding: 0, cursor: 'pointer', transition: 'all 0.2s' }} />
             ))}
           </div>
         </div>
@@ -744,14 +768,19 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <p style={{ fontSize: '11px', fontWeight: 400, color: T.inkMid, margin: 0 }}>Vídeos em destaque, seguidos pelos registros de apoio. Arraste para navegar.</p>
             </div>
             <div style={{ display: 'flex', gap: '4px', flexShrink: 0 }}>
-              <button aria-label="Voltar mídia da Intermodal" onClick={() => document.getElementById('sada-intermodal-track')?.scrollBy({ left: -360, behavior: 'smooth' })}
+              <button aria-label="Voltar mídia da Intermodal" onClick={() => { const p = Math.max(0, intermodalPage - 1); setIntermodalPage(p); scrollTrackTo('sada-intermodal-track', p, intermodalPages) }}
                 style={{ width: '32px', height: '32px', border: `1px solid ${T.rule}`, backgroundColor: T.white, color: T.inkMid, cursor: 'pointer', fontSize: '15px' }}>←</button>
-              <button aria-label="Avançar mídia da Intermodal" onClick={() => document.getElementById('sada-intermodal-track')?.scrollBy({ left: 360, behavior: 'smooth' })}
+              <button aria-label="Avançar mídia da Intermodal" onClick={() => { const p = Math.min(intermodalPages - 1, intermodalPage + 1); setIntermodalPage(p); scrollTrackTo('sada-intermodal-track', p, intermodalPages) }}
                 style={{ width: '32px', height: '32px', border: `1px solid ${T.navy}`, backgroundColor: T.navy, color: T.white, cursor: 'pointer', fontSize: '15px' }}>→</button>
             </div>
           </div>
 
-          <div id="sada-intermodal-track" className="sada-scroll-track sada-intermodal-track">
+          <div id="sada-intermodal-track" className="sada-scroll-track sada-intermodal-track"
+            onScroll={e => {
+              const el = e.currentTarget
+              const maxScroll = Math.max(1, el.scrollWidth - el.clientWidth)
+              setIntermodalPage(Math.round((el.scrollLeft / maxScroll) * (intermodalPages - 1)))
+            }}>
             {[
               { src: imgEntrev1, label: 'Entrevista 01', name: 'Marcela Araujo', role: 'Analista Comercial', url: 'https://youtube.com/shorts/uFWPXXPHZvI' },
               { src: imgEntrev2, label: 'Entrevista 02', name: 'Michel Veloso', role: 'Gerente de Logística', url: 'https://youtube.com/shorts/bI0RPlr1sBI' },
@@ -801,6 +830,12 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               <img src={imgConviteInter} alt="Convite Intermodal 2024"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }} />
             </button>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '5px', alignItems: 'center', marginTop: '12px' }} aria-label="Navegação da mídia da Intermodal">
+            {Array.from({ length: intermodalPages }).map((_, i) => (
+              <button key={i} aria-label={`Ir para grupo ${i + 1} da Intermodal`} onClick={() => { setIntermodalPage(i); scrollTrackTo('sada-intermodal-track', i, intermodalPages) }}
+                style={{ width: i === intermodalPage ? '18px' : '6px', height: '6px', borderRadius: '3px', backgroundColor: i === intermodalPage ? T.magenta : T.rule, border: 'none', padding: 0, cursor: 'pointer', transition: 'all 0.2s' }} />
+            ))}
           </div>
         </div>
       </div>
