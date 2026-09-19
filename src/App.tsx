@@ -775,7 +775,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             <div style={{ flex: 1, height: '1px', backgroundColor: T.ruleLight }} />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+          <div className="sada-video-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
             {[
               { src: imgEntrev1, label: 'Entrevista 01', name: 'Marcela Araujo', role: 'Analista Comercial', desc: 'Experiência na feira', url: 'https://youtube.com/shorts/uFWPXXPHZvI' },
               { src: imgEntrev2, label: 'Entrevista 02', name: 'Michel Veloso', role: 'Gerente de Logística', desc: 'Visão de mercado na feira', url: 'https://youtube.com/shorts/bI0RPlr1sBI' },
