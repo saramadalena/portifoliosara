@@ -932,9 +932,6 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </p>
       </div>
 
-      {/* ── NARRATIVA ── */}
-      {cases[0].narrativa && <NarrativaBlock texto={cases[0].narrativa} cor={T.navy} cargo="Analista de Marketing" />}
-
       {/* ── NAVEGAÇÃO ── */}
       <div style={{ padding: '20px 36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
         <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.18s' }}
