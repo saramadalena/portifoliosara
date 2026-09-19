@@ -713,12 +713,22 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* Canais, processos e comunicação interna */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Canais e operação</p>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 18px', maxWidth: '520px' }}>
-            Além das redes sociais, atuei em comunicações via RD Station para bases com mais de 2,4 mil destinatários e no ecossistema interno do GOintegro, com mais de 3 mil usuários cadastrados. A rotina também envolvia Salesforce para triagem e acompanhamento de demandas, trabalho com SLAs e participação na criação e melhoria de fluxos e POPs.
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 14px', maxWidth: '520px' }}>
+            Além das redes sociais, atuei em comunicações via RD Station para bases com mais de 2,4 mil destinatários e no ecossistema interno do GOintegro, com mais de 3 mil usuários cadastrados. A rotina também envolvia triagem, priorização e acompanhamento de demandas e participação na criação e melhoria de processos da área.
           </p>
-          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '520px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
+            {['Salesforce', 'Triagem e priorização', 'SLAs', 'Fluxos', 'POPs'].map(item => (
+              <span key={item} style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{item}</span>
+            ))}
+          </div>
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 12px', maxWidth: '520px' }}>
             Na comunicação interna, participei de campanhas, produção de textos e conteúdos, interface com áreas e suporte às lives corporativas, conectando conteúdo, organização e execução.
           </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+            {['Comunicação interna', 'Produção textual', 'Suporte a lives corporativas'].map(item => (
+              <span key={item} style={{ fontSize: '10px', fontWeight: 400, color: T.inkMid, padding: '5px 10px', border: `1px solid ${T.ruleLight}`, backgroundColor: T.bg }}>{item}</span>
+            ))}
+          </div>
         </div>
 
         {/* Frase de fechamento */}
@@ -742,7 +752,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               Intermodal South America 2024
             </h3>
             <p style={{ fontSize: '12px', fontWeight: 300, color: T.inkMid, margin: 0, lineHeight: 1.75, maxWidth: '400px' }}>
-              Planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento, incluindo Feed, Stories, Reels e vídeos.
+              Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento, incluindo Feed, Stories, Reels e vídeos.
             </p>
           </div>
           <div style={{ flexShrink: 0, display: 'flex', gap: '6px', paddingTop: '4px' }}>
@@ -931,11 +941,23 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
       <div style={{ padding: '36px', backgroundColor: T.bg, borderTop: `1px solid ${T.rule}` }}>
         <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Estudo estratégico · 2025</p>
         <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 12px' }}>Análise e direcionamento de Redes Sociais</h3>
-        <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '540px' }}>
-          A partir do histórico e dos dados dos canais, desenvolvi uma análise e uma proposta de direcionamento para as redes sociais em 2025. O estudo contemplou públicos de Instagram e LinkedIn, desempenho dos canais, concorrentes, SWOT, personas, tom de voz, SMO, objetivos de conteúdo, editorias, sugestões de pautas e indicadores.
+        <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 14px', maxWidth: '540px' }}>
+          A partir do histórico e dos dados dos canais, desenvolvi uma análise e uma proposta de direcionamento para as redes sociais em 2025, reunindo leitura de públicos e desempenho, análise de concorrentes e definição de direcionadores editoriais.
         </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
+          {['Instagram e LinkedIn', 'Concorrentes', 'SWOT', 'Personas', 'Tom de voz', 'SMO', 'Editorias', 'Indicadores', 'MLabs'].map(item => (
+            <span key={item} style={{
+              fontSize: '10px',
+              fontWeight: item === 'MLabs' ? 600 : 400,
+              color: item === 'MLabs' ? T.navy : T.inkMid,
+              padding: '5px 10px',
+              border: `1px solid ${item === 'MLabs' ? T.navy : T.rule}`,
+              backgroundColor: T.white,
+            }}>{item}</span>
+          ))}
+        </div>
         <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
-          Os dados foram extraídos dos canais e de ferramentas como MLabs. O planejamento apresentado nesse material não chegou à etapa de implementação.
+          Os dados foram extraídos dos próprios canais e de ferramentas de apoio, incluindo MLabs. O planejamento apresentado nesse material não chegou à etapa de implementação.
         </p>
       </div>
 
