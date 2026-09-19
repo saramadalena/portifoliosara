@@ -46,11 +46,11 @@ export default function PortfolioApp(){return <div className="portfolio-shell">
 <div className="portfolio-case-lead"><p>{sada.contexto}</p><p>{sada.atuacao}</p></div>
 <div className="portfolio-metrics portfolio-metrics-featured">{sada.metricas.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div>
 <Expandable title="Gestão de canais e performance"><p>{sada.canais}</p><h4>Instagram | 2024</h4><p>{sada.instagram}</p><h4>LinkedIn | jan–jul/2024</h4><p>{sada.linkedin}</p><h4>RD Station | 1º semestre/2024</h4><p>{sada.rd}</p><h4>GOintegro | 1º semestre/2024</h4><p>{sada.gointegro}</p></Expandable>
-<Expandable title="Campanhas e comunicação integrada"><p>{sada.campanhas}</p><p><strong>Fluxo:</strong> {sada.fluxo}</p><p>{sada.processos}</p></Expandable>
+<Expandable title="Campanhas, comunicação integrada e design de desdobramento"><p>{sada.campanhas}</p><p>{sada.design}</p><p><strong>Fluxo:</strong> {sada.fluxo}</p><p>{sada.processos}</p></Expandable>
 <Expandable title="Comunicação interna, engajamento e lives"><p>{sada.interna}</p></Expandable>
 <Expandable title="Intermodal 2024 | campanha e cobertura multimídia"><p>{sada.intermodal}</p><Mosaic images={[intermodalCover,equipeIntermodal,conviteIntermodal,entrevista1,entrevista2,entrevista3]}/><div className="portfolio-metrics">{sada.metricasIntermodal.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div><p className="portfolio-note">{sada.nota}</p></Expandable>
 <Expandable title="Análise e direcionamento de Redes Sociais | 2025"><p>{sada.analise2025}</p></Expandable>
-<div className="portfolio-case-signature"><strong>Estratégia + execução</strong><span>Campanhas · liderança transversal · conteúdo multimídia · canais · indicadores · design</span></div>
+<div className="portfolio-case-signature"><strong>Estratégia + execução</strong><span>Campanhas · liderança transversal · conteúdo multimídia · canais · indicadores · design de desdobramento</span></div>
 </Case>
 <Case period="2021 a 2022" title="SPDATA" subtitle={spdata.subtitle} image={spdataCover}><Expandable title="Contexto e minha atuação"><p>{spdata.contexto}</p><p>{spdata.atuacao}</p></Expandable><Expandable title="Marca, produtos e comunicação interna"><p>{spdata.marca}</p><p>{spdata.interna}</p><p>{spdata.lives}</p><Mosaic images={[spdata1,spdata2,spdataCI1,spdataCI2,spdataCracha]}/></Expandable></Case>
 <Case period="2018 a 2019" title="Colégio Arnaldo" subtitle={arnaldo.subtitle} image={arnaldoCover}><Expandable title="Ver atuação e materiais"><p>{arnaldo.texto}</p><p>{arnaldo.digital}</p><Mosaic images={[arnaldoCover,arnaldo2,arnaldo3,arnaldo4,arnaldo5]}/></Expandable></Case>
