@@ -91,3 +91,11 @@
 .portfolio-project-meta span:last-child{border-right:0}
 .portfolio-project-meta small{display:block;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#FF007F;font-weight:700;margin-bottom:5px}
 @media(max-width:600px){.portfolio-project-meta{grid-template-columns:1fr}.portfolio-project-meta span{border-right:0;border-bottom:1px solid #D8D8D6}.portfolio-project-meta span:last-child{border-bottom:0}}
+
+/* Transparência de escopo: processo realizado x proposta não implementada */
+.portfolio-process-line{margin:22px 0;padding:16px 18px;border-top:1px solid #000080;border-bottom:1px solid #000080;display:flex;flex-direction:column;gap:7px}
+.portfolio-process-line small,.portfolio-status-note strong{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#FF007F;font-weight:700}
+.portfolio-process-line strong{font-size:11px;line-height:1.65;color:#1A1A1A;font-weight:500}
+.portfolio-status-note{display:flex;align-items:center;gap:14px;margin:2px 0 14px;padding:10px 12px;background:#EBEBEA}
+.portfolio-status-note span{font-size:9px;line-height:1.5;color:#4A4A4A}
+@media(max-width:600px){.portfolio-status-note{align-items:flex-start;flex-direction:column;gap:4px}}
