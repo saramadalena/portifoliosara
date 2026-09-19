@@ -926,6 +926,20 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </p>
       </div>
 
+      {/* ── DEPOIMENTO ── */}
+      <div className="sada-testimonial" style={{ padding: '34px 36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}` }}>
+        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.navy, margin: '0 0 14px' }}>Reconhecimento profissional</p>
+        <blockquote style={{ margin: 0, maxWidth: '680px' }}>
+          <p style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 2vw, 22px)', fontWeight: 500, lineHeight: 1.5, color: T.ink, margin: '0 0 16px' }}>
+            “Reconhecimento pela capacidade de ouvir feedbacks, refletir sobre eles e realizar ajustes com agilidade quando necessário.”
+          </p>
+          <footer>
+            <strong style={{ display: 'block', fontSize: '11px', fontWeight: 700, color: T.ink, marginBottom: '2px' }}>Leila Vasconcelos</strong>
+            <span style={{ fontSize: '10px', fontWeight: 400, color: T.inkMid }}>Comunicação e Marketing</span>
+          </footer>
+        </blockquote>
+      </div>
+
       {/* ── NAVEGAÇÃO ── */}
       <div style={{ padding: '20px 36px', backgroundColor: T.white, borderTop: `1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
         <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.18s' }}
