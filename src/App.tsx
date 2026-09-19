@@ -523,7 +523,7 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
   )
 }
 
-function SadaCaseDetail({ onBack }: { onBack: () => void }) {
+function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => void }) {
   const [lightbox, setLightbox] = useState<string | null>(null)
 
   return (
@@ -834,7 +834,6 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
             ['+93%', 'alcance no LinkedIn'],
             ['59.246', 'interações'],
             ['38', 'Stories publicados'],
-            ['1.559', 'média de interações por Story'],
           ].map(([valor, label]) => (
             <div key={label} style={{ padding: '20px', backgroundColor: T.white }}>
               <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 7px' }}>{valor}</p>
@@ -842,7 +841,10 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
             </div>
           ))}
         </div>
-        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: '14px 0 0', maxWidth: '540px' }}>
+        <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.6, color: T.inkMid, margin: '14px 0 6px', maxWidth: '540px' }}>
+          1.559 de média de interações por Story.
+        </p>
+        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
           Resultados da cobertura digital da Intermodal 2024. A variação de alcance compara março de 2024 com janeiro de 2024, referência utilizada pela área.
         </p>
       </div>
@@ -940,7 +942,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
           onMouseLeave={e=>{e.currentTarget.style.borderColor=T.rule;e.currentTarget.style.color=T.inkMid}}>
           ← Todos os cases
         </button>
-        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.navy,border:`1px solid ${T.navy}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+        <button onClick={onNext} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.navy,border:`1px solid ${T.navy}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
           Próximo case →
         </button>
       </div>
@@ -2019,8 +2021,8 @@ function SimpleCaseDetail({ caseIndex, onBack }: { caseIndex: number; onBack: ()
 
 // ─── CASE DETAIL ROUTER ──────────────────────────────────────────────────────
 
-function CaseDetailRouter({ id, onBack }: { id: number; onBack: () => void }) {
-  if (id === 0) return <SadaCaseDetail onBack={onBack} />
+function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () => void; onOpenCase: (id: number) => void }) {
+  if (id === 0) return <SadaCaseDetail onBack={onBack} onNext={() => onOpenCase(1)} />
   if (id === 1) return <SpdataCaseDetail onBack={onBack} />
   if (id === 2) return <StartupCaseDetail onBack={onBack} />
   if (id === 3) return <SimpleCaseDetail caseIndex={3} onBack={onBack} />
@@ -2263,7 +2265,7 @@ export default function App() {
       <div style={{ backgroundColor:T.bg,color:T.ink,fontFamily:'Inter, sans-serif',minHeight:'100vh' }}>
         {navEl}
         <div style={{ paddingTop:'56px' }}>
-          <CaseDetailRouter id={openCase} onBack={() => setOpenCase(null)} />
+          <CaseDetailRouter id={openCase} onBack={() => setOpenCase(null)} onOpenCase={(id) => setOpenCase(id)} />
         </div>
         {footerEl}
       </div>
