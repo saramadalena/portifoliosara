@@ -47,6 +47,12 @@ export default function PortfolioApp(){return <div className="portfolio-shell">
 <section id="cases" className="portfolio-section"><div className="portfolio-container"><Head kicker="Cases" title="Projetos que mostram a prática" intro="Contexto, responsabilidade e evidência ficam separados para que a página continue leve e cada pessoa escolha o quanto quer aprofundar."/><div className="portfolio-cases">
 <Case period="2022 a 2025" title="Grupo SADA" subtitle={sada.subtitle} image={sadaCover}>
 <div className="portfolio-case-lead"><p>{sada.contexto}</p><p>{sada.atuacao}</p></div>
+<div className="portfolio-role-map">
+<div><small>01</small><strong>Planejamento</strong><span>Leitura de contexto, públicos, pautas, calendário e direcionamento dos canais.</span></div>
+<div><small>02</small><strong>Articulação transversal</strong><span>Interface com áreas internas, stakeholders, fornecedores e profissionais envolvidos nas entregas.</span></div>
+<div><small>03</small><strong>Execução</strong><span>Conteúdo, campanhas, publicação, comunicação interna e design de desdobramento.</span></div>
+<div><small>04</small><strong>Performance</strong><span>Monitoramento de canais, consolidação de indicadores e leitura de resultados para novos ajustes.</span></div>
+</div>
 <div className="portfolio-metrics portfolio-metrics-featured">{sada.metricas.map(([v,l])=><div className="portfolio-metric" key={l}><strong>{v}</strong><span>{l}</span></div>)}</div>
 <Expandable title="Gestão de canais e performance"><p>{sada.canais}</p><h4>Instagram | 2024</h4><p>{sada.instagram}</p><h4>LinkedIn | jan–jul/2024</h4><p>{sada.linkedin}</p><h4>RD Station | 1º semestre/2024</h4><p>{sada.rd}</p><h4>GOintegro | 1º semestre/2024</h4><p>{sada.gointegro}</p></Expandable>
 <Expandable title="Campanhas, comunicação integrada e design de desdobramento"><p>{sada.campanhas}</p><p>{sada.design}</p><div className="portfolio-evidence"><div className="portfolio-evidence-copy"><small>Evidência visual</small><strong>Desdobramento de campanha</strong><span>Aplicações e adaptações visuais dentro de identidade e direcionamento previamente definidos.</span></div><Mosaic images={[sadaDesdobramento1,sadaDesdobramento2,sadaDesdobramento3]}/></div><p><strong>Fluxo:</strong> {sada.fluxo}</p><p>{sada.processos}</p></Expandable>
