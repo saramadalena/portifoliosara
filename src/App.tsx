@@ -683,6 +683,14 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
           <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Diversas frentes, uma narrativa integrada</p>
         </div>
 
+        {/* Design de desdobramento */}
+        <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
+          <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Design aplicado à comunicação</p>
+          <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '520px' }}>
+            Na SADA, minha atuação em design esteve principalmente nos desdobramentos. A partir de identidades, conceitos e direcionamentos já definidos para campanhas e projetos, desenvolvia e adaptava peças para diferentes formatos, canais e necessidades de comunicação, preservando consistência visual e adequação ao contexto de cada entrega.
+          </p>
+        </div>
+
         {/* Canais, processos e comunicação interna */}
         <div style={{ padding: '28px 36px', borderTop: `1px solid ${T.ruleLight}` }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 14px' }}>Canais e operação</p>
