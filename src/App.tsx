@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import profilePhotoColor from './imports/perfil-2-2026-m_dia.jpg'
 import profilePhotoPEB from './imports/perfil-2-peb-2026.png'
 import heroPhotoPEB from './imports/hero.jpeg'
@@ -678,10 +678,10 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
             {['Planejamento', 'Articulação transversal', 'Execução', 'Performance e aprendizados'].map((etapa, i, arr) => (
-              <React.Fragment key={etapa}>
+              <Fragment key={etapa}>
                 <span style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{etapa}</span>
                 {i < arr.length - 1 && <span style={{ fontSize: '10px', color: T.inkLight }}>→</span>}
-              </React.Fragment>
+              </Fragment>
             ))}
           </div>
         </div>
