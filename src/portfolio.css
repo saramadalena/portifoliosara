@@ -99,3 +99,9 @@
 .portfolio-status-note{display:flex;align-items:center;gap:14px;margin:2px 0 14px;padding:10px 12px;background:#EBEBEA}
 .portfolio-status-note span{font-size:9px;line-height:1.5;color:#4A4A4A}
 @media(max-width:600px){.portfolio-status-note{align-items:flex-start;flex-direction:column;gap:4px}}
+
+/* Ritmo dos capítulos: hierarquia sem adicionar peso visual */
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details summary{font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,23px);line-height:1.25;letter-spacing:-.01em}
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details details[open] summary{color:#000080}
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details details{border-top:1px solid #D8D8D6}
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details details:last-of-type{border-bottom:1px solid #D8D8D6}
