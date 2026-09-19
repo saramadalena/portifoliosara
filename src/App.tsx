@@ -715,12 +715,6 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </div>
         </div>
 
-        {/* Frase de fechamento */}
-        <div style={{ padding: '20px 36px 32px' }}>
-          <p style={{ fontSize: '11px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '480px' }}>
-            Minha atuação combinava responsabilidades próprias e trabalho em equipe, conectando conteúdo, canais, campanhas, processos e públicos em diferentes necessidades de comunicação.
-          </p>
-        </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
