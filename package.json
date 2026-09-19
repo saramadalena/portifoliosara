@@ -4,9 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs && node scripts/review-patch-trajectory.mjs && node scripts/review-patch-skills.mjs && node scripts/review-patch-movee.mjs && node scripts/review-patch-sada-detail.mjs && node scripts/review-patch-recognition.mjs && node scripts/review-patch-final-copy.mjs && node scripts/review-patch-case-consistency.mjs && node scripts/review-patch-visual-balance.mjs && node scripts/review-patch-reading-flow.mjs && node scripts/review-patch-intermodal-density.mjs && node scripts/review-patch-home-cleanup.mjs",
     "dev": "vite --host 0.0.0.0",
-    "prebuild": "node scripts/review-patch.mjs && node scripts/review-patch-2.mjs && node scripts/review-patch-trajectory.mjs && node scripts/review-patch-skills.mjs && node scripts/review-patch-movee.mjs && node scripts/review-patch-sada-detail.mjs && node scripts/review-patch-recognition.mjs && node scripts/review-patch-final-copy.mjs && node scripts/review-patch-case-consistency.mjs && node scripts/review-patch-visual-balance.mjs && node scripts/review-patch-reading-flow.mjs && node scripts/review-patch-intermodal-density.mjs && node scripts/review-patch-home-cleanup.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "format": "oxfmt"
