@@ -131,6 +131,19 @@ iframe {
     background: #f5f5f3 !important;
   }
 
+  /* Os Shorts mantêm o formato vertical sem virar imagens gigantes no mobile. */
+  .sada-video-card {
+    max-height: 420px;
+    aspect-ratio: 9 / 16 !important;
+  }
+
+  .sada-video-card > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
   /* O visualizador de imagens deixa de ser uma tela preta no celular. */
   div[style*="position: fixed"][style*="z-index: 999"] {
     background-color: rgba(245, 245, 243, 0.98) !important;
