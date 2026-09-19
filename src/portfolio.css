@@ -52,3 +52,13 @@
 .portfolio-role-map span{font-size:10px;line-height:1.6;color:#4A4A4A}
 @media(max-width:900px){.portfolio-role-map{grid-template-columns:repeat(2,1fr)}.portfolio-role-map>div{min-height:145px}}
 @media(max-width:600px){.portfolio-role-map{grid-template-columns:1fr 1fr}.portfolio-role-map>div{padding:18px 14px}.portfolio-role-map small{margin-bottom:15px}}
+
+/* Fechamento editorial do case */
+.portfolio-case-closure{margin:34px -44px -36px;padding:34px 44px 38px;background:#1A1A1A;color:#fff}
+.portfolio-case-closure .portfolio-eyebrow{color:#FF007F;margin-bottom:12px}
+.portfolio-case-closure h4{font-family:'Playfair Display',serif!important;font-size:clamp(25px,3vw,36px)!important;line-height:1.15;margin:0 0 14px!important;color:#fff!important;max-width:720px}
+.portfolio-case-closure>p:not(.portfolio-eyebrow){font-size:12px;line-height:1.75;color:rgba(255,255,255,.68);max-width:780px;margin:0}
+.portfolio-case-closure .portfolio-case-signature{border-top-color:#FF007F;margin-top:24px}
+.portfolio-case-closure .portfolio-case-signature strong{color:#fff}
+.portfolio-case-closure .portfolio-case-signature span{color:rgba(255,255,255,.62)}
+@media(max-width:900px){.portfolio-case-closure{margin:30px -26px -28px;padding:30px 26px 32px}}
