@@ -11,3 +11,12 @@
 .portfolio-case-signature strong{font-family:'Playfair Display',serif;font-size:24px}
 .portfolio-case-signature span{font-size:11px;letter-spacing:.05em;color:#4A4A4A}
 @media(max-width:900px){.portfolio-case-lead{grid-template-columns:1fr}.portfolio-cases>.portfolio-case:first-child .portfolio-case-cover{min-height:auto}}
+
+/* Escala de imagens: hero pode ser G/GG; conteúdo dos cases fica entre M e P */
+.portfolio-case-image{min-height:300px;max-height:420px}
+.portfolio-case-image img{object-fit:cover}
+.portfolio-mosaic{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:980px}
+.portfolio-mosaic img{aspect-ratio:4/3;object-fit:contain;background:#F5F5F3;max-height:240px}
+.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 2;max-height:488px}
+@media(max-width:900px){.portfolio-case-image{min-height:260px;max-height:360px}.portfolio-mosaic{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-mosaic img{max-height:210px}.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 1;max-height:210px}}
+@media(max-width:600px){.portfolio-case-image{min-height:220px;max-height:300px}.portfolio-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.portfolio-mosaic img,.portfolio-mosaic img:first-child{grid-column:span 1;grid-row:span 1;max-height:190px;aspect-ratio:4/3}}
