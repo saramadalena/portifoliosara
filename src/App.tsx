@@ -830,10 +830,9 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
                 <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Período com 27% menos publicações</p>
               </div>
               <div style={{ padding: '24px 22px', backgroundColor: T.bg, borderTop: `2px solid ${T.ruleLight}`, flex: 1 }}>
-                <p style={{ fontSize: '12px', fontWeight: 500, color: T.ink, margin: '0 0 10px', lineHeight: 1.45 }}>Canais mais estruturados</p>
-                <p style={{ fontSize: '11px', fontWeight: 300, color: T.inkMid, margin: 0, lineHeight: 1.78 }}>
-                  Organização editorial, alinhamento de linguagem e acompanhamento contínuo dos indicadores de desempenho.
-                </p>
+                <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '34px', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.04em', color: T.navy, margin: '0 0 8px' }}>+18%</p>
+                <p style={{ fontSize: '12px', fontWeight: 500, color: T.ink, margin: '0 0 6px', lineHeight: 1.45 }}>Crescimento da comunidade no LinkedIn entre janeiro e julho de 2024.</p>
+                <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>108,8 mil → 128,4 mil seguidores</p>
               </div>
             </div>
           </div>
