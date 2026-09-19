@@ -744,13 +744,13 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
       <div style={{ borderTop: `1px solid ${T.rule}`, backgroundColor: T.white }}>
 
         {/* Cabeçalho */}
-        <div style={{ padding: '36px 36px 28px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '20px' }}>
-          <div>
+        <div className="sada-intermodal-header" style={{ padding: '36px 36px 28px', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) auto', alignItems: 'start', gap: '28px' }}>
+          <div style={{ minWidth: 0 }}>
             <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 10px' }}>Projeto em destaque</p>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.8vw, 22px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 10px' }}>
+            <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 12px' }}>
               Intermodal South America 2024
             </h3>
-            <p style={{ fontSize: '13px', fontWeight: 400, color: T.ink, margin: 0, lineHeight: 1.72, maxWidth: '560px' }}>
+            <p className="sada-intermodal-intro" style={{ fontSize: '15px', fontWeight: 400, color: T.ink, margin: 0, lineHeight: 1.62, maxWidth: '920px' }}>
               Minha responsabilidade esteve concentrada no planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento. O planejamento contemplou Feed, Stories e Reels, além de pautas e roteiros para vídeos com profissionais da empresa, liderança e cliente.
             </p>
           </div>
