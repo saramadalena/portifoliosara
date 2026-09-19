@@ -35,3 +35,11 @@
 .portfolio-cases>.portfolio-case:not(:first-child) .portfolio-mosaic img:first-child{grid-column:span 1;grid-row:span 1;max-height:160px;aspect-ratio:4/3}
 @media(max-width:900px){.portfolio-cases{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-cases>.portfolio-case,.portfolio-cases>.portfolio-case:first-child{grid-column:span 2}}
 @media(max-width:600px){.portfolio-cases{grid-template-columns:1fr}.portfolio-cases>.portfolio-case,.portfolio-cases>.portfolio-case:first-child{grid-column:1}.portfolio-cases>.portfolio-case:not(:first-child) .portfolio-case-image{min-height:180px;max-height:220px}}
+
+/* Evidências: imagem sempre acompanhada do que ela comprova */
+.portfolio-evidence{margin:22px 0 26px;padding:18px;background:#F5F5F3;border-left:3px solid #000080}
+.portfolio-evidence-copy{max-width:680px;margin-bottom:14px;display:flex;flex-direction:column;gap:5px}
+.portfolio-evidence-copy small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#FF007F;font-weight:700}
+.portfolio-evidence-copy strong{font-family:'Playfair Display',serif;font-size:20px}
+.portfolio-evidence-copy span{font-size:11px;line-height:1.6;color:#4A4A4A}
+.portfolio-evidence .portfolio-mosaic{margin:12px 0 0}
