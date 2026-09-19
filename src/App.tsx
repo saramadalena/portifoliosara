@@ -693,7 +693,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             O trabalho partia do contexto e das demandas de comunicação, passava pelo planejamento e pela articulação transversal com as áreas envolvidas e seguia para redação, produção, publicação e acompanhamento. A leitura dos indicadores alimentava ajustes e aprendizados para as próximas entregas.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
-            {['Contexto e demandas', 'Planejamento', 'Conteúdo e produção', 'Canais e campanhas', 'Públicos', 'Indicadores e aprendizados'].map((etapa, i, arr) => (
+            {['Planejamento', 'Articulação transversal', 'Execução', 'Performance e aprendizados'].map((etapa, i, arr) => (
               <React.Fragment key={etapa}>
                 <span style={{ fontSize: '10px', fontWeight: 400, color: T.ink, padding: '5px 10px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{etapa}</span>
                 {i < arr.length - 1 && <span style={{ fontSize: '10px', color: T.inkLight }}>→</span>}
@@ -846,7 +846,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           ))}
         </div>
         <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.6, color: T.inkMid, margin: '14px 0 6px', maxWidth: '540px' }}>
-          1.559 de média de interações por Story.
+          Média de 1.559 interações por Story.
         </p>
         <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
           Resultados da cobertura digital da Intermodal 2024. A variação de alcance compara março de 2024 com janeiro de 2024, referência utilizada pela área.
