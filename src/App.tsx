@@ -546,13 +546,13 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
 
       {/* Foto principal: foto de grupo — CAPA */}
       <div style={{ position: 'relative', overflow: 'hidden', height: '360px', backgroundColor: '#111' }}>
-        <img src={imgDiaVCapa} alt="Grupo SADA — Campanha Dia V"
+        <img src={imgDiaVCapa} alt="Grupo SADA (Campanha Dia V)"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0) 100%)' }} />
         <div style={{ position: 'absolute', bottom: '28px', left: '36px' }}>
           <div style={{ display:'flex',alignItems:'center',gap:'8px' }}>
             <CaseIcon id={1} size={13} color="rgba(255,255,255,0.75)" />
-            <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>Grupo SADA — 2022–2025</span>
+            <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>Grupo SADA · 2022–2025</span>
           </div>
         </div>
       </div>
@@ -635,7 +635,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         {/* Grid 1:1 — linha 1: 4 quadrados */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px', marginBottom: '3px' }}>
           {[
-            { src: imgSIPAT, alt: 'SIPAT — Segurança no Trabalho', label: 'SIPAT · Segurança', pos: 'center 20%' },
+            { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
             { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
             { src: imgMidia, alt: 'Grupo SADA na Mídia', label: 'Assessoria e PR', pos: 'center 15%' },
             { src: imgPremio, alt: 'Prêmio Voluntária Elisa', label: 'Prêmio Voluntária Elisa', pos: 'center' },
@@ -657,7 +657,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px' }}>
           {[
             { src: imgVolei, alt: 'SADA Vôlei', label: 'SADA Vôlei', pos: 'center 20%' },
-            { src: imgConecta, alt: 'Conecta — Escola Corporativa', label: 'Conecta · Escola Corporativa', pos: 'center' },
+            { src: imgConecta, alt: 'Conecta (Escola Corporativa)', label: 'Conecta · Escola Corporativa', pos: 'center' },
             { src: imgTrend, alt: 'Trend', label: 'Trend', pos: 'center' },
             { src: imgSnap2, alt: 'Conteúdo institucional', label: 'Conteúdo institucional', pos: 'center' },
           ].map(item => (
@@ -752,13 +752,13 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3px', marginBottom: '3px', alignItems: 'stretch' }}>
           <div onClick={() => setLightbox(imgEquipeIntermodal)}
             style={{ position: 'relative', overflow: 'hidden', height: '220px', cursor: 'zoom-in' }}>
-            <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA — Intermodal 2024"
+            <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA (Intermodal 2024)"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block', transition: 'transform 0.55s ease' }}
               onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)' }} />
             <div style={{ position: 'absolute', bottom: '14px', left: '16px' }}>
-              <p style={{ fontSize: '10px', fontWeight: 300, color: 'rgba(255,255,255,0.8)', margin: 0 }}>Equipe Grupo SADA no estande — Intermodal 2024</p>
+              <p style={{ fontSize: '10px', fontWeight: 300, color: 'rgba(255,255,255,0.8)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
             </div>
           </div>
           <div onClick={() => setLightbox(imgConviteInter)}
@@ -870,7 +870,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)' }} />
               <div style={{ position: 'absolute', bottom: '14px', left: '16px' }}>
                 <p style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', margin: '0 0 3px' }}>ESG · Voluntariado</p>
-                <p style={{ fontSize: '11px', fontWeight: 300, color: 'rgba(255,255,255,0.85)', margin: 0 }}>Dia V — Ação nos territórios</p>
+                <p style={{ fontSize: '11px', fontWeight: 300, color: 'rgba(255,255,255,0.85)', margin: 0 }}>Dia V (Ação nos territórios)</p>
               </div>
             </div>
 
