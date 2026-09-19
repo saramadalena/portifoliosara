@@ -156,6 +156,19 @@ iframe {
   min-width: 0;
 }
 
+.sada-practice-wrap,
+.sada-analysis-2025 {
+  box-sizing: border-box;
+}
+
+.sada-practice-grid > article {
+  min-width: 0;
+}
+
+.sada-analysis-grid > div {
+  min-width: 0;
+}
+
 .sada-channel-visual {
   height: 100%;
   min-height: 110px;
@@ -222,6 +235,19 @@ iframe {
 
   .sada-channel-heading {
     grid-template-columns: minmax(0, 1fr) 130px !important;
+  }
+
+  .sada-practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .sada-practice-grid > article:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .sada-analysis-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr) !important;
+    gap: 20px !important;
   }
 }
 
@@ -411,6 +437,26 @@ iframe {
 
   .sada-channel-heading {
     grid-template-columns: 1fr !important;
+  }
+
+  .sada-practice-wrap,
+  .sada-analysis-2025 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .sada-practice-grid,
+  .sada-analysis-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .sada-practice-grid > article:last-child {
+    grid-column: auto !important;
+  }
+
+  .sada-practice-grid > article {
+    padding: 16px !important;
   }
 
   .sada-channel-visual {
