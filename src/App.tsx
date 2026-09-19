@@ -620,7 +620,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         {/* ── MOSAICO ── */}
 
         {/* Grid 1:1 — linha 1: 4 quadrados */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px', marginBottom: '3px' }}>
+        <div className="sada-mosaic-grid sada-mosaic-grid-top" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px', marginBottom: '3px' }}>
           {[
             { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
             { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
@@ -641,7 +641,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </div>
 
         {/* Grid 1:1 — linha 2: 4 quadrados */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px' }}>
+        <div className="sada-mosaic-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px' }}>
           {[
             { src: imgVolei, alt: 'SADA Vôlei', label: 'SADA Vôlei', pos: 'center 20%' },
             { src: imgConecta, alt: 'Conecta (Escola Corporativa)', label: 'Conecta · Escola Corporativa', pos: 'center' },
@@ -740,7 +740,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </div>
 
         {/* Foto da equipe + convite */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3px', marginBottom: '3px', alignItems: 'stretch' }}>
+        <div className="sada-intermodal-media" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3px', marginBottom: '3px', alignItems: 'stretch' }}>
           <div onClick={() => setLightbox(imgEquipeIntermodal)}
             style={{ position: 'relative', overflow: 'hidden', height: '220px', cursor: 'zoom-in' }}>
             <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA (Intermodal 2024)"
@@ -854,7 +854,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </h3>
 
           {/* Layout: foto pequena à esquerda + cards empilhados à direita */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px', alignItems: 'stretch' }}>
+          <div className="sada-results-media" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px', alignItems: 'stretch' }}>
 
             {/* Foto Dia V — ação */}
             <div onClick={() => setLightbox(imgDiaVAcao)}
