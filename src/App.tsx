@@ -851,6 +851,18 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
+      {/* ── ANÁLISE DE REDES SOCIAIS 2025 ── */}
+      <div style={{ padding: '36px', backgroundColor: T.bg, borderTop: `1px solid ${T.rule}` }}>
+        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.24em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Estudo estratégico · 2025</p>
+        <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(17px, 1.9vw, 22px)', fontWeight: 600, lineHeight: 1.3, color: T.ink, margin: '0 0 12px' }}>Análise e direcionamento de Redes Sociais</h3>
+        <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: '0 0 16px', maxWidth: '540px' }}>
+          A partir do histórico e dos dados dos canais, desenvolvi uma análise e uma proposta de direcionamento para as redes sociais em 2025. O estudo contemplou públicos de Instagram e LinkedIn, desempenho dos canais, concorrentes, SWOT, personas, tom de voz, SMO, objetivos de conteúdo, editorias, sugestões de pautas e indicadores.
+        </p>
+        <p style={{ fontSize: '11px', fontWeight: 300, lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '540px' }}>
+          Os dados foram extraídos dos canais e de ferramentas como MLabs. O planejamento apresentado nesse material não chegou à etapa de implementação.
+        </p>
+      </div>
+
       {/* ── NARRATIVA ── */}
       {cases[0].narrativa && <NarrativaBlock texto={cases[0].narrativa} cor={T.navy} cargo="Analista de Marketing" />}
 
