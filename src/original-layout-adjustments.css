@@ -49,6 +49,43 @@ iframe {
   max-width: 100%;
 }
 
+/* Escala das evidências da SADA: depois do hero, as imagens ficam entre M e P. */
+.sada-mosaic-grid {
+  width: min(760px, calc(100% - 72px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sada-intermodal-media {
+  width: min(720px, calc(100% - 72px));
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.sada-intermodal-media > div:first-child {
+  height: 190px !important;
+}
+
+.sada-intermodal-media > div:last-child {
+  width: 190px !important;
+}
+
+.sada-video-grid {
+  width: min(620px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sada-video-card {
+  max-height: 280px;
+}
+
+.sada-results-media {
+  width: min(660px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Ajustes responsivos sobre o layout original. */
 @media (max-width: 700px) {
   h1,
@@ -93,21 +130,27 @@ iframe {
     gap: 6px !important;
   }
 
-  /* Evidências da Intermodal ficam em tamanho médio no mobile, sem virar imagens gigantes. */
-  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]),
-  div:has(> div > img[alt="Convite Intermodal 2024"]) {
-    grid-template-columns: 1fr !important;
+  /* Evidências da SADA permanecem compactas no mobile. */
+  .sada-mosaic-grid {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
   }
 
-  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]) > div,
-  div:has(> div > img[alt="Convite Intermodal 2024"]) > div {
-    width: 100% !important;
-    height: 220px !important;
+  .sada-intermodal-media {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr) !important;
+    gap: 6px !important;
+  }
+
+  .sada-intermodal-media > div:first-child,
+  .sada-intermodal-media > div:last-child {
+    width: auto !important;
+    height: 150px !important;
     min-height: 0 !important;
   }
 
-  div:has(> div > img[alt="Equipe Grupo SADA (Intermodal 2024)"]) > div > img,
-  div:has(> div > img[alt="Convite Intermodal 2024"]) > div > img {
+  .sada-intermodal-media > div > img {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
@@ -131,24 +174,43 @@ iframe {
     background: #f5f5f3 !important;
   }
 
-  /* Os Shorts mantêm o formato vertical sem virar imagens gigantes no mobile. */
+  /* Os Shorts ficam em tamanho P no mobile. */
   .sada-video-grid {
+    width: min(340px, calc(100% - 32px)) !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     align-items: start;
+    gap: 8px !important;
   }
 
   .sada-video-card {
     width: 100%;
-    max-height: 420px;
+    max-height: 300px;
     aspect-ratio: 9 / 16 !important;
   }
 
   .sada-video-grid > .sada-video-card > img {
     width: 100% !important;
     height: 100% !important;
-    max-height: 420px !important;
+    max-height: 300px !important;
     object-fit: cover !important;
     object-position: center top !important;
+  }
+
+  .sada-results-media {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .sada-results-media > div:first-child {
+    max-height: 240px;
+  }
+
+  .sada-results-media > div:first-child > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 40% !important;
   }
 
   /* O visualizador de imagens deixa de ser uma tela preta no celular. */
