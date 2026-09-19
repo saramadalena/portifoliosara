@@ -17,7 +17,7 @@
 .portfolio-case-image img{object-fit:cover}
 .portfolio-mosaic{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:980px}
 .portfolio-mosaic img{aspect-ratio:4/3;object-fit:contain;background:#F5F5F3;max-height:240px}
-.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 2;max-height:488px}
+.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 1;max-height:300px}
 @media(max-width:900px){.portfolio-case-image{min-height:260px;max-height:360px}.portfolio-mosaic{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-mosaic img{max-height:210px}.portfolio-mosaic img:first-child{grid-column:span 2;grid-row:span 1;max-height:210px}}
 @media(max-width:600px){.portfolio-case-image{min-height:220px;max-height:300px}.portfolio-mosaic{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.portfolio-mosaic img,.portfolio-mosaic img:first-child{grid-column:span 1;grid-row:span 1;max-height:190px;aspect-ratio:4/3}}
 
@@ -77,3 +77,10 @@
 .portfolio-analysis-callout strong{font-family:'Playfair Display',serif;font-size:19px;color:#000080;padding:0 12px;border-left:2px solid #FF007F}
 .portfolio-analysis-callout span{font-size:10px;line-height:1.55;color:#4A4A4A}
 @media(max-width:600px){.portfolio-analysis-callout{grid-template-columns:1fr;gap:6px}.portfolio-analysis-callout strong{padding:5px 0 5px 10px}}
+
+/* Ritmo editorial: evidências permanecem M/P mesmo quando são a âncora do mosaico */
+.portfolio-evidence .portfolio-mosaic{max-width:860px}
+.portfolio-evidence .portfolio-mosaic img{max-height:210px}
+.portfolio-evidence .portfolio-mosaic img:first-child{max-height:300px}
+@media(max-width:900px){.portfolio-evidence .portfolio-mosaic{max-width:760px}.portfolio-evidence .portfolio-mosaic img,.portfolio-evidence .portfolio-mosaic img:first-child{max-height:200px}}
+@media(max-width:600px){.portfolio-evidence .portfolio-mosaic{max-width:100%}.portfolio-evidence .portfolio-mosaic img,.portfolio-evidence .portfolio-mosaic img:first-child{max-height:175px}}
