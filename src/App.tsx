@@ -2020,13 +2020,7 @@ function SimpleCaseDetail({ caseIndex, onBack }: { caseIndex: number; onBack: ()
 // ─── CASE DETAIL ROUTER ──────────────────────────────────────────────────────
 
 function CaseDetailRouter({ id, onBack }: { id: number; onBack: () => void }) {
-  if (id === 0) {
-    try {
-      return <SadaCaseDetail onBack={onBack} />
-    } catch {
-      return <SimpleCaseDetail caseIndex={0} onBack={onBack} />
-    }
-  }
+  if (id === 0) return <SimpleCaseDetail caseIndex={0} onBack={onBack} />
   if (id === 1) return <SpdataCaseDetail onBack={onBack} />
   if (id === 2) return <StartupCaseDetail onBack={onBack} />
   if (id === 3) return <SimpleCaseDetail caseIndex={3} onBack={onBack} />
