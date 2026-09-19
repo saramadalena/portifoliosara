@@ -105,3 +105,11 @@
 .portfolio-cases>.portfolio-case:first-child .portfolio-case-details details[open] summary{color:#000080}
 .portfolio-cases>.portfolio-case:first-child .portfolio-case-details details{border-top:1px solid #D8D8D6}
 .portfolio-cases>.portfolio-case:first-child .portfolio-case-details details:last-of-type{border-bottom:1px solid #D8D8D6}
+
+/* Acabamento do piloto: densidade controlada e leitura confortável */
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details{max-width:1120px;margin:0 auto}
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details details>div,
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-details details>p{max-width:900px}
+.portfolio-cases>.portfolio-case:first-child .portfolio-metrics-featured{max-width:1040px}
+.portfolio-cases>.portfolio-case:first-child .portfolio-case-lead{max-width:1040px}
+@media(max-width:900px){.portfolio-cases>.portfolio-case:first-child .portfolio-case-details,.portfolio-cases>.portfolio-case:first-child .portfolio-case-lead,.portfolio-cases>.portfolio-case:first-child .portfolio-metrics-featured{max-width:100%}}
