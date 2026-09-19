@@ -2,7 +2,7 @@ name: Validate review branch
 
 on:
   push:
-    branches: ["revisao-conteudo-2026"]
+    branches: ["revisao-conteudo-2026", "revisao-final-portfolio-2026"]
   workflow_dispatch:
 
 permissions:
