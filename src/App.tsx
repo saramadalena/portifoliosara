@@ -571,6 +571,10 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           <span style={{ fontWeight: 400, fontStyle: 'italic' }}>Comunicação Digital e Marketing</span>
         </h2>
 
+        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: T.navy, margin: '0 0 14px' }}>
+          Comunicação Digital · Analista de Marketing
+        </p>
+
         {/* Texto principal */}
         <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: 1.82, color: T.inkMid, margin: '0 0 28px', maxWidth: '520px' }}>
           Atuação em Comunicação e Marketing conectando planejamento, conteúdo, campanhas, canais, comunicação interna e acompanhamento de performance em uma estrutura corporativa de múltiplos públicos e áreas.
