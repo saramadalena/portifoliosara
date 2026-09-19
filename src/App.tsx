@@ -617,48 +617,45 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           </p>
         </div>
 
-        {/* ── MOSAICO ── */}
-
-        {/* Grid 1:1 — linha 1: 4 quadrados */}
-        <div className="sada-mosaic-grid sada-mosaic-grid-top" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px', marginBottom: '3px' }}>
-          {[
-            { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
-            { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
-            { src: imgMidia, alt: 'Grupo SADA na Mídia', label: 'Presença na mídia', pos: 'center 15%' },
-            { src: imgPremio, alt: 'Prêmio Voluntária Elisa', label: 'Prêmio Voluntária Elisa', pos: 'center' },
-          ].map(item => (
-            <div key={item.alt} onClick={() => setLightbox(item.src)} style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', cursor: 'zoom-in' }}>
-              <img src={item.src} alt={item.alt}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: item.pos, display: 'block', transition: 'transform 0.55s ease' }}
-                onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.06)')}
-                onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.04) 42%, transparent 100%)' }} />
-              <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '8px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
-              </div>
+        {/* ── PUBLICAÇÕES E DESDOBRAMENTOS ── */}
+        <div className="sada-horizontal-shell" style={{ padding: '0 36px 18px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '12px' }}>
+            <div>
+              <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase', color: T.navy, margin: '0 0 4px' }}>Publicações e desdobramentos</p>
+              <p style={{ fontSize: '11px', fontWeight: 400, color: T.inkMid, margin: 0 }}>Arraste para navegar pelas peças.</p>
             </div>
-          ))}
-        </div>
-
-        {/* Grid 1:1 — linha 2: 4 quadrados */}
-        <div className="sada-mosaic-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3px' }}>
-          {[
-            { src: imgVolei, alt: 'SADA Vôlei', label: 'SADA Vôlei', pos: 'center 20%' },
-            { src: imgConecta, alt: 'Conecta (Escola Corporativa)', label: 'Conecta · Escola Corporativa', pos: 'center' },
-            { src: imgTrend, alt: 'Trend', label: 'Trend', pos: 'center' },
-            { src: imgSnap2, alt: 'Conteúdo institucional', label: 'Conteúdo institucional', pos: 'center' },
-          ].map(item => (
-            <div key={item.alt} onClick={() => setLightbox(item.src)} style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', cursor: 'zoom-in' }}>
-              <img src={item.src} alt={item.alt}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: item.pos, display: 'block', transition: 'transform 0.55s ease' }}
-                onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.06)')}
-                onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.04) 42%, transparent 100%)' }} />
-              <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '8px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 400, color: 'rgba(255,255,255,0.78)', margin: 0, lineHeight: 1.4 }}>{item.label}</p>
-              </div>
+            <div style={{ display: 'flex', gap: '4px', flexShrink: 0 }}>
+              <button aria-label="Voltar publicações" onClick={() => document.getElementById('sada-publications-track')?.scrollBy({ left: -340, behavior: 'smooth' })}
+                style={{ width: '32px', height: '32px', border: `1px solid ${T.rule}`, backgroundColor: T.white, color: T.inkMid, cursor: 'pointer', fontSize: '15px' }}>←</button>
+              <button aria-label="Avançar publicações" onClick={() => document.getElementById('sada-publications-track')?.scrollBy({ left: 340, behavior: 'smooth' })}
+                style={{ width: '32px', height: '32px', border: `1px solid ${T.navy}`, backgroundColor: T.navy, color: T.white, cursor: 'pointer', fontSize: '15px' }}>→</button>
             </div>
-          ))}
+          </div>
+
+          <div id="sada-publications-track" className="sada-scroll-track sada-publications-track">
+            {[
+              { src: imgSIPAT, alt: 'SIPAT (Segurança no Trabalho)', label: 'SIPAT · Segurança', pos: 'center 20%' },
+              { src: imgPNMC, alt: 'Programa Na Mão Certa', label: 'Programa Na Mão Certa', pos: 'center top' },
+              { src: imgMidia, alt: 'Grupo SADA na Mídia', label: 'Presença na mídia', pos: 'center 15%' },
+              { src: imgPremio, alt: 'Prêmio Voluntária Elisa', label: 'Prêmio Voluntária Elisa', pos: 'center' },
+              { src: imgVolei, alt: 'SADA Vôlei', label: 'SADA Vôlei', pos: 'center 20%' },
+              { src: imgConecta, alt: 'Conecta (Escola Corporativa)', label: 'Conecta · Escola Corporativa', pos: 'center' },
+              { src: imgTrend, alt: 'Trend', label: 'Trend', pos: 'center' },
+              { src: imgSnap2, alt: 'Conteúdo institucional', label: 'Conteúdo institucional', pos: 'center' },
+            ].map(item => (
+              <button key={item.alt} onClick={() => setLightbox(item.src)} className="sada-publication-card"
+                style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', cursor: 'zoom-in', border: 'none', padding: 0, background: 'none', flex: '0 0 auto', scrollSnapAlign: 'start' }}>
+                <img src={item.src} alt={item.alt}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: item.pos, display: 'block', transition: 'transform 0.4s ease' }}
+                  onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
+                  onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.56) 0%, rgba(0,0,0,0.03) 44%, transparent 100%)', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', bottom: '9px', left: '10px', right: '8px', textAlign: 'left', pointerEvents: 'none' }}>
+                  <p style={{ fontSize: '9px', fontWeight: 500, color: 'rgba(255,255,255,0.9)', margin: 0, lineHeight: 1.35 }}>{item.label}</p>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
         {lightbox && <Lightbox src={lightbox} onClose={() => setLightbox(null)} />}
