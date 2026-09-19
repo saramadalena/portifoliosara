@@ -740,30 +740,30 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
         </div>
 
         {/* Foto da equipe + convite */}
-        <div className="sada-intermodal-media" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3px', marginBottom: '3px', alignItems: 'stretch' }}>
+        <div className="sada-intermodal-media" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2.2fr) minmax(150px, 0.8fr)', gap: '10px', maxWidth: '720px', margin: '0 auto 12px', alignItems: 'stretch' }}>
           <div onClick={() => setLightbox(imgEquipeIntermodal)}
-            style={{ position: 'relative', overflow: 'hidden', height: '220px', cursor: 'zoom-in' }}>
+            style={{ position: 'relative', overflow: 'hidden', height: '180px', cursor: 'zoom-in', backgroundColor: T.bg, border: `1px solid ${T.ruleLight}` }}>
             <img src={imgEquipeIntermodal} alt="Equipe Grupo SADA (Intermodal 2024)"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block', transition: 'transform 0.55s ease' }}
-              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block', transition: 'transform 0.55s ease' }}
+              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.02)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)' }} />
-            <div style={{ position: 'absolute', bottom: '14px', left: '16px' }}>
-              <p style={{ fontSize: '10px', fontWeight: 300, color: 'rgba(255,255,255,0.8)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.34) 0%, transparent 42%)' }} />
+            <div style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px' }}>
+              <p style={{ fontSize: '9px', fontWeight: 300, color: 'rgba(255,255,255,0.88)', margin: 0 }}>Equipe Grupo SADA no estande (Intermodal 2024)</p>
             </div>
           </div>
           <div onClick={() => setLightbox(imgConviteInter)}
-            style={{ width: '220px', position: 'relative', overflow: 'hidden', cursor: 'zoom-in', flexShrink: 0 }}>
+            style={{ minWidth: 0, position: 'relative', overflow: 'hidden', height: '180px', cursor: 'zoom-in', backgroundColor: T.bg, border: `1px solid ${T.ruleLight}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img src={imgConviteInter} alt="Convite Intermodal 2024"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: 'transform 0.45s ease' }}
-              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block', transition: 'transform 0.45s ease' }}
+              onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.02)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
           </div>
         </div>
 
         {/* 4 vídeos — entrevistas */}
-        <div style={{ padding: '20px 36px 36px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+        <div className="sada-video-section" style={{ padding: '16px 36px 36px', maxWidth: '760px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
             <div style={{ width: '16px', height: '1px', backgroundColor: T.navy }} />
             <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.20em', textTransform: 'uppercase', color: T.navy }}>Conteúdo audiovisual · YouTube Shorts</span>
             <div style={{ flex: 1, height: '1px', backgroundColor: T.ruleLight }} />
