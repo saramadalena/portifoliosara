@@ -545,7 +545,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
 
       {/* Foto principal: foto de grupo — CAPA */}
       <div style={{ position: 'relative', overflow: 'hidden', height: '360px', backgroundColor: '#111' }}>
-        <img src={imgDiaVCapa} alt="Grupo SADA (Campanha Dia V)"
+        <img src={imgDiaVCapa} alt="Grupo SADA no Dia V"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0) 100%)' }} />
         <div style={{ position: 'absolute', bottom: '28px', left: '36px' }}>
