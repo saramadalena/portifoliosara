@@ -782,7 +782,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
               { src: imgEntrev3, label: 'Entrevista 03', name: 'Rafael Torres', role: 'Gestor de Comunicação e Marketing', desc: 'Importância da feira para o Grupo', url: 'https://youtube.com/shorts/qd37imNmO0U' },
               { src: imgEntrev4, label: 'Aftermovie 04', name: 'Murillo Esperandio', role: 'Executivo de Carga Geral', desc: 'Experiência gerada na feira', url: 'https://youtube.com/shorts/Zorb3uOKYn4' },
             ].map(v => (
-              <a key={v.url} href={v.url} target="_blank" rel="noopener noreferrer"
+              <a key={v.url} href={v.url} target="_blank" rel="noopener noreferrer" className="sada-video-card"
                 style={{ textDecoration: 'none', display: 'block', position: 'relative', overflow: 'hidden', aspectRatio: '9/16', backgroundColor: '#111', flexShrink: 0 }}
                 onMouseEnter={e => {
                   const img = e.currentTarget.querySelector('img') as HTMLImageElement
