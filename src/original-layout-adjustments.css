@@ -87,6 +87,53 @@ iframe {
   margin-right: auto;
 }
 
+/* Faixas horizontais da SADA seguem a lógica do carrossel do Arnaldo. */
+.sada-horizontal-shell {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sada-scroll-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.sada-scroll-track::-webkit-scrollbar {
+  display: none;
+}
+
+.sada-scroll-track:active {
+  cursor: grabbing;
+}
+
+.sada-publication-card {
+  width: 140px;
+}
+
+.sada-intermodal-track .sada-video-card {
+  width: 150px;
+  max-height: none;
+}
+
+.sada-intermodal-support-card {
+  height: 267px;
+}
+
+.sada-intermodal-team-card {
+  width: 250px;
+}
+
+.sada-intermodal-invite-card {
+  width: 150px;
+}
+
 /* A hierarquia da SADA privilegia leitura e explicação, não apenas imagem. */
 .sada-case-detail p[style*="font-weight: 400"] {
   text-rendering: optimizeLegibility;
@@ -230,6 +277,33 @@ iframe {
     height: 100% !important;
     object-fit: cover !important;
     object-position: center 40% !important;
+  }
+
+  .sada-horizontal-shell {
+    max-width: 100%;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .sada-publication-card {
+    width: 132px;
+  }
+
+  .sada-intermodal-track .sada-video-card {
+    width: 142px;
+    max-height: none;
+  }
+
+  .sada-intermodal-support-card {
+    height: 252px;
+  }
+
+  .sada-intermodal-team-card {
+    width: 220px;
+  }
+
+  .sada-intermodal-invite-card {
+    width: 142px;
   }
 
   /* O visualizador de imagens deixa de ser uma tela preta no celular. */
