@@ -802,6 +802,27 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
+      {/* Resultados da cobertura digital da Intermodal */}
+      <div style={{ padding: '28px 36px 36px', borderTop: `1px solid ${T.ruleLight}`, backgroundColor: T.bg }}>
+        <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 16px' }}>Cobertura digital · resultados</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', backgroundColor: T.ruleLight, border: `1px solid ${T.ruleLight}` }}>
+          {[
+            ['+112%', 'alcance no Instagram'],
+            ['+93%', 'alcance no LinkedIn'],
+            ['59.246', 'interações'],
+            ['38', 'Stories publicados'],
+          ].map(([valor, label]) => (
+            <div key={label} style={{ padding: '20px', backgroundColor: T.white }}>
+              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 700, lineHeight: 1, color: T.navy, margin: '0 0 7px' }}>{valor}</p>
+              <p style={{ fontSize: '10px', fontWeight: 300, lineHeight: 1.5, color: T.inkMid, margin: 0 }}>{label}</p>
+            </div>
+          ))}
+        </div>
+        <p style={{ fontSize: '10px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.65, color: T.inkLight, margin: '14px 0 0', maxWidth: '540px' }}>
+          Resultados da cobertura digital da Intermodal 2024. A variação de alcance compara março de 2024 com janeiro de 2024, referência utilizada pela área.
+        </p>
+      </div>
+
       {/* ══════════════════════════════════════════════════════════════════════
           TELA 3 — RESULTADOS E DESTAQUE
       ══════════════════════════════════════════════════════════════════════ */}
