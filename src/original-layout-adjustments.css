@@ -137,7 +137,7 @@ iframe {
 
 /* Fechamento de resultados usa melhor a largura sem aumentar o peso da imagem. */
 .sada-results-wrap {
-  width: min(1040px, 100%);
+  width: min(1120px, 100%);
   box-sizing: border-box;
 }
 
@@ -167,18 +167,6 @@ iframe {
 
 .sada-analysis-grid > div {
   min-width: 0;
-}
-
-.sada-channel-visual {
-  height: 100%;
-  min-height: 110px;
-}
-
-.sada-channel-visual > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 /* A hierarquia da SADA privilegia leitura e explicação, não apenas imagem. */
@@ -226,15 +214,11 @@ iframe {
   }
 
   .sada-results-layout {
-    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.45fr) !important;
+    grid-template-columns: minmax(200px, 0.62fr) minmax(0, 1.65fr) !important;
   }
 
   .sada-secondary-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .sada-channel-heading {
-    grid-template-columns: minmax(0, 1fr) 130px !important;
   }
 
   .sada-practice-grid {
@@ -435,10 +419,6 @@ iframe {
     padding: 16px !important;
   }
 
-  .sada-channel-heading {
-    grid-template-columns: 1fr !important;
-  }
-
   .sada-practice-wrap,
   .sada-analysis-2025 {
     padding-left: 16px !important;
@@ -457,11 +437,6 @@ iframe {
 
   .sada-practice-grid > article {
     padding: 16px !important;
-  }
-
-  .sada-channel-visual {
-    height: 150px !important;
-    min-height: 0 !important;
   }
 
   .sada-featured-metrics {
