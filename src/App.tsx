@@ -19,7 +19,6 @@ import spdataCI6 from './imports/CI__6_.png'
 import spdataRS1 from './imports/ID-RS__1_.png'
 import spdataCracha2 from './imports/campanha-crach___2_.png'
 import spdataCracha3 from './imports/campanha-crach___3_.png'
-import caseSadaRedes from './imports/rs-sada-0001.jpg'
 import caseSadaIntermodal from './imports/rs-sada-0002.jpg'
 import caseDiaV1 from './imports/Prancheta_1.png'
 import caseDiaV2 from './imports/Prancheta_2.png'
@@ -80,7 +79,7 @@ const cases: CaseItem[] = [
     id: 1, num: '01', empresa: 'Grupo SADA',
     subtitulo: 'Comunicação e Marketing em uma estrutura corporativa de múltiplos públicos, áreas e negócios.',
     periodo: '2022–2025', cor: T.navy,
-    imagens: [caseSadaRedes, caseSadaIntermodal, caseDiaV1, caseDiaV2, caseDiaV3],
+    imagens: [imgSIPAT, caseSadaIntermodal, caseDiaV1, caseDiaV2, caseDiaV3],
     contexto: 'No Grupo SADA, atuei em Comunicação e Marketing em uma estrutura corporativa ampla, formada por diferentes empresas, segmentos, áreas, públicos e necessidades de comunicação. Minha atuação acontecia de forma transversal e em equipe, conectando planejamento, conteúdo, campanhas, canais internos e externos e acompanhamento de performance.',
     desafio: 'Atender diferentes demandas de comunicação em uma estrutura corporativa complexa, articulando públicos, áreas, canais e formatos com consistência, organização e adequação a cada contexto.',
     estrategia: 'Planejamento editorial, redação e produção de conteúdo, gestão de canais, participação em campanhas e projetos, comunicação interna, desdobramentos visuais e acompanhamento de indicadores, com interface entre áreas internas, fornecedores, stakeholders e equipe de Comunicação e Marketing.',
@@ -423,7 +422,7 @@ export function IntermodalCase({ onBack }: { onBack: () => void }) {
           {/* Posts publicados: redes sociais da Intermodal */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
             <div style={{ overflow: 'hidden', backgroundColor: '#0a200a', flex: 1 }}>
-              <img src={caseSadaRedes} alt="Posts Instagram — Intermodal 2024"
+              <img src={imgEntrev1} alt="Conteúdo audiovisual Intermodal 2024"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block', transition: 'transform 0.55s ease' }}
                 onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
                 onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
@@ -897,9 +896,9 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                     Indicadores acompanhados para orientar análise, ajustes editoriais e evolução dos canais ao longo de 2024.
                   </p>
                 </div>
-                <button onClick={() => setLightbox(caseSadaRedes)} className="sada-channel-visual"
+                <button onClick={() => setLightbox(imgSIPAT)} className="sada-channel-visual"
                   style={{ border: `1px solid ${T.ruleLight}`, padding: 0, backgroundColor: T.white, overflow: 'hidden', cursor: 'zoom-in', minWidth: 0 }}>
-                  <img src={caseSadaRedes} alt="Redes sociais do Grupo SADA"
+                  <img src={imgSIPAT} alt="Publicação do Grupo SADA para SIPAT"
                     style={{ width: '100%', height: '100%', minHeight: '110px', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
                 </button>
               </div>
