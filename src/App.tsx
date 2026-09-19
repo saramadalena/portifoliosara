@@ -687,13 +687,13 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
           TELA 3 — RESULTADOS E DESTAQUE
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="sada-results-section" style={{ borderTop: `1px solid ${T.rule}`, backgroundColor: T.white }}>
-        <div className="sada-results-wrap" style={{ padding: '28px 36px 32px', maxWidth: '1040px', margin: '0 auto' }}>
+        <div className="sada-results-wrap" style={{ padding: '28px 36px 32px', maxWidth: '1120px', margin: '0 auto' }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 10px' }}>Performance dos canais</p>
           <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.015em', color: T.ink, margin: '0 0 20px' }}>
             Comunicação orientada por consistência e desempenho.
           </h3>
 
-          <div className="sada-results-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(240px, 0.78fr) minmax(0, 1.7fr)', gap: '18px', alignItems: 'stretch' }}>
+          <div className="sada-results-layout" style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 0.62fr) minmax(0, 1.9fr)', gap: '18px', alignItems: 'stretch' }}>
             <div onClick={() => setLightbox(imgDiaVAcao)} className="sada-results-photo"
               style={{ overflow: 'hidden', position: 'relative', minHeight: '330px', cursor: 'zoom-in', backgroundColor: T.bg }}>
               <img src={imgDiaVAcao} alt="Dia V em Ação"
@@ -706,21 +706,12 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             </div>
 
             <div className="sada-channel-panel" style={{ border: `1px solid ${T.ruleLight}`, backgroundColor: T.bg, padding: '22px', minWidth: 0 }}>
-              <div className="sada-channel-heading" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 150px', gap: '14px', alignItems: 'stretch', marginBottom: '16px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0 }}>
-                  <div>
-                    <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.navy, margin: '0 0 7px' }}>Indicadores de canais · 2024</p>
-                    <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.7vw, 21px)', fontWeight: 600, lineHeight: 1.25, color: T.ink, margin: '0 0 10px' }}>Leitura de performance como parte da rotina.</h4>
-                  </div>
-                  <p style={{ fontSize: '10px', fontWeight: 400, lineHeight: 1.55, color: T.inkMid, margin: 0, maxWidth: '340px' }}>
-                    Indicadores acompanhados para orientar análise, ajustes editoriais e evolução dos canais ao longo de 2024.
-                  </p>
-                </div>
-                <button onClick={() => setLightbox(imgSIPAT)} className="sada-channel-visual"
-                  style={{ border: `1px solid ${T.ruleLight}`, padding: 0, backgroundColor: T.white, overflow: 'hidden', cursor: 'zoom-in', minWidth: 0 }}>
-                  <img src={imgSIPAT} alt="Publicação do Grupo SADA para SIPAT"
-                    style={{ width: '100%', height: '100%', minHeight: '110px', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
-                </button>
+              <div className="sada-channel-heading" style={{ marginBottom: '16px' }}>
+                <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.navy, margin: '0 0 7px' }}>Indicadores de canais · 2024</p>
+                <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(16px, 1.7vw, 21px)', fontWeight: 600, lineHeight: 1.25, color: T.ink, margin: '0 0 8px' }}>Leitura de performance como parte da rotina.</h4>
+                <p style={{ fontSize: '11px', fontWeight: 400, lineHeight: 1.55, color: T.inkMid, margin: 0, maxWidth: '680px' }}>
+                  Indicadores acompanhados para orientar análise, ajustes editoriais e evolução dos canais ao longo de 2024.
+                </p>
               </div>
 
               <div className="sada-featured-metrics" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px', marginBottom: '8px' }}>
@@ -790,7 +781,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
                 Atuei principalmente nos desdobramentos, adaptando identidades, conceitos e direcionamentos já definidos para diferentes formatos, canais e necessidades, com atenção à consistência visual de cada entrega.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
-                {['Adobe Photoshop', 'Adobe InDesign', 'Canva', 'Adobe Premiere Pro', 'CapCut', 'Fotografia', 'Vídeo'].map(item => (
+                {['Adobe Photoshop', 'Adobe Illustrator', 'Canva', 'Adobe Premiere Pro', 'CapCut', 'Fotografia', 'Vídeo'].map(item => (
                   <span key={item} style={{ fontSize: '9px', fontWeight: 500, color: T.inkMid, padding: '4px 8px', border: `1px solid ${T.rule}`, backgroundColor: T.white }}>{item}</span>
                 ))}
               </div>
