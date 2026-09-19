@@ -113,3 +113,6 @@
 .portfolio-cases>.portfolio-case:first-child .portfolio-metrics-featured{max-width:1040px}
 .portfolio-cases>.portfolio-case:first-child .portfolio-case-lead{max-width:1040px}
 @media(max-width:900px){.portfolio-cases>.portfolio-case:first-child .portfolio-case-details,.portfolio-cases>.portfolio-case:first-child .portfolio-case-lead,.portfolio-cases>.portfolio-case:first-child .portfolio-metrics-featured{max-width:100%}}
+
+/* Indicadores como evidência de acompanhamento, sem sugerir causalidade individual */
+.portfolio-metrics-context{max-width:760px;margin:0 0 16px;font-size:10px;line-height:1.65;color:#868686;font-weight:300}
