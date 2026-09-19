@@ -803,6 +803,7 @@ function SadaCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => 
             </button>
           </div>
         </div>
+      </div>
 
       {/* Resultados da cobertura digital da Intermodal */}
       <div style={{ padding: '28px 36px 36px', borderTop: `1px solid ${T.ruleLight}`, backgroundColor: T.bg }}>
