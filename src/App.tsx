@@ -569,7 +569,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         }}>
           Grupo SADA
           <br />
-          <span style={{ fontWeight: 400, fontStyle: 'italic' }}>Comunicação, Marca e Canais Digitais</span>
+          <span style={{ fontWeight: 400, fontStyle: 'italic' }}>Comunicação Digital e Marketing</span>
         </h2>
 
         {/* Texto principal */}
@@ -580,7 +580,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         {/* Contexto */}
         <div style={{ borderLeft: `2px solid ${T.ruleLight}`, paddingLeft: '16px', marginBottom: '32px', maxWidth: '480px' }}>
           <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkLight, margin: 0 }}>
-            Em um grupo empresarial de grande porte e atuação diversificada, a comunicação precisava equilibrar identidade institucional, proximidade com os públicos e coerência entre canais internos e externos.
+            Minha atuação acontecia de forma transversal e em equipe, com interface entre áreas internas, fornecedores, stakeholders e profissionais da equipe de Comunicação e Marketing, em frentes com responsabilidades distribuídas entre os envolvidos.
           </p>
         </div>
 
@@ -588,7 +588,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         <div style={{ marginBottom: '36px' }}>
           <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: T.inkLight, margin: '0 0 12px' }}>Minha atuação</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-            {['Gestão de canais', 'Estratégia de conteúdo', 'Branding', 'Comunicação corporativa', 'ESG', 'Eventos'].map(chip => (
+            {['Planejamento editorial', 'Redação e produção textual', 'Conteúdo multimídia', 'Gestão de canais', 'Comunicação interna', 'Campanhas', 'Indicadores', 'Design de desdobramento'].map(chip => (
               <span key={chip} style={{
                 fontSize: '11px', fontWeight: 400, color: T.ink,
                 padding: '5px 13px', border: `1px solid ${T.rule}`,
@@ -605,12 +605,12 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
               fontFamily: 'Playfair Display, serif',
               fontSize: '44px', fontWeight: 700, lineHeight: 1,
               letterSpacing: '-0.04em', color: T.navy, margin: '0 0 6px',
-            }}>+7%</p>
+            }}>+23%</p>
             <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.65, color: T.inkMid, margin: '0 0 8px', maxWidth: '320px' }}>
-              Crescimento do engajamento orgânico nas redes institucionais em 2024.
+              Evolução do engajamento no Instagram em 2024, na comparação com o período anterior.
             </p>
             <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0, letterSpacing: '0.02em' }}>
-              Instagram e LinkedIn · acompanhamento contínuo de indicadores e otimização de conteúdo
+              Indicador de contexto do canal, acompanhado em conjunto com alcance, interações, cliques e volume de publicações
             </p>
           </div>
         </div>
@@ -626,7 +626,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
             Uma estratégia, diferentes pontos de contato.
           </h3>
           <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: 1.78, color: T.inkMid, margin: 0, maxWidth: '480px' }}>
-            Planejamento, produção e gestão de comunicação para fortalecer a marca, apoiar a cultura organizacional e manter uma linguagem consistente entre canais, públicos e iniciativas.
+            Planejamento, redação e produção de conteúdo, gestão de canais, campanhas, comunicação interna, desdobramentos visuais e acompanhamento de indicadores em diferentes frentes da comunicação.
           </p>
         </div>
 
@@ -686,7 +686,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
         {/* Frase de fechamento */}
         <div style={{ padding: '20px 36px 32px' }}>
           <p style={{ fontSize: '11px', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.7, color: T.inkLight, margin: 0, maxWidth: '480px' }}>
-            Da estratégia à execução, cada entrega buscou manter consistência editorial, clareza de mensagem e alinhamento com a marca.
+            Minha atuação combinava responsabilidades próprias e trabalho em equipe, conectando conteúdo, canais, campanhas, processos e públicos em diferentes necessidades de comunicação.
           </p>
         </div>
       </div>
@@ -704,7 +704,7 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
               Intermodal South America 2024
             </h3>
             <p style={{ fontSize: '12px', fontWeight: 300, color: T.inkMid, margin: 0, lineHeight: 1.75, maxWidth: '400px' }}>
-              Estratégia digital, cobertura editorial e produção audiovisual durante a maior feira de logística da América Latina — com entrevistas, conteúdo em tempo real e aftermovie.
+              Planejamento da frente de comunicação digital, com gestão de mídias sociais e canais, calendário de publicações e cobertura antes, durante e depois do evento, incluindo Feed, Stories, Reels e vídeos.
             </p>
           </div>
           <div style={{ flexShrink: 0, display: 'flex', gap: '6px', paddingTop: '4px' }}>
@@ -825,9 +825,9 @@ function SadaCaseDetail({ onBack }: { onBack: () => void }) {
                   fontFamily: 'Playfair Display, serif',
                   fontSize: '48px', fontWeight: 700, lineHeight: 1,
                   letterSpacing: '-0.04em', color: T.navy, margin: '0 0 10px',
-                }}>+7%</p>
-                <p style={{ fontSize: '12px', fontWeight: 400, color: T.ink, margin: '0 0 5px', lineHeight: 1.45 }}>Crescimento do engajamento orgânico nas redes institucionais em 2024.</p>
-                <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Gestão contínua de Instagram e LinkedIn</p>
+                }}>+23%</p>
+                <p style={{ fontSize: '12px', fontWeight: 400, color: T.ink, margin: '0 0 5px', lineHeight: 1.45 }}>Evolução do engajamento no Instagram em 2024, na comparação com o período anterior.</p>
+                <p style={{ fontSize: '10px', fontWeight: 300, color: T.inkLight, margin: 0 }}>Período com 27% menos publicações</p>
               </div>
               <div style={{ padding: '24px 22px', backgroundColor: T.bg, borderTop: `2px solid ${T.ruleLight}`, flex: 1 }}>
                 <p style={{ fontSize: '12px', fontWeight: 500, color: T.ink, margin: '0 0 10px', lineHeight: 1.45 }}>Canais mais estruturados</p>
