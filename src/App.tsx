@@ -1662,8 +1662,8 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
   const { isMobile } = useBreakpoint()
 
   const docs = [
-    { title: 'One-Page Institucional', desc: 'Síntese do posicionamento, proposta de valor e diferenciais competitivos da move.e.', tag: 'Posicionamento' },
-    { title: 'Sumário Executivo', desc: 'Documento estratégico com conceito, arquitetura de mensagens e narrativa para stakeholders.', tag: 'Estratégia' },
+    { title: 'One-Page Institucional', desc: 'Síntese do posicionamento, proposta de valor e diferenciais competitivos da move.e.', tag: 'Posicionamento', pdf: pdfOnePage },
+    { title: 'Sumário Executivo', desc: 'Documento estratégico com conceito, arquitetura de mensagens e narrativa para stakeholders.', tag: 'Estratégia', pdf: pdfSumario },
   ]
 
   return (
@@ -1776,10 +1776,24 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
           </p>
           <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:'12px' }}>
             {docs.map(doc => (
-              <article key={doc.title} style={{ padding:'18px', backgroundColor:T.bg, borderTop:`2px solid ${T.navy}` }}>
-                <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 5px' }}>{doc.tag}</p>
-                <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>{doc.title}</p>
-                <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.6, color:T.inkMid, margin:0 }}>{doc.desc}</p>
+              <article key={doc.title} style={{ backgroundColor:T.bg, borderTop:`2px solid ${T.navy}`, overflow:'hidden' }}>
+                <div style={{ height: isMobile ? '260px' : '300px', backgroundColor:'#e8e8e6', overflow:'hidden' }}>
+                  <iframe
+                    src={`${doc.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    title={doc.title}
+                    style={{ width:'100%', height:'100%', border:'none', display:'block' }}
+                  />
+                </div>
+                <div style={{ padding:'16px 18px 18px' }}>
+                  <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 5px' }}>{doc.tag}</p>
+                  <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>{doc.title}</p>
+                  <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.6, color:T.inkMid, margin:'0 0 12px' }}>{doc.desc}</p>
+                  <a href={doc.pdf} target="_blank" rel="noopener noreferrer"
+                    style={{ display:'inline-flex', alignItems:'center', gap:'7px', padding:'7px 12px', backgroundColor:T.navy, color:'#fff', fontSize:'9px', fontWeight:600, letterSpacing:'0.10em', textTransform:'uppercase', textDecoration:'none' }}>
+                    Abrir PDF
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </article>
             ))}
           </div>
