@@ -146,19 +146,24 @@ const cases: CaseItem[] = [
 
 const competencias = [
   {
-    grupo: 'Criação',
+    grupo: 'Criação & Atendimento',
     cor: T.navy,
     itens: [
       'Entendimento de demandas',
+      'Levantamento de necessidades',
       'Briefing',
       'Diagnóstico de problemas de comunicação',
       'Organização da necessidade e do escopo',
       'Proposição de soluções de comunicação',
+      'Atendimento a clientes e áreas internas',
+      'Relacionamento com stakeholders',
       'Criação e desdobramento de peças',
       'Identidade visual',
       'Materiais institucionais',
       'Materiais comerciais',
       'Materiais digitais',
+      'Materiais impressos',
+      'Gestão e acompanhamento de fornecedores',
       'Acompanhamento da entrega',
     ],
   },
@@ -2418,7 +2423,7 @@ export default function App() {
           <SectionHead n="02" label="Competências" color={T.navy} />
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:'40px',gap:'24px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.2vw,34px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.025em',margin:0,color:T.ink }}>
-              Criação, Comunicação & Marketing e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>Marketing Digital.</em>
+              Criação & Atendimento, Comunicação & Marketing e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>Marketing Digital.</em>
             </h2>
             <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth: isMobile ? '100%' : '420px',lineHeight:1.7,margin:0,textAlign: isMobile ? 'left' : 'right',flexShrink:0 }}>Entender a demanda → fazer briefing → identificar o problema → organizar a necessidade → propor a solução → criar/desdobrar → acompanhar a entrega.</p>
           </div>
