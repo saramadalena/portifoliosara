@@ -114,19 +114,19 @@ const cases: CaseItem[] = [
     narrativa: 'Na SPDATA, empresa focada no desenvolvimento de software ERP para a área médica, atuei na estruturação da comunicação interna, no relacionamento com parceiros e no suporte institucional ao público interno e fornecedores. Conduzi projetos essenciais para a organização da marca, como o desenvolvimento de identidades para as linhas de produtos da empresa, padronização de peças comerciais, apresentações executivas e campanhas de endomarketing voltadas para a cultura organizacional. Foi uma experiência centrada em aproximar a linguagem de tecnologia do público final, garantindo clareza, consistência visual e um alinhamento direto entre a comunicação e a liderança.',
   },
   {
-    id: 3, num: '03', empresa: 'Freelance de Marketing, Branding e Conteúdo',
-    subtitulo: 'Do posicionamento de startups ao relatório de ESG: comunicação que serve pra quem decide.',
+    id: 3, num: '03', empresa: 'move.e · Conteúdo e Design',
+    subtitulo: 'Produção de conteúdo, apoio à comunicação e entregas pontuais de design.',
     periodo: '2024–2025', cor: T.navy,
     imagens: [startupCapaNova],
-    contexto: 'Startup de tecnologia com solução voltada à gestão e mensuração de indicadores ASG para empresas de médio e grande porte. Com produto em estágio de validação, a empresa não tinha posicionamento institucional definido nem narrativa estruturada para o mercado.',
-    desafio: 'Construir do zero o posicionamento institucional da marca, criar a arquitetura de mensagens e desenvolver materiais de comunicação para relacionamento com stakeholders, captação de investidores e aproximação com clientes potenciais.',
-    estrategia: 'Diagnóstico de posicionamento e análise de mercado. Definição de arquitetura de mensagens por público (investidores, clientes corporativos, parceiros). Desenvolvimento de narrativa institucional com foco em proposta de valor, diferenciação e credibilidade.',
-    execucao: 'Desenvolvi do zero a identidade visual, o guia de marca e as apresentações para colocar a startup de pé no mercado de sustentabilidade e atrair parceiros. Fiz a ponte com investidores e parceiros na Expo Favela 2025 e cuidei dos materiais de relacionamento com cada público.',
+    contexto: 'Na move.e, atuei em demandas pontuais de conteúdo e apoio à comunicação. Colaborava com a pessoa responsável pela área por meio de conversas e debates sobre pautas, ideias e abordagens, sem assumir a estruturação da comunicação da empresa.',
+    desafio: 'Contribuir com demandas específicas de comunicação e conteúdo, apoiando ações e eventos da move.e e atendendo também uma demanda de design para um cliente da empresa.',
+    estrategia: 'Atuação colaborativa, a partir das necessidades de cada entrega: troca de ideias com a pessoa de comunicação, produção de conteúdo para ações e eventos e desenvolvimento visual de materiais conforme os briefings recebidos.',
+    execucao: 'Produzi conteúdos relacionados à Expo Favela e a uma palestra do Sebrae. Também apoiei a pessoa de comunicação da move.e em conversas e debates sobre pautas e abordagens. Em uma frente separada, atuei como freelancer de design para um cliente atendido pela empresa, desenvolvendo uma one-page e um sumário executivo.',
     resultados: [
-      { valor: '1', label: 'Arquitetura de mensagens estruturada' },
-      { valor: '3', label: 'Públicos mapeados' },
+      { valor: '2', label: 'Ações com produção de conteúdo' },
+      { valor: '2', label: 'Entregas de design para cliente' },
     ],
-    resultadoTexto: 'A startup saiu do zero com marca, posicionamento e materiais prontos para conversar com investidores, clientes e parceiros — cada um na sua linguagem.',
+    resultadoTexto: 'Atuação concentrada em demandas pontuais: conteúdo para a Expo Favela e uma palestra do Sebrae, apoio colaborativo à comunicação e design de uma one-page e de um sumário executivo para um cliente da move.e.',
   },
   {
     id: 4, num: '04', empresa: 'Colégio Arnaldo',
@@ -1742,8 +1742,8 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
   const { isMobile } = useBreakpoint()
 
   const docs = [
-    { title: 'One-Page Institucional', desc: 'Síntese do posicionamento, proposta de valor e diferenciais competitivos da move.e.', tag: 'Posicionamento', pdf: pdfOnePage },
-    { title: 'Sumário Executivo', desc: 'Documento estratégico com conceito, arquitetura de mensagens e narrativa para stakeholders.', tag: 'Estratégia', pdf: pdfSumario },
+    { title: 'One-Page', desc: 'Trabalho de design e diagramação para um cliente atendido pela move.e, a partir do conteúdo fornecido para a peça.', tag: 'Design', pdf: pdfOnePage },
+    { title: 'Sumário Executivo', desc: 'Trabalho de design e organização visual para um cliente atendido pela move.e, a partir do conteúdo do projeto.', tag: 'Design', pdf: pdfSumario },
   ]
 
   return (
@@ -1757,7 +1757,7 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
           ← Todos os cases
         </button>
         <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
-        <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>Consultoria Estratégica · move.e</span>
+        <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>Conteúdo & Design · move.e</span>
       </div>
 
       {/* Hero */}
@@ -1768,25 +1768,25 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
         <div style={{ position:'absolute', inset:0, padding: isMobile ? '24px 20px' : '30px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
           <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 9px' }}>
             <CaseIcon id={3} size={13} color="rgba(255,255,255,0.62)" />
-            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.68)' }}>Freelance de Marketing, Branding e Conteúdo · 2024–2025</span>
+            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.68)' }}>Conteúdo, apoio à comunicação e design · 2024–2025</span>
           </div>
           <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.6vw,34px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 8px' }}>move.e</h2>
           <p style={{ fontSize: isMobile ? '12px' : '14px', fontWeight:400, lineHeight:1.45, color:'rgba(255,255,255,0.82)', margin:0, maxWidth:'760px' }}>
-            Posicionamento · Narrativa Institucional · Comunicação para Stakeholders
+            Produção de conteúdo · Apoio à comunicação · Design
           </p>
         </div>
       </div>
 
       {/* Visão geral */}
       <div style={{ padding: isMobile ? '30px 20px' : '32px 36px 34px', borderBottom:`1px solid ${T.ruleLight}` }}>
-        <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.navy, margin:'0 0 10px' }}>Consultoria Estratégica · Startup de Tecnologia</p>
-        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 14px' }}>Gestão ASG e posicionamento institucional.</h2>
+        <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.navy, margin:'0 0 10px' }}>Apoio à comunicação · Conteúdo · Design</p>
+        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 14px' }}>Conteúdo em eventos, apoio à comunicação e design.</h2>
         <p className="movee-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:'0 0 20px', maxWidth:'920px' }}>{c.contexto}</p>
         <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'22px', maxWidth:'900px' }}>
           <p className="movee-body-copy" style={{ fontSize:'14px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>{c.desafio}</p>
         </div>
         <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
-          {['Posicionamento de Marca', 'Arquitetura de Mensagens', 'Narrativa Institucional', 'Comunicação com Stakeholders', 'ESG', 'Consultoria'].map(chip => (
+          {['Produção de conteúdo', 'Expo Favela', 'Palestra Sebrae', 'Apoio à comunicação', 'Design', 'One-page', 'Sumário executivo'].map(chip => (
             <span key={chip} style={{ fontSize:'10px', fontWeight:500, color:T.ink, padding:'5px 11px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
           ))}
         </div>
@@ -1795,8 +1795,8 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
       {/* Expo Favela + conteúdo audiovisual */}
       <div style={{ backgroundColor:T.white, borderTop:`1px solid ${T.ruleLight}` }}>
         <div style={{ padding: isMobile ? '28px 20px 18px' : '30px 36px 20px', maxWidth:'1120px', margin:'0 auto' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Atuação integrada</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>Expo Favela 2025.</h3>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Produção de conteúdo</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>Expo Favela e palestra do Sebrae.</h3>
           <p className="movee-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:0, maxWidth:'920px' }}>{c.execucao}</p>
         </div>
 
@@ -1823,7 +1823,7 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
           <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', marginBottom:'12px' }}>
             <div>
               <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.20em', textTransform:'uppercase', color:T.navy, margin:'0 0 4px' }}>Conteúdo audiovisual · Instagram Reels</p>
-              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0 }}>Cobertura, bastidores e narrativa institucional.</p>
+              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0 }}>Conteúdos produzidos para ações e eventos.</p>
             </div>
           </div>
           <div className="movee-reels-track" style={{ display:'flex', gap:'10px', overflowX:'auto', overflowY:'hidden', scrollSnapType:'x mandatory' }}>
@@ -1850,9 +1850,9 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
       {/* ── MATERIAIS ESTRATÉGICOS ── */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
         <div style={{ padding: isMobile ? '32px 20px 24px' : '36px 36px 24px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Materiais estratégicos</p>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.75, color:T.inkMid, margin:0, maxWidth:'480px' }}>
-            Documentos institucionais desenvolvidos para posicionamento da marca e relacionamento com investidores, clientes e parceiros.
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Design freelancer para cliente da move.e</p>
+          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.75, color:T.inkMid, margin:0, maxWidth:'560px' }}>
+            Em uma frente separada das demandas de conteúdo, desenvolvi o design e a organização visual de uma one-page e de um sumário executivo para um cliente atendido pela move.e.
           </p>
         </div>
         <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px', margin: isMobile ? '0 20px 32px' : '0 36px 36px' }}>
@@ -1898,15 +1898,15 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
       {/* Resultados */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
         <div style={{ padding: isMobile ? '28px 20px 30px' : '30px 36px 32px', maxWidth:'1120px', margin:'0 auto' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Resultados</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 18px' }}>Posicionamento estruturado, narrativa pronta para o mercado.</h3>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Síntese da atuação</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 18px' }}>Apoio pontual, produção de conteúdo e entregas de design.</h3>
           <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:0 }}>
             <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.navy}` }}>
-              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Mensagens por público</p>
-              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>Investidores, clientes corporativos e parceiros, cada um com narrativa e materiais específicos.</p>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Conteúdo e apoio</p>
+              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>Produção de conteúdo para a Expo Favela e uma palestra do Sebrae, além de trocas com a pessoa de comunicação da move.e.</p>
             </div>
             <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.ruleLight}` }}>
-              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Entregáveis estratégicos</p>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Design freelancer</p>
               <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>{c.resultadoTexto}</p>
             </div>
           </div>
