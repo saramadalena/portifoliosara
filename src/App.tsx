@@ -145,10 +145,78 @@ const cases: CaseItem[] = [
 ]
 
 const competencias = [
-  { grupo: 'Comunicação & Estratégia', cor: T.navy, itens: ['Branding', 'Comunicação Corporativa', 'Comunicação Institucional', 'Comunicação Interna', 'Endomarketing', 'Planejamento de Comunicação', 'Gestão de Campanhas', 'Storytelling', 'Copywriting', 'Posicionamento de Marca'] },
-  { grupo: 'Marketing Digital & Performance', cor: T.magenta, itens: ['Meta Business Suite', 'Google Ads', 'LinkedIn Ads', 'RD Station', 'MLabs', 'Google Analytics', 'SEO / SMO', 'Salesforce'] },
-  { grupo: 'Design & Multimídia', cor: T.navy, itens: ['Photoshop', 'Illustrator', 'InDesign', 'Premiere', 'CorelDRAW', 'Canva', 'CapCut'] },
-  { grupo: 'Processos & Governança', cor: T.magenta, itens: ['Monitoramento de Indicadores', 'Padronização de Processos', 'POPs', 'Monday', 'Trello', 'Apoio a Auditorias ISO'] },
+  {
+    grupo: 'Criação e atendimento',
+    cor: T.navy,
+    itens: [
+      'Briefing',
+      'Entendimento de demandas',
+      'Diagnóstico de problemas de comunicação',
+      'Criação e desdobramento de peças',
+      'Identidade visual',
+      'Materiais institucionais',
+      'Materiais comerciais',
+      'Materiais digitais',
+      'Materiais impressos',
+    ],
+  },
+  {
+    grupo: 'Comunicação e campanhas',
+    cor: T.magenta,
+    itens: [
+      'Planejamento de comunicação',
+      'Campanhas',
+      'Comunicação corporativa',
+      'Comunicação institucional',
+      'Comunicação interna',
+      'Conteúdo',
+      'Redes sociais',
+      'Branding',
+      'Endomarketing',
+      'Employer branding',
+      'Eventos',
+      'Comunicação de mudança',
+    ],
+  },
+  {
+    grupo: 'Gestão e processos',
+    cor: T.navy,
+    itens: [
+      'Gestão de projetos e demandas',
+      'Triagem e priorização',
+      'Cronogramas',
+      'SLAs',
+      'Gestão de fornecedores',
+      'Indicadores de comunicação',
+      'Relatórios',
+      'POPs',
+      'Padronização',
+      'Governança',
+    ],
+  },
+  {
+    grupo: 'Ferramentas',
+    cor: T.magenta,
+    itens: [
+      'Adobe Photoshop',
+      'Adobe Illustrator',
+      'Adobe InDesign',
+      'Figma',
+      'Canva',
+      'RD Station',
+      'Salesforce',
+      'Microsoft 365',
+      'Monday.com',
+      'Trello',
+      'WordPress',
+      'Meta Ads & Business',
+      'LinkedIn Ads',
+      'Google Ads',
+      'ChatGPT',
+      'Claude',
+      'Gemini',
+    ],
+  },
 ]
 
 const timeline = [
@@ -164,8 +232,10 @@ const timeline = [
 
 // Cabeçalho editorial de seção: número grande em fundo + label + linha conectora
 const sectionIconMap: Record<string, SiteIconName> = {
-  '01': 'cases', '02': 'method', '03': 'skills',
-  '04': 'about', '05': 'contact', '06': 'blog',
+  '01': 'cases',
+  '02': 'skills',
+  '03': 'about',
+  '04': 'contact',
 }
 
 function SectionHead({ n, label, color = T.navy, light = false }: { n: string; label: string; color?: string; light?: boolean }) {
@@ -1614,6 +1684,9 @@ function SpdataCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () =
                 style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block' }} />
             </button>
           ))}
+          <p style={{ fontSize:'10px', fontWeight:400, lineHeight:1.6, color:T.inkLight, margin:'-20px 36px 28px', maxWidth:'820px' }}>
+            Os documentos são exibidos como amostras do trabalho. Informações sensíveis do projeto permanecem preservadas.
+          </p>
         </div>
       </div>
 
@@ -1767,39 +1840,51 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
         </div>
       </div>
 
-      {/* Materiais estratégicos */}
+      {/* ── MATERIAIS ESTRATÉGICOS ── */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding: isMobile ? '28px 20px' : '30px 36px', maxWidth:'1120px', margin:'0 auto' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Materiais estratégicos</p>
-          <p style={{ fontSize:'13px', fontWeight:400, lineHeight:1.58, color:T.ink, margin:'0 0 16px', maxWidth:'820px' }}>
+        <div style={{ padding: isMobile ? '32px 20px 24px' : '36px 36px 24px' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Materiais estratégicos</p>
+          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.75, color:T.inkMid, margin:0, maxWidth:'480px' }}>
             Documentos institucionais desenvolvidos para posicionamento da marca e relacionamento com investidores, clientes e parceiros.
           </p>
-          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:'12px' }}>
-            {docs.map(doc => (
-              <article key={doc.title} style={{ backgroundColor:T.bg, borderTop:`2px solid ${T.navy}`, overflow:'hidden' }}>
-                <div style={{ height: isMobile ? '260px' : '300px', backgroundColor:'#e8e8e6', overflow:'hidden' }}>
-                  <iframe
-                    src={`${doc.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                    title={doc.title}
-                    style={{ width:'100%', height:'100%', border:'none', display:'block' }}
-                  />
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px', margin: isMobile ? '0 20px 32px' : '0 36px 36px' }}>
+          {docs.map(doc => (
+            <div key={doc.title} style={{ backgroundColor:T.bg, borderTop:`2px solid ${T.navy}`, display:'flex', flexDirection:'column', overflow:'hidden' }}>
+              {/* Preview do PDF */}
+              <div style={{ position:'relative', width:'100%', height: isMobile ? '280px' : '360px', overflow:'hidden', backgroundColor:'#e8e8e6' }}>
+                <iframe
+                  src={`${doc.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                  style={{ width:'100%', height:'100%', border:'none', display:'block' }}
+                  title={doc.title}
+                />
+              </div>
+              {/* Info + botão */}
+              <div style={{ padding:'20px 22px', display:'flex', flexDirection:'column', gap:'10px' }}>
+                <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
+                  <svg width="16" height="20" viewBox="0 0 18 22" fill="none">
+                    <rect x="1" y="1" width="12" height="20" rx="1" stroke={T.navy} strokeWidth="1.2"/>
+                    <path d="M13 1l4 4v16H5" stroke={T.navy} strokeWidth="1.2"/>
+                    <line x1="4" y1="8" x2="10" y2="8" stroke={T.navy} strokeWidth="1"/>
+                    <line x1="4" y1="11" x2="10" y2="11" stroke={T.navy} strokeWidth="1"/>
+                    <line x1="4" y1="14" x2="8" y2="14" stroke={T.navy} strokeWidth="1"/>
+                  </svg>
+                  <div>
+                    <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 1px' }}>{doc.tag}</p>
+                    <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:0 }}>{doc.title}</p>
+                  </div>
                 </div>
-                <div style={{ padding:'16px 18px 18px' }}>
-                  <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 5px' }}>{doc.tag}</p>
-                  <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>{doc.title}</p>
-                  <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.6, color:T.inkMid, margin:'0 0 12px' }}>{doc.desc}</p>
-                  <a href={doc.pdf} target="_blank" rel="noopener noreferrer"
-                    style={{ display:'inline-flex', alignItems:'center', gap:'7px', padding:'7px 12px', backgroundColor:T.navy, color:'#fff', fontSize:'9px', fontWeight:600, letterSpacing:'0.10em', textTransform:'uppercase', textDecoration:'none' }}>
-                    Abrir PDF
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-          <p style={{ fontSize:'10px', fontWeight:400, lineHeight:1.6, color:T.inkLight, margin:0, maxWidth:'820px' }}>
-            Os materiais são apresentados no portfólio de forma resumida, preservando informações sensíveis do projeto.
-          </p>
+                <p style={{ fontSize:'11px', fontWeight:300, lineHeight:1.70, color:T.inkMid, margin:0 }}>{doc.desc}</p>
+                <a href={doc.pdf} target="_blank" rel="noopener noreferrer"
+                  style={{ display:'inline-flex', alignItems:'center', gap:'7px', padding:'8px 16px', backgroundColor:T.navy, color:'#fff', fontSize:'10px', fontWeight:600, letterSpacing:'0.10em', textTransform:'uppercase', textDecoration:'none', alignSelf:'flex-start', transition:'background-color 0.18s' }}
+                  onMouseEnter={e=>(e.currentTarget.style.backgroundColor=T.magenta)}
+                  onMouseLeave={e=>(e.currentTarget.style.backgroundColor=T.navy)}>
+                  Abrir PDF
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="1" y1="9" x2="9" y2="1" stroke="currentColor" strokeWidth="1.5"/><polyline points="4,1 9,1 9,6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -2323,9 +2408,9 @@ export default function App() {
           <SectionHead n="02" label="Competências" color={T.navy} />
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:'40px',gap:'24px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.2vw,34px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.025em',margin:0,color:T.ink }}>
-              Técnicas e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>ferramentas.</em>
+              Competências e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>ferramentas.</em>
             </h2>
-            {!isMobile && <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth:'240px',lineHeight:1.7,margin:0,textAlign:'right',flexShrink:0 }}>Do planejamento estratégico à execução — em todas as frentes.</p>}
+            {!isMobile && <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth:'240px',lineHeight:1.7,margin:0,textAlign:'right',flexShrink:0 }}>Criação, comunicação, gestão de demandas, processos e ferramentas.</p>}
           </div>
           <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':isTablet?'1fr 1fr':'1fr 1fr',gap:'2px',backgroundColor:T.rule }}>
             {competencias.map((grupo) => (
