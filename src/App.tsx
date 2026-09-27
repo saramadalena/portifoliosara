@@ -2464,7 +2464,7 @@ export default function App() {
                 Experiência conectando demandas, públicos, mensagens, canais e formatos, com atuação em comunicação corporativa, campanhas, branding, redes sociais, processos e indicadores.
               </p>
               <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '36px' }}>
-                {['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem · Grande BH', 'B2B & B2C'].map((tag) => (
+                {['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem, MG · Grande Belo Horizonte', 'B2B & B2C'].map((tag) => (
                   <span key={tag} style={{ padding: '5px 12px', border: `1px solid ${T.rule}`, fontSize: '11px', fontWeight: 400, color: T.inkMid, backgroundColor: T.bg, letterSpacing: '0.02em' }}>
                     {tag}
                   </span>
