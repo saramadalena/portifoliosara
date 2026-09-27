@@ -144,13 +144,6 @@ const cases: CaseItem[] = [
   },
 ]
 
-const formaDeTrabalhar = [
-  { num: '01', titulo: 'Diagnóstico antes de entrega', descricao: 'Toda demanda começa com escuta ativa. Entendo o contexto, os públicos e os objetivos antes de propor qualquer solução. Comunicação descontextualizada não resolve — ela só ocupa espaço.', cor: T.navy },
-  { num: '02', titulo: 'Estratégia integrada', descricao: 'Conecto o que a liderança precisa comunicar com o que o público precisa entender. Isso exige visão sistêmica, alinhamento entre áreas e clareza na arquitetura de mensagens.', cor: T.magenta },
-  { num: '03', titulo: 'Processo com consistência', descricao: 'Fluxos, POPs e padrões editoriais garantem que a comunicação funcione além de um projeto pontual. Estruturo processos que sustentam resultados no longo prazo.', cor: T.navy },
-  { num: '04', titulo: 'Criação com critério', descricao: 'Domino as ferramentas de criação e uso esse domínio a serviço da estratégia, não como fim em si mesmo. A estética sempre serve à mensagem.', cor: T.magenta },
-]
-
 const competencias = [
   { grupo: 'Comunicação & Estratégia', cor: T.navy, itens: ['Branding', 'Comunicação Corporativa', 'Comunicação Institucional', 'Comunicação Interna', 'Endomarketing', 'Planejamento de Comunicação', 'Gestão de Campanhas', 'Storytelling', 'Copywriting', 'Posicionamento de Marca'] },
   { grupo: 'Marketing Digital & Performance', cor: T.magenta, itens: ['Meta Business Suite', 'Google Ads', 'LinkedIn Ads', 'RD Station', 'MLabs', 'Google Analytics', 'SEO / SMO', 'Salesforce'] },
@@ -2075,105 +2068,7 @@ function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () =
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
 }
 
-// ─── BLOG ────────────────────────────────────────────────────────────────────
-
-type BlogPost = { id: number; title: string; excerpt: string; category: string; date: string; readTime: string }
-
-const blogPosts: BlogPost[] = [
-  { id: 1, title: 'Como estruturar comunicação corporativa do zero', excerpt: 'Quando a comunicação acontece em silos — cada área falando por conta própria, sem linha editorial, sem padrão — o ruído vira cultura. O que aprendi estruturando áreas do zero em empresas de diferentes portes.', category: 'Comunicação Corporativa', date: 'Ago 2025', readTime: '5 min' },
-  { id: 2, title: 'Branding interno: por que a identidade começa antes do cliente', excerpt: 'Antes de falar com o mercado, a marca precisa fazer sentido para quem trabalha dentro dela. Como o endomarketing sustenta a consistência de marca a longo prazo.', category: 'Branding', date: 'Jul 2025', readTime: '4 min' },
-  { id: 3, title: 'ESG na comunicação: do relatório ao conteúdo', excerpt: 'Transformar dados de ESG em narrativa não é simplificar — é traduzir. Como conectar indicadores de impacto com a linguagem dos diferentes públicos de uma empresa.', category: 'ESG', date: 'Jun 2025', readTime: '6 min' },
-]
-
-function BlogCard({ post, onSelect }: { post: BlogPost; onSelect: () => void }) {
-  const [hov, setHov] = useState(false)
-  return (
-    <div onClick={onSelect} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
-      style={{ backgroundColor:T.white,cursor:'pointer',padding:'32px 28px',borderTop:`2px solid ${hov?T.magenta:T.ruleLight}`,transition:'all 0.2s' }}>
-      <div style={{ display:'flex',alignItems:'center',gap:'8px',marginBottom:'16px',flexWrap:'wrap' }}>
-        <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:T.magenta }}>{post.category}</span>
-        <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
-        <span style={{ fontSize:'9px',fontWeight:300,color:T.inkLight }}>{post.date}</span>
-        <span style={{ fontSize:'9px',fontWeight:300,color:T.inkLight }}>· {post.readTime}</span>
-      </div>
-      <h3 style={{ fontFamily:'Playfair Display, serif',fontSize:'17px',fontWeight:600,lineHeight:1.3,letterSpacing:'-0.01em',color:T.ink,margin:'0 0 12px' }}>{post.title}</h3>
-      <p style={{ fontSize:'12px',fontWeight:300,lineHeight:1.78,color:T.inkMid,margin:'0 0 20px' }}>{post.excerpt}</p>
-      <div style={{ display:'flex',alignItems:'center',gap:'6px',color: hov?T.magenta:T.inkLight,transition:'color 0.18s' }}>
-        <span style={{ fontSize:'10px',fontWeight:600,letterSpacing:'0.1em',textTransform:'uppercase' }}>Ler artigo</span>
-        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><line x1="0" y1="4" x2="9" y2="4" stroke="currentColor" strokeWidth="1.5"/><polyline points="6,1 9,4 6,7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
-      </div>
-    </div>
-  )
-}
-
-function BlogListing({ onSelect, onBack }: { onSelect: (id: number) => void; onBack: () => void }) {
-  const { isMobile, isTablet } = useBreakpoint()
-  return (
-    <div style={{ minHeight:'calc(100vh - 56px)',backgroundColor:T.bg }}>
-      <div style={{ padding: isMobile?'48px 20px 36px':'64px 48px 48px',borderBottom:`1px solid ${T.rule}`,backgroundColor:T.white }}>
-        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'7px',background:'none',border:'none',padding:'0 0 28px',cursor:'pointer',fontSize:'10px',fontWeight:500,letterSpacing:'0.12em',textTransform:'uppercase',color:T.inkLight,fontFamily:'Inter, sans-serif',transition:'color 0.18s' }}
-          onMouseEnter={e=>(e.currentTarget.style.color=T.magenta)} onMouseLeave={e=>(e.currentTarget.style.color=T.inkLight)}>
-          ← Portfólio
-        </button>
-        <SectionHead n="06" label="Blog" color={T.magenta} />
-        <h1 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(26px,2.8vw,40px)',fontWeight:700,lineHeight:1.12,letterSpacing:'-0.03em',margin:'0 0 12px',color:T.ink }}>
-          Reflexões sobre{' '}
-          <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>comunicação e estratégia.</em>
-        </h1>
-        <p style={{ fontSize:'14px',fontWeight:300,color:T.inkLight,margin:0,lineHeight:1.7 }}>Artigos sobre comunicação corporativa, branding, ESG e estratégia de conteúdo.</p>
-      </div>
-      <div style={{ padding: isMobile?'32px 20px':'48px 48px',display:'grid',gridTemplateColumns: isMobile?'1fr':isTablet?'1fr 1fr':'1fr 1fr 1fr',gap:'2px' }}>
-        {blogPosts.map(post => <BlogCard key={post.id} post={post} onSelect={() => onSelect(post.id)} />)}
-      </div>
-    </div>
-  )
-}
-
-function BlogArticle({ id, onBack }: { id: number; onBack: () => void }) {
-  const post = blogPosts.find(p => p.id === id)!
-  const { isMobile } = useBreakpoint()
-  return (
-    <div style={{ minHeight:'calc(100vh - 56px)',backgroundColor:T.bg }}>
-      <div style={{ padding:'14px 28px',borderBottom:`1px solid ${T.ruleLight}`,display:'flex',alignItems:'center',gap:'12px',backgroundColor:T.white }}>
-        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'7px',background:'none',border:'none',padding:0,cursor:'pointer',fontSize:'10px',fontWeight:500,letterSpacing:'0.12em',textTransform:'uppercase',color:T.inkMid,fontFamily:'Inter, sans-serif' }}>
-          ← Blog
-        </button>
-        <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
-        <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:T.magenta }}>{post.category}</span>
-      </div>
-      <div style={{ maxWidth:'720px',margin:'0 auto',padding: isMobile?'40px 24px':'64px 48px' }}>
-        <p style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:T.inkLight,margin:'0 0 16px' }}>{post.date} · {post.readTime} de leitura</p>
-        <h1 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.4vw,34px)',fontWeight:700,lineHeight:1.18,letterSpacing:'-0.025em',color:T.ink,margin:'0 0 24px' }}>{post.title}</h1>
-        <div style={{ width:'40px',height:'3px',backgroundColor:T.magenta,marginBottom:'32px' }} />
-        <p style={{ fontSize:'16px',fontWeight:300,lineHeight:1.85,color:T.inkMid,margin:'0 0 36px' }}>{post.excerpt}</p>
-        <div style={{ padding:'28px 24px',border:`1.5px dashed ${T.ruleLight}`,marginBottom:'32px',backgroundColor:T.white }}>
-          <p style={{ fontSize:'10px',fontWeight:600,letterSpacing:'0.14em',textTransform:'uppercase',color:T.inkLight,margin:'0 0 6px' }}>Corpo do artigo</p>
-          <p style={{ fontSize:'11px',fontWeight:300,color:T.inkLight,margin:0,lineHeight:1.55 }}>O conteúdo completo do artigo será adicionado aqui. A estrutura suporta subtítulos, imagens, citações em destaque e múltiplos parágrafos.</p>
-        </div>
-        <div style={{ padding:'40px 24px',backgroundColor:T.white,border:`1px solid ${T.ruleLight}`,marginBottom:'36px',display:'flex',alignItems:'center',justifyContent:'center',gap:'12px' }}>
-          <svg width="20" height="16" viewBox="0 0 20 16" fill="none"><rect x="1" y="1" width="18" height="14" rx="1" stroke={T.rule} strokeWidth="1.5"/><circle cx="6.5" cy="5.5" r="1.5" fill={T.rule}/><polyline points="1,11 7,6 11,10 14,7 19,11" fill="none" stroke={T.rule} strokeWidth="1.5" strokeLinejoin="round"/></svg>
-          <span style={{ fontSize:'10px',fontWeight:300,color:T.inkLight }}>Imagem do artigo</span>
-        </div>
-        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
-          ← Voltar ao Blog
-        </button>
-      </div>
-    </div>
-  )
-}
-
-// NavLink
-function NavLink({ href, children, onClick }: { href: string; children: string; onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
-  const [hov, setHov] = useState(false)
-  return (
-    <a href={href} onClick={onClick} style={{ fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',color: hov?T.navy:T.inkLight,transition:'color 0.18s',paddingBottom:'2px',borderBottom: hov?`1px solid ${T.navy}`:'1px solid transparent',minHeight:'44px',display:'inline-flex',alignItems:'center' }} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-      {children}
-    </a>
-  )
-}
-
-// Menu mobile drawer
-function MobileMenu({ open, onClose, onBlog, onCase, onNav }: { open: boolean; onClose: () => void; onBlog: () => void; onCase: () => void; onNav: (id: string) => void }) {
+function MobileMenu({ open, onClose, onCase, onNav }: { open: boolean; onClose: () => void; onCase: () => void; onNav: (id: string) => void }) {
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = ''
@@ -2195,10 +2090,8 @@ function MobileMenu({ open, onClose, onBlog, onCase, onNav }: { open: boolean; o
         </div>
         <nav style={{ flex:1 }}>
           {item('Cases', onCase)}
-          {item('Método', () => onNav('forma'))}
           {item('Competências', () => onNav('competencias'))}
           {item('Sobre', () => onNav('sobre'))}
-          {item('Blog', onBlog)}
           {item('Contato', () => onNav('contato'))}
         </nav>
         <div style={{ padding:'24px 28px',borderTop:`1px solid ${T.rule}` }}>
@@ -2214,8 +2107,6 @@ function MobileMenu({ open, onClose, onBlog, onCase, onNav }: { open: boolean; o
 
 export default function App() {
   const [openCase, setOpenCase] = useState<number | null>(null)
-  const [blogView, setBlogView] = useState(false)
-  const [blogArticleId, setBlogArticleId] = useState<number | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { isMobile, isTablet, isWide } = useBreakpoint()
@@ -2228,7 +2119,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
-  }, [openCase, blogView, blogArticleId])
+  }, [openCase])
 
   const gridBg = {
     backgroundImage: `linear-gradient(${T.ruleLight} 1px, transparent 1px), linear-gradient(90deg, ${T.ruleLight} 1px, transparent 1px)`,
@@ -2238,8 +2129,6 @@ export default function App() {
   const goHome = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenCase(null)
-    setBlogView(false)
-    setBlogArticleId(null)
   }
 
   const navEl = (
@@ -2247,9 +2136,8 @@ export default function App() {
       <MobileMenu
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
-        onBlog={() => { setBlogView(true); setBlogArticleId(null); setOpenCase(null) }}
-        onCase={() => { setOpenCase(null); setBlogView(false); setBlogArticleId(null); setTimeout(() => document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }), 50) }}
-        onNav={(id) => { setOpenCase(null); setBlogView(false); setBlogArticleId(null); setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 50) }}
+        onCase={() => { setOpenCase(null); setTimeout(() => document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' }), 50) }}
+        onNav={(id) => { setOpenCase(null); setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 50) }}
       />
       <nav style={{ position:'fixed',top:0,left:0,right:0,zIndex:100,height:'56px',padding: isMobile?'0 16px':'0 48px',display:'flex',alignItems:'center',justifyContent:'space-between',backgroundColor: scrolled?'rgba(245,245,243,0.97)':T.white,borderBottom:`1px solid ${T.rule}`,backdropFilter: scrolled?'blur(16px)':'none',transition:'all 0.3s ease' }}>
         <a href="#" onClick={goHome} style={{ textDecoration:'none',display:'flex',alignItems:'center',gap:'10px',minHeight:'44px' }}>
@@ -2261,12 +2149,9 @@ export default function App() {
         </a>
         {!isMobile && (
           <div style={{ display:'flex',gap:'28px',alignItems:'center' }}>
-            <NavLink href="#cases" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('cases')?.scrollIntoView({behavior:'smooth'}),50)}}>Cases</NavLink>
-            <NavLink href="#forma" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('forma')?.scrollIntoView({behavior:'smooth'}),50)}}>Método</NavLink>
-            {!isTablet && <NavLink href="#competencias" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('competencias')?.scrollIntoView({behavior:'smooth'}),50)}}>Competências</NavLink>}
-            <NavLink href="#sobre" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('sobre')?.scrollIntoView({behavior:'smooth'}),50)}}>Sobre</NavLink>
-            <button onClick={()=>{setBlogView(true);setBlogArticleId(null);setOpenCase(null)}} style={{ fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',color:T.inkLight,background:'none',border:'none',cursor:'pointer',fontFamily:'Inter, sans-serif',padding:0,transition:'color 0.18s',minHeight:'44px' }} onMouseEnter={e=>(e.currentTarget.style.color=T.navy)} onMouseLeave={e=>(e.currentTarget.style.color=T.inkLight)}>Blog</button>
-            <a href="#contato" onClick={(e)=>{e.preventDefault();setOpenCase(null);setBlogView(false);setBlogArticleId(null);setTimeout(()=>document.getElementById('contato')?.scrollIntoView({behavior:'smooth'}),50)}} style={{ display:'inline-flex',alignItems:'center',gap:'6px',padding:'9px 18px',backgroundColor:T.navy,color:'#fff',fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',transition:'background-color 0.18s',minHeight:'44px' }}
+            <NavLink href="#cases" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('cases')?.scrollIntoView({behavior:'smooth'}),50)}}>Cases</NavLink>
+            {!isTablet && <NavLink href="#competencias" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('competencias')?.scrollIntoView({behavior:'smooth'}),50)}}>Competências</NavLink>}
+            <NavLink href="#sobre" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('sobre')?.scrollIntoView({behavior:'smooth'}),50)}}>Sobre</NavLink>            <a href="#contato" onClick={(e)=>{e.preventDefault();setOpenCase(null);setTimeout(()=>document.getElementById('contato')?.scrollIntoView({behavior:'smooth'}),50)}} style={{ display:'inline-flex',alignItems:'center',gap:'6px',padding:'9px 18px',backgroundColor:T.navy,color:'#fff',fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',transition:'background-color 0.18s',minHeight:'44px' }}
               onMouseEnter={e=>(e.currentTarget.style.backgroundColor=T.magenta)} onMouseLeave={e=>(e.currentTarget.style.backgroundColor=T.navy)}>
               Contato <span style={{ fontSize:'14px',lineHeight:1 }}>→</span>
             </a>
@@ -2292,7 +2177,7 @@ export default function App() {
         </svg>
         <span style={{ fontFamily:'Playfair Display, serif', fontSize:'15px',fontWeight:700,color:'#fff',letterSpacing:'0.01em' }}>Sara Madalena</span>
         <span style={{ width:'1px',height:'14px',backgroundColor:'rgba(255,255,255,0.15)' }} />
-        {['Marketing & Estratégia','Branding & Posicionamento','Conteúdo & Narrativa','Comunicação Corporativa'].map((tag, i) => (
+        {['Estratégia','Conteúdo & Narrativas','Comunicação Corporativa','Branding & Posicionamento'].map((tag, i) => (
           <span key={tag} style={{ fontSize:'10px',fontWeight:300,color: i % 2 === 0 ? 'rgba(255,255,255,0.38)' : T.magenta, letterSpacing:'0.04em', whiteSpace:'nowrap' }}>
             {tag}{i < 3 ? <span style={{ color:'rgba(255,255,255,0.15)',margin:'0 8px' }}>·</span> : null}
           </span>
@@ -2300,7 +2185,7 @@ export default function App() {
       </div>
       <div style={{ display:'flex',alignItems:'center',gap:'16px' }}>
         <span style={{ fontSize:'9px',fontWeight:600,letterSpacing:'0.14em',textTransform:'uppercase',color:T.magenta }}>comunicacao.saramada@gmail.com</span>
-        <span style={{ fontSize:'10px',color:'rgba(255,255,255,0.2)' }}>© 2025</span>
+        <span style={{ fontSize:'10px',color:'rgba(255,255,255,0.2)' }}>© 2026</span>
       </div>
     </footer>
   )
@@ -2312,22 +2197,6 @@ export default function App() {
         {navEl}
         <div style={{ paddingTop:'56px' }}>
           <CaseDetailRouter id={openCase} onBack={() => setOpenCase(null)} onOpenCase={(id) => setOpenCase(id)} />
-        </div>
-        {footerEl}
-      </div>
-    )
-  }
-
-  // ── BLOG ──
-  if (blogView) {
-    return (
-      <div style={{ backgroundColor:T.bg,color:T.ink,fontFamily:'Inter, sans-serif',minHeight:'100vh' }}>
-        {navEl}
-        <div style={{ paddingTop:'56px' }}>
-          {blogArticleId !== null
-            ? <BlogArticle id={blogArticleId} onBack={() => setBlogArticleId(null)} />
-            : <BlogListing onSelect={(id) => setBlogArticleId(id)} onBack={() => setBlogView(false)} />
-          }
         </div>
         {footerEl}
       </div>
@@ -2361,8 +2230,8 @@ export default function App() {
               fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.025em',
               margin: '0 0 8px', color: T.ink,
             }}>
-              <em style={{ fontStyle: 'italic', fontWeight: 400, color: T.navy }}>Marketing</em>,{' '}
-              <em style={{ fontStyle: 'italic', fontWeight: 400, color: T.magenta }}>Branding</em>{' '}
+              <em style={{ fontStyle: 'italic', fontWeight: 400, color: T.navy }}>Comunicação</em>,{' '}
+              <em style={{ fontStyle: 'italic', fontWeight: 400, color: T.magenta }}>Marketing</em>{' '}
               e Conteúdo.
             </h1>
 
@@ -2374,16 +2243,16 @@ export default function App() {
             </div>
 
             <p style={{ fontSize: '15px', fontWeight: 300, lineHeight: 1.82, color: T.inkMid, margin: '0 0 32px', maxWidth: '420px' }}>
-              Estratégia, criação e execução integradas — do posicionamento de marca à produção de conteúdo, conectando comunicação, identidade e resultado.
+              Estratégia, conteúdo, criação e execução integradas, conectando comunicação corporativa, branding, canais e diferentes públicos.
             </p>
 
             {/* 4 pilares de atuação */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', marginBottom: '36px' }}>
               {[
-                { icon: 'marketing' as SiteIconName, label: 'Marketing & Estratégia', cor: T.navy },
+                { icon: 'marketing' as SiteIconName, label: 'Estratégia', cor: T.navy },
+                { icon: 'experience' as SiteIconName, label: 'Conteúdo & Narrativas', cor: T.magenta },
+                { icon: 'channels' as SiteIconName, label: 'Comunicação Corporativa', cor: T.navy },
                 { icon: 'branding' as SiteIconName, label: 'Branding & Posicionamento', cor: T.magenta },
-                { icon: 'experience' as SiteIconName, label: 'Conteúdo & Narrativa', cor: T.navy },
-                { icon: 'channels' as SiteIconName, label: 'Comunicação Corporativa', cor: T.magenta },
               ].map((pilar) => (
                 <div key={pilar.label} style={{ padding: '14px 16px', backgroundColor: T.bg, borderTop: `2px solid ${pilar.cor}`, display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SiteIcon name={pilar.icon} size={15} color={pilar.cor} />
@@ -2426,7 +2295,7 @@ export default function App() {
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',gap:'24px',paddingBottom:'40px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(26px,2.8vw,40px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.03em',margin:0,color:T.ink,maxWidth:'560px' }}>
               Projetos reais,{' '}
-              <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>resultados mensuráveis.</em>
+              <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>estratégia e execução em contexto.</em>
             </h2>
             {!isMobile && <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth:'260px',lineHeight:1.75,margin:0,textAlign:'right',flexShrink:0 }}>Estrutura: <em>Contexto · Desafio · Estratégia<br/>Execução · Resultados</em></p>}
           </div>
@@ -2434,45 +2303,10 @@ export default function App() {
         <CaseGallery onOpen={(id) => setOpenCase(id)} />
       </section>
 
-      {/* ── FORMA DE TRABALHAR ── */}
-      <section id="forma" style={{ backgroundColor:T.white,borderTop:`1px solid ${T.rule}`,padding: isMobile?'48px 24px':isWide?'80px 80px':'72px 48px' }}>
-        <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':isTablet?'1fr':'260px 1fr',gap: isMobile||isTablet?'32px':'64px',maxWidth:'1200px',margin:'0 auto' }}>
-          <div style={{ paddingTop:'4px' }}>
-            <SectionHead n="02" label="Método" color={T.magenta} />
-            <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.2vw,34px)',fontWeight:700,lineHeight:1.18,letterSpacing:'-0.025em',margin:'0 0 16px',color:T.ink }}>
-              Minha forma<br/><em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>de trabalhar.</em>
-            </h2>
-            <p style={{ fontSize:'13px',fontWeight:300,lineHeight:1.75,color:T.inkLight,margin:0 }}>Princípios que guiam cada projeto, do diagnóstico à entrega final.</p>
-          </div>
-          {(() => {
-            const methodIcons: SiteIconName[] = ['diagnose', 'strategy', 'process', 'create']
-            return (
-              <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':'1fr 1fr',gap:'1px',backgroundColor:T.rule }}>
-                {formaDeTrabalhar.map((item, idx) => (
-                  <div key={item.num} style={{ backgroundColor:T.white,padding: isMobile?'28px 20px':'36px 32px',position:'relative',overflow:'hidden',transition:'background-color 0.18s' }}
-                    onMouseEnter={e=>(e.currentTarget.style.backgroundColor=T.bg)} onMouseLeave={e=>(e.currentTarget.style.backgroundColor=T.white)}>
-                    {/* ícone fantasma */}
-                    <div style={{ position:'absolute',top:'8px',right:'10px',opacity:0.05,pointerEvents:'none',userSelect:'none' }}>
-                      <SiteIcon name={methodIcons[idx]} size={72} color={T.ink} />
-                    </div>
-                    <div style={{ display:'flex',alignItems:'center',gap:'10px',marginBottom:'16px' }}>
-                      <SiteIcon name={methodIcons[idx]} size={18} color={item.cor} />
-                      <svg width="24" height="6" viewBox="0 0 24 6" style={{ flexShrink:0 }}><line x1="0" y1="3" x2="20" y2="3" stroke={item.cor} strokeWidth="1"/><polyline points="16,1 20,3 16,5" fill="none" stroke={item.cor} strokeWidth="1" strokeLinejoin="round"/></svg>
-                    </div>
-                    <h3 style={{ fontSize:'15px',fontWeight:600,lineHeight:1.3,marginBottom:'10px',color:T.ink }}>{item.titulo}</h3>
-                    <p style={{ fontSize:'13px',fontWeight:300,lineHeight:1.82,color:T.inkMid,margin:0 }}>{item.descricao}</p>
-                  </div>
-                ))}
-              </div>
-            )
-          })()}
-        </div>
-      </section>
-
       {/* ── COMPETÊNCIAS ── */}
       <section id="competencias" style={{ backgroundColor:T.bg,borderTop:`1px solid ${T.rule}`,padding: isMobile?'48px 24px':isWide?'80px 80px':'72px 48px' }}>
         <div style={{ maxWidth:'1200px',margin:'0 auto' }}>
-          <SectionHead n="03" label="Competências" color={T.navy} />
+          <SectionHead n="02" label="Competências" color={T.navy} />
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:'40px',gap:'24px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.2vw,34px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.025em',margin:0,color:T.ink }}>
               Técnicas e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>ferramentas.</em>
@@ -2500,7 +2334,7 @@ export default function App() {
       {/* ── SOBRE ── */}
       <section id="sobre" style={{ backgroundColor:T.white,borderTop:`1px solid ${T.rule}`,padding: isMobile?'48px 24px':isWide?'80px 80px':'72px 48px' }}>
         <div style={{ maxWidth:'1200px',margin:'0 auto' }}>
-          <SectionHead n="04" label="Sobre" color={T.magenta} />
+          <SectionHead n="03" label="Sobre" color={T.magenta} />
           <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':'1fr 1fr',gap: isMobile?'40px':'72px',alignItems:'start' }}>
 
             {/* esquerda */}
@@ -2509,10 +2343,10 @@ export default function App() {
                 Sara Madalena Silva.<br/><em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>Estratégia, criação e execução.</em>
               </h2>
               <p style={{ fontSize:'14px',fontWeight:300,lineHeight:1.85,color:T.inkMid,marginBottom:'14px' }}>
-                Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong>. Mais de <strong style={{ fontWeight:600,color:T.ink }}>10 anos</strong> estruturando áreas, processos e narrativas para empresas que precisam falar com clareza.
+                Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong> e trajetória em marketing, comunicação, criação gráfica, conteúdo e atendimento.
               </p>
               <p style={{ fontSize:'14px',fontWeight:300,lineHeight:1.85,color:T.inkMid,marginBottom:'32px' }}>
-                Vivência integrada com <em>RH, Educação Corporativa, ESG, Compliance e LGPD</em>. Atuação que conecta diagnóstico, estratégia, criação e execução — sempre com foco em consistência e resultado.
+                Experiência conectando demandas, públicos, mensagens, canais e formatos, com atuação em comunicação corporativa, campanhas, branding, redes sociais, processos e indicadores.
               </p>
               <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '36px' }}>
                 {['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem, MG', 'B2B & B2C'].map((tag) => (
@@ -2576,8 +2410,8 @@ export default function App() {
                 <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'20px' }}>
                   {[
                     {n:'+10',l:'anos de experiência, buscando consistência e assertividade na comunicação',cor:T.navy},
-                    {n:'+33%',l:'de abertura de comunicados internos em 2024, atingindo a meta estabelecida',cor:T.magenta},
-                    {n:'+7%',l:'de engajamento no Instagram e LinkedIn, com aumento perceptível de 2023 para 2024',cor:T.navy},
+                    {n:'33%',l:'taxa média anual de abertura dos e-mails internos em 2024, atingindo a meta da área',cor:T.magenta},
+                    {n:'+7%',l:'de engajamento orgânico no Instagram e LinkedIn em 2024, em comparação com 2023',cor:T.navy},
                   ].map(s=><ResultNum key={s.l} valor={s.n} label={s.l} cor={s.cor}/>)}
                 </div>
               </div>
@@ -2589,7 +2423,7 @@ export default function App() {
       {/* ── CONTATO ── */}
       <section id="contato" style={{ backgroundColor:T.bg,borderTop:`1px solid ${T.rule}`,padding: isMobile?'48px 24px':isWide?'80px 80px':'72px 48px' }}>
         <div style={{ maxWidth:'1200px',margin:'0 auto' }}>
-          <SectionHead n="05" label="Contato" color={T.navy} />
+          <SectionHead n="04" label="Contato" color={T.navy} />
           <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':'1fr 1fr',gap: isMobile?'40px':'80px',alignItems:'start' }}>
             <div>
               <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(28px,3.5vw,52px)',fontWeight:700,lineHeight:1.05,letterSpacing:'-0.035em',margin:'0 0 20px',color:T.ink }}>
