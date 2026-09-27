@@ -146,22 +146,24 @@ const cases: CaseItem[] = [
 
 const competencias = [
   {
-    grupo: 'Criação e atendimento',
+    grupo: 'Criação',
     cor: T.navy,
     itens: [
-      'Briefing',
       'Entendimento de demandas',
+      'Briefing',
       'Diagnóstico de problemas de comunicação',
+      'Organização da necessidade e do escopo',
+      'Proposição de soluções de comunicação',
       'Criação e desdobramento de peças',
       'Identidade visual',
       'Materiais institucionais',
       'Materiais comerciais',
       'Materiais digitais',
-      'Materiais impressos',
+      'Acompanhamento da entrega',
     ],
   },
   {
-    grupo: 'Comunicação e campanhas',
+    grupo: 'Comunicação & Marketing',
     cor: T.magenta,
     itens: [
       'Planejamento de comunicação',
@@ -170,28 +172,26 @@ const competencias = [
       'Comunicação institucional',
       'Comunicação interna',
       'Conteúdo',
-      'Redes sociais',
       'Branding',
       'Endomarketing',
-      'Employer branding',
       'Eventos',
       'Comunicação de mudança',
+      'Relacionamento com áreas e stakeholders',
     ],
   },
   {
-    grupo: 'Gestão e processos',
+    grupo: 'Marketing Digital',
     cor: T.navy,
     itens: [
-      'Gestão de projetos e demandas',
-      'Triagem e priorização',
-      'Cronogramas',
-      'SLAs',
-      'Gestão de fornecedores',
-      'Indicadores de comunicação',
-      'Relatórios',
-      'POPs',
-      'Padronização',
-      'Governança',
+      'Planejamento de conteúdo',
+      'Redes sociais',
+      'Calendário editorial',
+      'Gestão de canais digitais',
+      'Campanhas digitais',
+      'E-mail marketing',
+      'RD Station',
+      'Acompanhamento de indicadores',
+      'Relatórios e análise de resultados',
     ],
   },
   {
@@ -2418,9 +2418,9 @@ export default function App() {
           <SectionHead n="02" label="Competências" color={T.navy} />
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:'40px',gap:'24px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(22px,2.2vw,34px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.025em',margin:0,color:T.ink }}>
-              Competências e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>ferramentas.</em>
+              Criação, Comunicação & Marketing e <em style={{ fontStyle:'italic',fontWeight:400,color:T.navy }}>Marketing Digital.</em>
             </h2>
-            {!isMobile && <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth:'240px',lineHeight:1.7,margin:0,textAlign:'right',flexShrink:0 }}>Criação, comunicação, gestão de demandas, processos e ferramentas.</p>}
+            <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth: isMobile ? '100%' : '420px',lineHeight:1.7,margin:0,textAlign: isMobile ? 'left' : 'right',flexShrink:0 }}>Entender a demanda → fazer briefing → identificar o problema → organizar a necessidade → propor a solução → criar/desdobrar → acompanhar a entrega.</p>
           </div>
           <div style={{ display:'grid',gridTemplateColumns: isMobile?'1fr':isTablet?'1fr 1fr':'1fr 1fr',gap:'2px',backgroundColor:T.rule }}>
             {competencias.map((grupo) => (
