@@ -2540,7 +2540,7 @@ export default function App() {
                   icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/><polyline points="2,4 12,13 22,4" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>,
                 },
                 {
-                  label:'LinkedIn', value:'silvamsara', href:'https://www.linkedin.com/in/saramadalena/', cor:T.navy,
+                  label:'LinkedIn', value:'silvamsara', href:'https://www.linkedin.com/in/silvamsara/', cor:T.navy,
                   icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.5"/><line x1="7" y1="10" x2="7" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="7" cy="7" r="1" fill="currentColor"/><path d="M11 10v7M11 13c0-1.66 1.34-3 3-3s3 1.34 3 3v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
                 },
                 {
