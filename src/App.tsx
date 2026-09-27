@@ -2304,7 +2304,7 @@ export default function App() {
 
   // ── PORTFÓLIO ──
   return (
-    <div style={{ backgroundColor: T.bg, color: T.ink, fontFamily: 'Inter, sans-serif', minHeight: '100vh' }}>
+    <div data-release="2026-09-27-r133" style={{ backgroundColor: T.bg, color: T.ink, fontFamily: 'Inter, sans-serif', minHeight: '100vh' }}>
       {navEl}
 
       {/* ── HERO ── */}
