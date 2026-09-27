@@ -9,7 +9,6 @@ import spdataVoce1 from './imports/spdata_voce__1_.png'
 import spdataVoce2 from './imports/spdata_voce__2_.png'
 import spdataVoce4 from './imports/spdata_voce__4_.png'
 import spdataVoce5 from './imports/spdata_voce__5_.png'
-import spdataCapa from './imports/institucional-spdata-voce.jpg'
 import spdataVoce8 from './imports/spdata_voce__8_.png'
 import spdataCI1 from './imports/CI__1_.png'
 import spdataCI2 from './imports/CI__2_.png'
@@ -66,6 +65,8 @@ const T = {
   magenta: '#FF007F',
   yellow: '#FFFF00',
 }
+
+const spdataCapa = `${import.meta.env.BASE_URL}assets/portfolio/spdata/spdata-voce-capa.jpg`
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
