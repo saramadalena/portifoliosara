@@ -1663,18 +1663,18 @@ function SpdataCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () =
 
 // ─── STARTUP CASE DETAIL (move.e) ────────────────────────────────────────────
 
-function StartupCaseDetail({ onBack }: { onBack: () => void }) {
+function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => void }) {
   const [lightbox, setLightbox] = useState<string | null>(null)
   const c = cases[2]
   const { isMobile } = useBreakpoint()
 
   const docs = [
-    { title: 'One-Page Institucional', desc: 'Síntese do posicionamento, proposta de valor e diferenciais competitivos da move.e.', tag: 'Posicionamento', pdf: pdfOnePage },
-    { title: 'Sumário Executivo', desc: 'Documento estratégico com conceito, arquitetura de mensagens e narrativa para stakeholders.', tag: 'Estratégia', pdf: pdfSumario },
+    { title: 'One-Page Institucional', desc: 'Síntese do posicionamento, proposta de valor e diferenciais competitivos da move.e.', tag: 'Posicionamento' },
+    { title: 'Sumário Executivo', desc: 'Documento estratégico com conceito, arquitetura de mensagens e narrativa para stakeholders.', tag: 'Estratégia' },
   ]
 
   return (
-    <div style={{ backgroundColor: T.white }}>
+    <div className="movee-case-detail" style={{ backgroundColor: T.white }}>
       {lightbox && <Lightbox src={lightbox} onClose={() => setLightbox(null)} />}
 
       {/* Barra de retorno */}
@@ -1687,235 +1687,162 @@ function StartupCaseDetail({ onBack }: { onBack: () => void }) {
         <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>Consultoria Estratégica · move.e</span>
       </div>
 
-      {/* ── HERO ── */}
-      <div style={{ position:'relative', overflow:'hidden', height: isMobile ? '280px' : '380px', backgroundColor:'#0a0a0a' }}>
-        <img src={startupAcao} alt="move.e — Expo Favela 2025"
+      {/* Hero */}
+      <div style={{ position:'relative', overflow:'hidden', height: isMobile ? '260px' : '320px', backgroundColor:'#0a0a0a' }}>
+        <img src={startupAcao} alt="move.e (Expo Favela 2025)"
           style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center 35%', display:'block', opacity:0.88 }} />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(120deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0) 100%)' }} />
-        <div style={{ position:'absolute', inset:0, padding: isMobile ? '24px 20px' : '32px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
-          <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 10px' }}>
-            <CaseIcon id={3} size={13} color="rgba(255,255,255,0.55)" />
-            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.55)' }}>Freelance de Marketing, Branding e Conteúdo · 2024–2025</span>
+        <div style={{ position:'absolute', inset:0, padding: isMobile ? '24px 20px' : '30px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
+          <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 9px' }}>
+            <CaseIcon id={3} size={13} color="rgba(255,255,255,0.62)" />
+            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.68)' }}>Freelance de Marketing, Branding e Conteúdo · 2024–2025</span>
           </div>
-          <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.6vw,34px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 12px', maxWidth:'520px' }}>
-            move.e
-          </h2>
-          <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-            <div style={{ width:'28px', height:'2px', backgroundColor:T.yellow }} />
-            <p style={{ fontSize:'12px', fontWeight:300, color:'rgba(255,255,255,0.65)', margin:0 }}>
-              Posicionamento · Narrativa Institucional · Comunicação para Stakeholders
-            </p>
-          </div>
+          <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.6vw,34px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 8px' }}>move.e</h2>
+          <p style={{ fontSize: isMobile ? '12px' : '14px', fontWeight:400, lineHeight:1.45, color:'rgba(255,255,255,0.82)', margin:0, maxWidth:'760px' }}>
+            Posicionamento · Narrativa Institucional · Comunicação para Stakeholders
+          </p>
         </div>
       </div>
 
-      {/* ── VISÃO GERAL ── */}
-      <div style={{ padding: isMobile ? '32px 20px 36px' : '40px 36px 44px', borderBottom:`1px solid ${T.ruleLight}` }}>
-        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 16px' }}>
-          Consultoria Estratégica<br/>
-          <span style={{ fontWeight:400, fontStyle:'italic' }}>Startup de Tecnologia — Gestão ASG</span>
-        </h2>
-        <p style={{ fontSize:'13px', fontWeight:300, lineHeight:1.82, color:T.inkMid, margin:'0 0 24px', maxWidth:'520px' }}>
-          {c.contexto}
-        </p>
-        <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'32px', maxWidth:'480px' }}>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.inkLight, margin:0 }}>
-            {c.desafio}
-          </p>
+      {/* Visão geral */}
+      <div style={{ padding: isMobile ? '30px 20px' : '32px 36px 34px', borderBottom:`1px solid ${T.ruleLight}` }}>
+        <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.navy, margin:'0 0 10px' }}>Consultoria Estratégica · Startup de Tecnologia</p>
+        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 14px' }}>Gestão ASG e posicionamento institucional.</h2>
+        <p className="movee-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:'0 0 20px', maxWidth:'920px' }}>{c.contexto}</p>
+        <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'22px', maxWidth:'900px' }}>
+          <p className="movee-body-copy" style={{ fontSize:'14px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>{c.desafio}</p>
         </div>
-        <div style={{ marginBottom:'36px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 12px' }}>Minha atuação</p>
-          <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
-            {['Posicionamento de Marca', 'Arquitetura de Mensagens', 'Narrativa Institucional', 'Comunicação com Stakeholders', 'ESG', 'Consultoria'].map(chip => (
-              <span key={chip} style={{ fontSize:'11px', fontWeight:400, color:T.ink, padding:'5px 13px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
-            ))}
-          </div>
-        </div>
-        <div style={{ paddingTop:'28px', borderTop:`1px solid ${T.ruleLight}` }}>
-          <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
-            {['Posicionamento de marca', 'Arquitetura de mensagens por público', 'Materiais institucionais', 'Narrativa para stakeholders'].map(tag => (
-              <span key={tag} style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, padding:'5px 13px', border:`1px solid ${T.rule}` }}>{tag}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── ATUAÇÃO — fotos da Expo ── */}
-      <div style={{ backgroundColor:T.white, borderTop:`1px solid ${T.ruleLight}` }}>
-        <div style={{ padding: isMobile ? '32px 20px 20px' : '40px 36px 24px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 14px' }}>Atuação integrada</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(17px,1.8vw,22px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>
-            Cobertura da Expo Favela 2025.
-          </h3>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.inkMid, margin:0, maxWidth:'480px' }}>
-            {c.execucao}
-          </p>
-        </div>
-
-        {/* Duas fotos lado a lado */}
-        <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px' }}>
-          {[
-            { src: startupCapa,  label: 'Equipe move.e — Estande Expo Favela 2025', pos: 'center 20%' },
-            { src: startupAcao,  label: 'Ação no estande — atendimento a visitantes',  pos: 'center 15%' },
-          ].map(item => (
-            <div key={item.label} onClick={() => setLightbox(item.src)}
-              style={{ position:'relative', overflow:'hidden', aspectRatio: isMobile ? '4/3' : '3/2', cursor:'zoom-in', backgroundColor:'#111' }}>
-              <img src={item.src} alt={item.label}
-                style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition: item.pos, display:'block', transition:'transform 0.55s ease' }}
-                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.04)')}
-                onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)' }} />
-              <div style={{ position:'absolute', bottom:'14px', left:'16px', right:'12px' }}>
-                <p style={{ fontSize:'10px', fontWeight:300, color:'rgba(255,255,255,0.80)', margin:0, lineHeight:1.4 }}>{item.label}</p>
-              </div>
-            </div>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
+          {['Posicionamento de Marca', 'Arquitetura de Mensagens', 'Narrativa Institucional', 'Comunicação com Stakeholders', 'ESG', 'Consultoria'].map(chip => (
+            <span key={chip} style={{ fontSize:'10px', fontWeight:500, color:T.ink, padding:'5px 11px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
           ))}
         </div>
-        <div style={{ padding:'10px 20px', backgroundColor:T.bg, borderTop:`1px solid ${T.ruleLight}`, display:'flex', alignItems:'baseline', gap:'12px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:0 }}>Expo Favela 2025</p>
-          <span style={{ width:'1px', height:'10px', backgroundColor:T.rule, display:'inline-block' }} />
-          <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0 }}>São Paulo · Cobertura e representação institucional da move.e</p>
+      </div>
+
+      {/* Expo Favela + conteúdo audiovisual */}
+      <div style={{ backgroundColor:T.white, borderTop:`1px solid ${T.ruleLight}` }}>
+        <div style={{ padding: isMobile ? '28px 20px 18px' : '30px 36px 20px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Atuação integrada</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>Expo Favela 2025.</h3>
+          <p className="movee-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:0, maxWidth:'920px' }}>{c.execucao}</p>
         </div>
 
-        {/* ── REELS INSTAGRAM ── */}
-        <div style={{ padding: isMobile ? '28px 20px 20px' : '36px 36px 24px' }}>
-          <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'20px' }}>
-            <div style={{ width:'16px', height:'1px', backgroundColor:T.navy }} />
-            <span style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.20em', textTransform:'uppercase', color:T.navy }}>Conteúdo audiovisual · Instagram Reels</span>
-            <div style={{ flex:1, height:'1px', backgroundColor:T.ruleLight }} />
+        <div className="movee-expo-grid" style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px', maxWidth:'1120px', margin:'0 auto' }}>
+          {[
+            { src: startupCapa, label: 'Equipe move.e (Estande Expo Favela 2025)', pos: 'center 20%' },
+            { src: startupAcao, label: 'Ação no estande (atendimento a visitantes)', pos: 'center 15%' },
+          ].map(item => (
+            <button key={item.label} onClick={() => setLightbox(item.src)}
+              style={{ position:'relative', overflow:'hidden', height: isMobile ? '210px' : '230px', cursor:'zoom-in', backgroundColor:'#111', border:'none', padding:0 }}>
+              <img src={item.src} alt={item.label}
+                style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:item.pos, display:'block', transition:'transform 0.45s ease' }}
+                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.03)')}
+                onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
+              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.50) 0%, transparent 58%)', pointerEvents:'none' }} />
+              <div style={{ position:'absolute', bottom:'12px', left:'14px', right:'12px', textAlign:'left', pointerEvents:'none' }}>
+                <p style={{ fontSize:'10px', fontWeight:500, color:'rgba(255,255,255,0.86)', margin:0 }}>{item.label}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div style={{ maxWidth:'1120px', margin:'0 auto', padding: isMobile ? '24px 20px 28px' : '24px 36px 30px' }}>
+          <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', marginBottom:'12px' }}>
+            <div>
+              <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.20em', textTransform:'uppercase', color:T.navy, margin:'0 0 4px' }}>Conteúdo audiovisual · Instagram Reels</p>
+              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0 }}>Cobertura, bastidores e narrativa institucional.</p>
+            </div>
           </div>
-          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap:'10px' }}>
+          <div className="movee-reels-track" style={{ display:'flex', gap:'10px', overflowX:'auto', overflowY:'hidden', scrollSnapType:'x mandatory' }}>
             {[
               { id:'DNf0ROqx1gI', label:'Reel 01' },
               { id:'DMQs6XsxXvu', label:'Reel 02' },
               { id:'DMiGuykRYfD', label:'Reel 03' },
               { id:'DMTnJ-2x-Fq', label:'Reel 04' },
             ].map(reel => (
-              <div key={reel.id} style={{ position:'relative', aspectRatio:'9/16', overflow:'hidden', backgroundColor:'#111' }}>
+              <div key={reel.id} style={{ width: isMobile ? '142px' : '154px', flex:'0 0 auto', aspectRatio:'9/16', overflow:'hidden', backgroundColor:'#111', scrollSnapAlign:'start' }}>
                 <iframe
                   src={`https://www.instagram.com/p/${reel.id}/embed/`}
                   style={{ width:'100%', height:'100%', border:'none', display:'block' }}
                   allowFullScreen
                   scrolling="no"
-                  title={`move.e — ${reel.label}`}
+                  title={`move.e (${reel.label})`}
                 />
               </div>
             ))}
           </div>
-          <div style={{ marginTop:'10px', padding:'10px 16px', backgroundColor:T.bg, borderLeft:`2px solid ${T.ruleLight}` }}>
-            <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0, lineHeight:1.6 }}>
-              Reels produzidos para o Instagram da move.e durante a Expo Favela 2025 — cobertura, bastidores e narrativa institucional.
-            </p>
-          </div>
         </div>
       </div>
 
-      {/* ── MATERIAIS ESTRATÉGICOS ── */}
+      {/* Materiais estratégicos */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding: isMobile ? '32px 20px 24px' : '36px 36px 24px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Materiais estratégicos</p>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.75, color:T.inkMid, margin:0, maxWidth:'480px' }}>
+        <div style={{ padding: isMobile ? '28px 20px' : '30px 36px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Materiais estratégicos</p>
+          <p style={{ fontSize:'13px', fontWeight:400, lineHeight:1.58, color:T.ink, margin:'0 0 16px', maxWidth:'820px' }}>
             Documentos institucionais desenvolvidos para posicionamento da marca e relacionamento com investidores, clientes e parceiros.
           </p>
-        </div>
-        <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px', margin: isMobile ? '0 20px 32px' : '0 36px 36px' }}>
-          {docs.map(doc => (
-            <div key={doc.title} style={{ backgroundColor:T.bg, borderTop:`2px solid ${T.navy}`, display:'flex', flexDirection:'column', overflow:'hidden' }}>
-              {/* Preview do PDF */}
-              <div style={{ position:'relative', width:'100%', height: isMobile ? '280px' : '360px', overflow:'hidden', backgroundColor:'#e8e8e6' }}>
-                <iframe
-                  src={`${doc.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                  style={{ width:'100%', height:'100%', border:'none', display:'block' }}
-                  title={doc.title}
-                />
-              </div>
-              {/* Info + botão */}
-              <div style={{ padding:'20px 22px', display:'flex', flexDirection:'column', gap:'10px' }}>
-                <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-                  <svg width="16" height="20" viewBox="0 0 18 22" fill="none">
-                    <rect x="1" y="1" width="12" height="20" rx="1" stroke={T.navy} strokeWidth="1.2"/>
-                    <path d="M13 1l4 4v16H5" stroke={T.navy} strokeWidth="1.2"/>
-                    <line x1="4" y1="8" x2="10" y2="8" stroke={T.navy} strokeWidth="1"/>
-                    <line x1="4" y1="11" x2="10" y2="11" stroke={T.navy} strokeWidth="1"/>
-                    <line x1="4" y1="14" x2="8" y2="14" stroke={T.navy} strokeWidth="1"/>
-                  </svg>
-                  <div>
-                    <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 1px' }}>{doc.tag}</p>
-                    <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:0 }}>{doc.title}</p>
-                  </div>
-                </div>
-                <p style={{ fontSize:'11px', fontWeight:300, lineHeight:1.70, color:T.inkMid, margin:0 }}>{doc.desc}</p>
-                <a href={doc.pdf} target="_blank" rel="noopener noreferrer"
-                  style={{ display:'inline-flex', alignItems:'center', gap:'7px', padding:'8px 16px', backgroundColor:T.navy, color:'#fff', fontSize:'10px', fontWeight:600, letterSpacing:'0.10em', textTransform:'uppercase', textDecoration:'none', alignSelf:'flex-start', transition:'background-color 0.18s' }}
-                  onMouseEnter={e=>(e.currentTarget.style.backgroundColor=T.magenta)}
-                  onMouseLeave={e=>(e.currentTarget.style.backgroundColor=T.navy)}>
-                  Abrir PDF
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="1" y1="9" x2="9" y2="1" stroke="currentColor" strokeWidth="1.5"/><polyline points="4,1 9,1 9,6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── RESULTADOS ── */}
-      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding: isMobile ? '32px 20px 36px' : '40px 36px 40px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 14px' }}>Resultados</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(17px,1.8vw,22px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 24px' }}>
-            Posicionamento estruturado, narrativa pronta para o mercado.
-          </h3>
-          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'2px', marginBottom:'28px' }}>
-            {[
-              { label:'Mensagens por público', desc:'Investidores, clientes corporativos e parceiros — cada um com narrativa e materiais específicos.', cor:T.navy },
-              { label:'Entregáveis estratégicos', desc:c.resultadoTexto, cor:T.ruleLight },
-            ].map((s,i) => (
-              <div key={i} style={{ padding:'22px 20px', backgroundColor:T.bg, borderTop:`3px solid ${s.cor}` }}>
-                <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 8px' }}>{s.label}</p>
-                <p style={{ fontSize:'11px', fontWeight:300, color:T.inkMid, margin:0, lineHeight:1.72 }}>{s.desc}</p>
-              </div>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:'12px' }}>
+            {docs.map(doc => (
+              <article key={doc.title} style={{ padding:'18px', backgroundColor:T.bg, borderTop:`2px solid ${T.navy}` }}>
+                <p style={{ fontSize:'8px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:'0 0 5px' }}>{doc.tag}</p>
+                <p style={{ fontSize:'13px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>{doc.title}</p>
+                <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.6, color:T.inkMid, margin:0 }}>{doc.desc}</p>
+              </article>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* ── NAVEGAÇÃO ── */}
-      {/* ── RELATÓRIO ESG ── */}
-      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:'#060f08' }}>
-        <div style={{ padding: isMobile ? '32px 20px 28px' : '40px 36px 28px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:'rgba(100,200,120,0.65)', margin:'0 0 14px' }}>Dentro do projeto · Relatório de Sustentabilidade</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(17px,1.8vw,22px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:'#fff', margin:'0 0 12px' }}>
-            Economia Circular Fotovoltaica & ESG
-          </h3>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:'rgba(255,255,255,0.60)', margin:'0 0 28px', maxWidth:'480px' }}>
-            Transformei dados densos de sustentabilidade, legislação e regionalização em um material visual simples de ler — com rigor técnico, clareza executiva e proteção das informações sensíveis do cliente do setor de energia.
+          <p style={{ fontSize:'10px', fontWeight:400, lineHeight:1.6, color:T.inkLight, margin:0, maxWidth:'820px' }}>
+            Os materiais são apresentados no portfólio de forma resumida, preservando informações sensíveis do projeto.
           </p>
-          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap:'2px', marginBottom:'24px' }}>
-            {[
-              { val:'5', label:'Regiões do Brasil mapeadas', color:'#2d6e40' },
-              { val:'17', label:'ODSs referenciados', color:'#1a4a28' },
-              { val:'1', label:'Relatório executivo estruturado', color:'#2d6e40' },
-            ].map((s, i) => (
-              <div key={i} style={{ padding:'20px', borderTop:`3px solid ${s.color}`, backgroundColor:'rgba(255,255,255,0.04)' }}>
-                <p style={{ fontFamily:'Playfair Display, serif', fontSize:'40px', fontWeight:700, lineHeight:1, letterSpacing:'-0.04em', color:'rgba(100,200,120,0.90)', margin:'0 0 6px' }}>{s.val}</p>
-                <p style={{ fontSize:'11px', fontWeight:300, color:'rgba(255,255,255,0.55)', margin:0, lineHeight:1.5 }}>{s.label}</p>
-              </div>
-            ))}
+        </div>
+      </div>
+
+      {/* Resultados + relatório ESG */}
+      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
+        <div style={{ padding: isMobile ? '28px 20px 30px' : '30px 36px 32px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Resultados</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 18px' }}>Posicionamento estruturado, narrativa pronta para o mercado.</h3>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:'16px' }}>
+            <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.navy}` }}>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Mensagens por público</p>
+              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>Investidores, clientes corporativos e parceiros, cada um com narrativa e materiais específicos.</p>
+            </div>
+            <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.ruleLight}` }}>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Entregáveis estratégicos</p>
+              <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>{c.resultadoTexto}</p>
+            </div>
           </div>
-          <div style={{ padding:'14px 18px', borderLeft:'2px solid #2d6e40', backgroundColor:'rgba(255,255,255,0.04)' }}>
-            <p style={{ fontSize:'11px', fontWeight:300, lineHeight:1.75, color:'rgba(255,255,255,0.55)', margin:0 }}>
-              Material estratégico entregue com clareza visual, rigor técnico e proteção das informações sensíveis do cliente.
+
+          <div style={{ padding:'20px', backgroundColor:'#060f08' }}>
+            <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:'rgba(100,200,120,0.72)', margin:'0 0 8px' }}>Dentro do projeto · Relatório de Sustentabilidade</p>
+            <h4 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(16px,1.8vw,21px)', fontWeight:600, lineHeight:1.25, color:'#fff', margin:'0 0 8px' }}>Economia Circular Fotovoltaica & ESG</h4>
+            <p style={{ fontSize:'12px', fontWeight:400, lineHeight:1.62, color:'rgba(255,255,255,0.68)', margin:'0 0 14px', maxWidth:'900px' }}>
+              Transformei dados densos de sustentabilidade, legislação e regionalização em um material visual simples de ler, com rigor técnico, clareza executiva e proteção das informações sensíveis do cliente do setor de energia.
             </p>
+            <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)', gap:'4px' }}>
+              {[
+                { val:'5', label:'Regiões do Brasil mapeadas' },
+                { val:'17', label:'ODSs referenciados' },
+                { val:'1', label:'Relatório executivo estruturado' },
+              ].map(item => (
+                <div key={item.label} style={{ padding:'14px', backgroundColor:'rgba(255,255,255,0.05)', borderTop:'2px solid #2d6e40' }}>
+                  <p style={{ fontFamily:'Playfair Display, serif', fontSize:'28px', fontWeight:700, lineHeight:1, color:'rgba(100,200,120,0.92)', margin:'0 0 5px' }}>{item.val}</p>
+                  <p style={{ fontSize:'10px', fontWeight:400, color:'rgba(255,255,255,0.62)', margin:0, lineHeight:1.5 }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ── NAVEGAÇÃO ── */}
-      <div style={{ padding:'20px 36px', backgroundColor:T.bg, borderTop:`1px solid ${T.rule}` }}>
+      {/* Navegação */}
+      <div style={{ padding:'20px 36px', backgroundColor:T.bg, borderTop:`1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
         <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.18s' }}
           onMouseEnter={e=>{e.currentTarget.style.borderColor=T.navy;e.currentTarget.style.color=T.navy}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor=T.rule;e.currentTarget.style.color=T.inkMid}}>
           ← Todos os cases
+        </button>
+        <button onClick={onNext} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.navy,border:`1px solid ${T.navy}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          Próximo case →
         </button>
       </div>
     </div>
@@ -2031,7 +1958,7 @@ function SimpleCaseDetail({ caseIndex, onBack }: { caseIndex: number; onBack: ()
 function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () => void; onOpenCase: (id: number) => void }) {
   if (id === 0) return <SadaCaseDetail onBack={onBack} onNext={() => onOpenCase(1)} />
   if (id === 1) return <SpdataCaseDetail onBack={onBack} onNext={() => onOpenCase(2)} />
-  if (id === 2) return <StartupCaseDetail onBack={onBack} />
+  if (id === 2) return <StartupCaseDetail onBack={onBack} onNext={() => onOpenCase(3)} />
   if (id === 3) return <SimpleCaseDetail caseIndex={3} onBack={onBack} />
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
 }
