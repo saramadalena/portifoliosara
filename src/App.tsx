@@ -2458,13 +2458,13 @@ export default function App() {
                 Sara Madalena Silva.<br/><em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>Estratégia, criação e execução.</em>
               </h2>
               <p style={{ fontSize:'14px',fontWeight:300,lineHeight:1.85,color:T.inkMid,marginBottom:'14px' }}>
-                Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong> e trajetória em marketing, comunicação, criação gráfica, conteúdo e atendimento.
+                Publicitária formada pela <strong style={{ fontWeight:600,color:T.ink }}>PUC Minas</strong>, com <strong style={{ fontWeight:600,color:T.ink }}>MBA em Comunicação e Marketing</strong> e trajetória em marketing, comunicação, criação gráfica, conteúdo e atendimento. Baseada em Contagem, na Grande Belo Horizonte.
               </p>
               <p style={{ fontSize:'14px',fontWeight:300,lineHeight:1.85,color:T.inkMid,marginBottom:'32px' }}>
                 Experiência conectando demandas, públicos, mensagens, canais e formatos, com atuação em comunicação corporativa, campanhas, branding, redes sociais, processos e indicadores.
               </p>
               <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '36px' }}>
-                {['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem, MG', 'B2B & B2C'].map((tag) => (
+                {['PUC Minas', 'MBA Comunicação e Marketing', 'Contagem · Grande BH', 'B2B & B2C'].map((tag) => (
                   <span key={tag} style={{ padding: '5px 12px', border: `1px solid ${T.rule}`, fontSize: '11px', fontWeight: 400, color: T.inkMid, backgroundColor: T.bg, letterSpacing: '0.02em' }}>
                     {tag}
                   </span>
@@ -2530,7 +2530,7 @@ export default function App() {
                 Tem um projeto?<br/><em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>Vamos conversar.</em>
               </h2>
               <p style={{ fontSize:'14px',fontWeight:300,lineHeight:1.8,color:T.inkMid,maxWidth:'340px',margin:0 }}>
-                Aberta a projetos de <strong style={{ fontWeight:500,color:T.ink }}>marketing</strong>, <strong style={{ fontWeight:500,color:T.ink }}>branding</strong>, produção de conteúdo, comunicação corporativa e consultoria estratégica.
+                Aberta a projetos de <strong style={{ fontWeight:500,color:T.ink }}>marketing</strong>, <strong style={{ fontWeight:500,color:T.ink }}>branding</strong>, produção de conteúdo, comunicação corporativa e consultoria estratégica em Contagem, Belo Horizonte e região.
               </p>
             </div>
             <div style={{ paddingTop:'4px' }}>
