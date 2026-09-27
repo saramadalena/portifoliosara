@@ -1294,7 +1294,7 @@ function CaseCard({ c, cover, gradient, onClick, fullWidth = false }: {
       onKeyDown={e => e.key === 'Enter' && onClick()}
       style={{ cursor: 'pointer', overflow: 'hidden', backgroundColor: T.white, boxShadow: hov ? '0 8px 40px rgba(0,0,0,0.10)' : 'none', transition: 'box-shadow 0.22s', WebkitTapHighlightColor: 'transparent' }}>
       <div style={{ height: fullWidth ? '220px' : isMobile ? '240px' : '300px', position: 'relative', overflow: 'hidden', background: gradient }}>
-        {cover && <img src={cover} alt={c.empresa} style={{ width:'100%',height:'100%',objectFit:'cover',objectPosition: c.id === 3 ? 'center 20%' : 'center top',display:'block',transform: hov ? 'scale(1.05)' : 'scale(1)',transition:'transform 0.6s ease' }} />}
+        {cover && <img src={cover} alt={c.empresa} style={{ width:'100%',height:'100%',objectFit:'cover',objectPosition: c.id === 2 ? 'center 29%' : c.id === 3 ? 'center 20%' : 'center top',display:'block',transform: hov ? 'scale(1.05)' : 'scale(1)',transition:'transform 0.6s ease' }} />}
         <div style={{ position:'absolute',inset:0,background: cover ? 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.16) 55%, transparent 100%)' : 'linear-gradient(135deg,rgba(0,0,0,0.30) 0%,rgba(0,0,0,0) 100%)' }} />
         {/* ícone fantasma no fundo */}
         <div style={{ position:'absolute',top:'10px',left:'14px',opacity:0.12,pointerEvents:'none',userSelect:'none' }}>
