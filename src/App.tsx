@@ -2515,21 +2515,6 @@ export default function App() {
                 ))}
               </div>
 
-              {/* indicadores */}
-              <div style={{ borderTop:`1px solid ${T.rule}`,paddingTop:'36px' }}>
-                <div style={{ display:'flex',alignItems:'center',gap:'10px',marginBottom:'24px' }}>
-                  <div style={{ width:'16px',height:'1px',backgroundColor:T.navy }} />
-                  <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:T.navy }}>Indicadores</span>
-                  <div style={{ flex:1,height:'1px',backgroundColor:T.ruleLight }} />
-                </div>
-                <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'20px' }}>
-                  {[
-                    {n:'+10',l:'anos de experiência, buscando consistência e assertividade na comunicação',cor:T.navy},
-                    {n:'33%',l:'taxa média anual de abertura dos e-mails internos em 2024, atingindo a meta da área',cor:T.magenta},
-                    {n:'+7%',l:'de engajamento orgânico no Instagram e LinkedIn em 2024, em comparação com 2023',cor:T.navy},
-                  ].map(s=><ResultNum key={s.l} valor={s.n} label={s.l} cor={s.cor}/>)}
-                </div>
-              </div>
             </div>
           </div>
         </div>
