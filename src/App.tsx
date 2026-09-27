@@ -1727,20 +1727,20 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
           <p className="movee-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:0, maxWidth:'920px' }}>{c.execucao}</p>
         </div>
 
-        <div className="movee-expo-grid" style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'3px', maxWidth:'1120px', margin:'0 auto' }}>
+        <div className="movee-expo-grid" style={{ display:'flex', gap:'12px', overflowX: isMobile ? 'auto' : 'visible', overflowY:'hidden', width: isMobile ? '100%' : 'min(640px, calc(100% - 72px))', maxWidth:'100%', margin:'0 auto', padding: isMobile ? '0 20px 4px' : '0', boxSizing:'border-box', justifyContent: isMobile ? 'flex-start' : 'center', scrollSnapType:'x mandatory' }}>
           {[
-            { src: startupCapa, label: 'Equipe move.e (Estande Expo Favela 2025)', pos: 'center 20%' },
-            { src: startupAcao, label: 'Ação no estande (atendimento a visitantes)', pos: 'center 15%' },
+            { src: startupCapa, label: 'Equipe move.e (Estande Expo Favela 2025)' },
+            { src: startupAcao, label: 'Ação no estande (atendimento a visitantes)' },
           ].map(item => (
             <button key={item.label} onClick={() => setLightbox(item.src)}
-              style={{ position:'relative', overflow:'hidden', height: isMobile ? '210px' : '230px', cursor:'zoom-in', backgroundColor:'#111', border:'none', padding:0 }}>
+              style={{ position:'relative', overflow:'hidden', width: isMobile ? '220px' : '300px', flex:'0 0 auto', aspectRatio:'3/4', cursor:'zoom-in', backgroundColor:T.bg, border:'none', padding:0, scrollSnapAlign:'start' }}>
               <img src={item.src} alt={item.label}
-                style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:item.pos, display:'block', transition:'transform 0.45s ease' }}
-                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.03)')}
+                style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center', display:'block', transition:'transform 0.45s ease' }}
+                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.02)')}
                 onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.50) 0%, transparent 58%)', pointerEvents:'none' }} />
+              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.48) 0%, transparent 42%)', pointerEvents:'none' }} />
               <div style={{ position:'absolute', bottom:'12px', left:'14px', right:'12px', textAlign:'left', pointerEvents:'none' }}>
-                <p style={{ fontSize:'10px', fontWeight:500, color:'rgba(255,255,255,0.86)', margin:0 }}>{item.label}</p>
+                <p style={{ fontSize:'10px', fontWeight:500, color:'rgba(255,255,255,0.90)', margin:0, lineHeight:1.4 }}>{item.label}</p>
               </div>
             </button>
           ))}
@@ -1796,12 +1796,12 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
         </div>
       </div>
 
-      {/* Resultados + relatório ESG */}
+      {/* Resultados */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
         <div style={{ padding: isMobile ? '28px 20px 30px' : '30px 36px 32px', maxWidth:'1120px', margin:'0 auto' }}>
           <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Resultados</p>
           <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 18px' }}>Posicionamento estruturado, narrativa pronta para o mercado.</h3>
-          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:'16px' }}>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', marginBottom:0 }}>
             <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.navy}` }}>
               <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Mensagens por público</p>
               <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.62 }}>Investidores, clientes corporativos e parceiros, cada um com narrativa e materiais específicos.</p>
@@ -1812,25 +1812,6 @@ function StartupCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () 
             </div>
           </div>
 
-          <div style={{ padding:'20px', backgroundColor:'#060f08' }}>
-            <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:'rgba(100,200,120,0.72)', margin:'0 0 8px' }}>Dentro do projeto · Relatório de Sustentabilidade</p>
-            <h4 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(16px,1.8vw,21px)', fontWeight:600, lineHeight:1.25, color:'#fff', margin:'0 0 8px' }}>Economia Circular Fotovoltaica & ESG</h4>
-            <p style={{ fontSize:'12px', fontWeight:400, lineHeight:1.62, color:'rgba(255,255,255,0.68)', margin:'0 0 14px', maxWidth:'900px' }}>
-              Transformei dados densos de sustentabilidade, legislação e regionalização em um material visual simples de ler, com rigor técnico, clareza executiva e proteção das informações sensíveis do cliente do setor de energia.
-            </p>
-            <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)', gap:'4px' }}>
-              {[
-                { val:'5', label:'Regiões do Brasil mapeadas' },
-                { val:'17', label:'ODSs referenciados' },
-                { val:'1', label:'Relatório executivo estruturado' },
-              ].map(item => (
-                <div key={item.label} style={{ padding:'14px', backgroundColor:'rgba(255,255,255,0.05)', borderTop:'2px solid #2d6e40' }}>
-                  <p style={{ fontFamily:'Playfair Display, serif', fontSize:'28px', fontWeight:700, lineHeight:1, color:'rgba(100,200,120,0.92)', margin:'0 0 5px' }}>{item.val}</p>
-                  <p style={{ fontSize:'10px', fontWeight:400, color:'rgba(255,255,255,0.62)', margin:0, lineHeight:1.5 }}>{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
