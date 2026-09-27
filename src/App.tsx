@@ -1953,13 +1953,144 @@ function SimpleCaseDetail({ caseIndex, onBack }: { caseIndex: number; onBack: ()
   )
 }
 
+function ArnaldoCaseDetail({ onBack, onPrev }: { onBack: () => void; onPrev: () => void }) {
+  const c = cases[3]
+  const { isMobile } = useBreakpoint()
+
+  const arnaldoItems: GalleryItem[] = [
+    { src: arnaldoMatriculas2jpg, label: 'Campanha de Rematrícula 2017/18', tag: 'Captação' },
+    { src: arnaldoMatriculas2png, label: 'Rematrícula (Variação)', tag: 'Captação' },
+    { src: arnaldoMatriculas3, label: 'Rematrícula (Arte 03)', tag: 'Captação' },
+    { src: arnaldoMatriculas4, label: 'Rematrícula (Arte 04)', tag: 'Captação' },
+    { src: arnaldoMatriculas5, label: 'Rematrícula (Arte 05)', tag: 'Captação' },
+    { src: arnaldo50Anos1, label: 'Campanha 50 Anos (Anchieta)', tag: 'Institucional' },
+    { src: arnaldo50Anos2, label: '50 Anos (Arte)', tag: 'Institucional' },
+    { src: arnaldoCiencias1, label: 'Ciências Naturais 2019', tag: 'Evento' },
+    { src: arnaldoCiencias3, label: 'Ciências Naturais (Peça)', tag: 'Evento' },
+  ]
+
+  return (
+    <div className="arnaldo-case-detail" style={{ backgroundColor:T.white }}>
+      {/* Barra de retorno */}
+      <div style={{ padding:'14px 28px', borderBottom:`1px solid ${T.ruleLight}`, display:'flex', alignItems:'center', gap:'12px', backgroundColor:T.bg }}>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'7px',background:'none',border:'none',padding:0,cursor:'pointer',fontSize:'10px',fontWeight:500,letterSpacing:'0.12em',textTransform:'uppercase',color:T.inkMid,fontFamily:'Inter, sans-serif',transition:'color 0.18s' }}
+          onMouseEnter={e=>(e.currentTarget.style.color=T.magenta)} onMouseLeave={e=>(e.currentTarget.style.color=T.inkMid)}>
+          ← Todos os cases
+        </button>
+        <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
+        <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>Colégio Arnaldo · Comunicação</span>
+      </div>
+
+      {/* Hero */}
+      <div style={{ position:'relative', overflow:'hidden', height: isMobile ? '260px' : '320px', backgroundColor:'#111' }}>
+        <img src={arnaldoMatriculas3} alt="Colégio Arnaldo (Campanha de Rematrícula)"
+          style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block' }} />
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to right, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.16) 58%, rgba(0,0,0,0) 100%)' }} />
+        <div style={{ position:'absolute', inset:0, padding: isMobile ? '24px 20px' : '30px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
+          <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 9px' }}>
+            <CaseIcon id={4} size={13} color="rgba(255,255,255,0.62)" />
+            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.68)' }}>Colégio Arnaldo · 2018–2019</span>
+          </div>
+          <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.6vw,34px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 8px' }}>Colégio Arnaldo</h2>
+          <p style={{ fontSize: isMobile ? '12px' : '14px', fontWeight:400, lineHeight:1.45, color:'rgba(255,255,255,0.82)', margin:0, maxWidth:'760px' }}>
+            Comunicação de duas unidades e da instituição mantenedora.
+          </p>
+        </div>
+      </div>
+
+      {/* Visão geral */}
+      <div style={{ padding: isMobile ? '30px 20px' : '32px 36px 34px', borderBottom:`1px solid ${T.ruleLight}` }}>
+        <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.magenta, margin:'0 0 10px' }}>Assistente de Comunicação</p>
+        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 14px' }}>
+          Comunicação no ritmo do dia a dia escolar.
+        </h2>
+        <p className="arnaldo-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:'0 0 20px', maxWidth:'920px' }}>
+          Instituição de ensino tradicional com duas unidades (Funcionários e Anchieta) e uma mantenedora. A comunicação acontecia de forma fragmentada, com fluxo constante de demandas entre áreas e canais.
+        </p>
+        <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'22px', maxWidth:'900px' }}>
+          <p className="arnaldo-body-copy" style={{ fontSize:'14px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>
+            O desafio era atender as duas unidades e a mantenedora ao mesmo tempo, mantendo redes, site, campanhas, eventos e impressos em funcionamento diante de um volume alto de demandas simultâneas.
+          </p>
+        </div>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
+          {['Atendimento interno', 'Produção multimídia', 'Campanhas', 'Eventos', 'Redes sociais', 'WordPress', 'Criação gráfica'].map(chip => (
+            <span key={chip} style={{ fontSize:'10px', fontWeight:500, color:T.ink, padding:'5px 11px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Atuação */}
+      <div style={{ borderTop:`1px solid ${T.ruleLight}`, backgroundColor:T.white }}>
+        <div style={{ padding: isMobile ? '28px 20px' : '30px 36px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.22em',textTransform:'uppercase',color:T.inkLight,margin:'0 0 12px' }}>Minha atuação em prática</p>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, minmax(0,1fr))', gap:'8px' }}>
+            {[
+              { label:'Atendimento', desc:'Interface direta com professores, coordenadores, diretores, áreas administrativas e fornecedores.' },
+              { label:'Produção', desc:'Materiais gráficos, conteúdo multimídia, fotografia e apoio à comunicação de eventos.' },
+              { label:'Campanhas', desc:'Campanhas pedagógicas, institucionais, de captação, rematrícula e eventos.' },
+              { label:'Gestão Digital', desc:'Instagram, Facebook, YouTube, Flickr e atualização de conteúdos no WordPress.' },
+            ].map((item,i) => (
+              <article key={item.label} style={{ padding:'16px', backgroundColor:T.bg, borderTop:`2px solid ${i===0 ? T.magenta : T.rule}` }}>
+                <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:T.magenta, margin:'0 0 7px' }}>{item.label}</p>
+                <p style={{ fontSize:'12px', fontWeight:400, lineHeight:1.58, color:T.inkMid, margin:0 }}>{item.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Peças */}
+      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
+        <div style={{ padding: isMobile ? '28px 20px 16px' : '30px 36px 16px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 6px' }}>Peças produzidas</p>
+          <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0 }}>Campanhas de captação, eventos institucionais e comunicação multimídia.</p>
+        </div>
+        <div style={{ padding: isMobile ? '0 20px 26px' : '0 36px 28px', maxWidth:'1120px', margin:'0 auto' }}>
+          <PieceCarousel items={arnaldoItems} cor={T.magenta} />
+        </div>
+      </div>
+
+      {/* Resultado */}
+      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
+        <div style={{ padding: isMobile ? '28px 20px 32px' : '30px 36px 34px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Resultado</p>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'minmax(0,1fr) minmax(0,1fr)', gap:'8px' }}>
+            <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.magenta}` }}>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Operação de comunicação</p>
+              <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>
+                Atendimento simultâneo das duas unidades e da mantenedora, com campanhas, eventos, redes sociais, site e materiais em circulação.
+              </p>
+            </div>
+            <div style={{ padding:'18px', backgroundColor:T.bg, borderTop:`3px solid ${T.ruleLight}` }}>
+              <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>Síntese</p>
+              <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>
+                Comunicação das duas unidades funcionando, campanhas de rematrícula no ar e redes e site atualizados mesmo com o volume alto de demandas do dia a dia escolar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Navegação */}
+      <div style={{ padding:'20px 36px', backgroundColor:T.white, borderTop:`1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
+        <button onClick={onPrev} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          ← Case anterior
+        </button>
+        <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.magenta,border:`1px solid ${T.magenta}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          Todos os cases
+        </button>
+      </div>
+    </div>
+  )
+}
+
 // ─── CASE DETAIL ROUTER ──────────────────────────────────────────────────────
 
 function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () => void; onOpenCase: (id: number) => void }) {
   if (id === 0) return <SadaCaseDetail onBack={onBack} onNext={() => onOpenCase(1)} />
   if (id === 1) return <SpdataCaseDetail onBack={onBack} onNext={() => onOpenCase(2)} />
   if (id === 2) return <StartupCaseDetail onBack={onBack} onNext={() => onOpenCase(3)} />
-  if (id === 3) return <SimpleCaseDetail caseIndex={3} onBack={onBack} />
+  if (id === 3) return <ArnaldoCaseDetail onBack={onBack} onPrev={() => onOpenCase(2)} />
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
 }
 
