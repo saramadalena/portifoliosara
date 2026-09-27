@@ -1443,8 +1443,9 @@ const caseMethodology: Record<number, { label: string; desc: string }[]> = {
 
 // ─── SPDATA CASE DETAIL ───────────────────────────────────────────────────────
 
-function SpdataCaseDetail({ onBack }: { onBack: () => void }) {
+function SpdataCaseDetail({ onBack, onNext }: { onBack: () => void; onNext: () => void }) {
   const [lightbox, setLightbox] = useState<string | null>(null)
+  const { isMobile } = useBreakpoint()
   const c = cases[1]
 
   const voceImages = [
@@ -1456,12 +1457,22 @@ function SpdataCaseDetail({ onBack }: { onBack: () => void }) {
   ]
 
   const crachaCampanha = [
-    { src: spdataCracha2, label: 'Campanha Crachá — Identidade' },
-    { src: spdataCracha3, label: 'Campanha Crachá — RFID' },
+    { src: spdataCracha2, label: 'Campanha Crachá (Identidade)' },
+    { src: spdataCracha3, label: 'Campanha Crachá (RFID)' },
+  ]
+
+  const internalImages = [
+    { src: spdataCI2, label: 'Boas-vindas (Novos Colaboradores)' },
+    { src: spdataCI1, label: 'SPDATA Carreiras (Promoção)' },
+    { src: spdataCI6, label: 'Aniversariantes do Dia' },
+    { src: spdataCI4, label: 'Palestra (Colaboração)' },
+    { src: spdataCI3, label: 'Comunicado Interno' },
+    { src: spdataCI5, label: 'Certificação SBIS (SGH)' },
+    { src: spdataRS1, label: 'Dia da Ciência e Tecnologia' },
   ]
 
   return (
-    <div style={{ backgroundColor: T.white }}>
+    <div className="spdata-case-detail" style={{ backgroundColor: T.white }}>
       {lightbox && <Lightbox src={lightbox} onClose={() => setLightbox(null)} />}
 
       {/* Barra de retorno */}
@@ -1471,220 +1482,179 @@ function SpdataCaseDetail({ onBack }: { onBack: () => void }) {
           ← Todos os cases
         </button>
         <span style={{ width:'1px',height:'10px',backgroundColor:T.rule }} />
-        <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>SPDATA · Campanha SPDATA&Você</span>
+        <span style={{ fontSize:'9px',fontWeight:400,letterSpacing:'0.14em',color:T.inkLight }}>SPDATA · Comunicação e Marketing</span>
       </div>
 
-      {/* ── HERO ── */}
-      <div style={{ position:'relative', overflow:'hidden', height:'360px', backgroundColor:'#1a0030' }}>
-        <img src={spdataVoce5} alt="SPDATA&Você — Juntos, Somos Melhores"
+      {/* Hero */}
+      <div style={{ position:'relative', overflow:'hidden', height: isMobile ? '260px' : '320px', backgroundColor:'#1a0030' }}>
+        <img src={spdataVoce5} alt="SPDATA&Você (Juntos, Somos Melhores)"
           style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block', opacity:0.85 }} />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(120deg, rgba(180,0,90,0.65) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 100%)' }} />
-        <div style={{ position:'absolute', inset:0, padding:'32px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
-          <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 10px' }}>
-            <CaseIcon id={2} size={13} color="rgba(255,255,255,0.55)" />
-            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.55)' }}>SPDATA · 2021–2022</span>
+        <div style={{ position:'absolute', inset:0, padding: isMobile ? '24px 20px' : '30px 36px', display:'flex', flexDirection:'column', justifyContent:'flex-end' }}>
+          <div style={{ display:'flex',alignItems:'center',gap:'8px',margin:'0 0 9px' }}>
+            <CaseIcon id={2} size={13} color="rgba(255,255,255,0.62)" />
+            <span style={{ fontSize:'9px',fontWeight:700,letterSpacing:'0.26em',textTransform:'uppercase',color:'rgba(255,255,255,0.68)' }}>SPDATA · 2021–2022</span>
           </div>
-          <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 12px', maxWidth:'480px' }}>
-            Campanha SPDATA&Você
+          <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.5vw,32px)', fontWeight:700, lineHeight:1.15, letterSpacing:'-0.02em', color:'#fff', margin:'0 0 8px', maxWidth:'700px' }}>
+            SPDATA
           </h2>
-          <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-            <div style={{ width:'28px', height:'2px', backgroundColor:T.magenta }} />
-            <p style={{ fontSize:'12px', fontWeight:300, color:'rgba(255,255,255,0.65)', margin:0 }}>
-              Endomarketing · Cultura Organizacional · Comunicação Interna
-            </p>
-          </div>
+          <p style={{ fontSize: isMobile ? '12px' : '14px', fontWeight:400, lineHeight:1.45, color:'rgba(255,255,255,0.82)', margin:0, maxWidth:'720px' }}>
+            Comunicação interna, endomarketing e identidade digital.
+          </p>
         </div>
       </div>
 
-      {/* ── VISÃO GERAL ── */}
-      <div style={{ padding:'40px 36px 44px', borderBottom:`1px solid ${T.ruleLight}` }}>
-        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(22px,2.6vw,32px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 16px' }}>
-          SPDATA<br/>
-          <span style={{ fontWeight:400, fontStyle:'italic' }}>Aproximando o time da cultura da empresa.</span>
+      {/* Visão geral */}
+      <div className="spdata-overview" style={{ padding: isMobile ? '30px 20px 30px' : '32px 36px 34px', borderBottom:`1px solid ${T.ruleLight}` }}>
+        <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.magenta, margin:'0 0 10px' }}>Analista de Comunicação e Marketing</p>
+        <h2 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(20px,2.4vw,30px)', fontWeight:600, lineHeight:1.18, letterSpacing:'-0.02em', color:T.ink, margin:'0 0 14px' }}>
+          Aproximando o time da cultura da empresa.
         </h2>
-        <p style={{ fontSize:'13px', fontWeight:300, lineHeight:1.82, color:T.inkMid, margin:'0 0 28px', maxWidth:'520px' }}>
+        <p className="spdata-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:'0 0 20px', maxWidth:'920px' }}>
           {c.contexto}
         </p>
-        <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'32px', maxWidth:'480px' }}>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.inkLight, margin:0 }}>
-            {c.desafio}
+        <div style={{ borderLeft:`2px solid ${T.ruleLight}`, paddingLeft:'16px', marginBottom:'22px', maxWidth:'900px' }}>
+          <p className="spdata-body-copy" style={{ fontSize:'14px', fontWeight:400, lineHeight:1.62, color:T.inkMid, margin:0 }}>
+            Criar uma comunicação interna que aproximasse as pessoas da liderança, valorizasse o time e colocasse a cultura da empresa em evidência, enquanto a presença digital das duas linhas de produto ganhava identidade visual diferenciada por público.
           </p>
         </div>
-        <div style={{ marginBottom:'36px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 12px' }}>Minha atuação</p>
+        <div>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Minha atuação</p>
           <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
             {['Endomarketing', 'Comunicação Interna', 'Cultura Organizacional', 'Identidade Visual', 'Campanha', 'Eventos'].map(chip => (
-              <span key={chip} style={{ fontSize:'11px', fontWeight:400, color:T.ink, padding:'5px 13px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
+              <span key={chip} style={{ fontSize:'10px', fontWeight:500, color:T.ink, padding:'5px 11px', border:`1px solid ${T.rule}`, whiteSpace:'nowrap' }}>{chip}</span>
             ))}
           </div>
         </div>
-        <div style={{ display:'flex', alignItems:'flex-start', gap:'20px', paddingTop:'28px', borderTop:`1px solid ${T.ruleLight}` }}>
-          <div>
-            <p style={{ fontFamily:'Playfair Display, serif', fontSize:'44px', fontWeight:700, lineHeight:1, letterSpacing:'-0.04em', color:T.magenta, margin:'0 0 6px' }}>1</p>
-            <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.65, color:T.inkMid, margin:'0 0 6px', maxWidth:'320px' }}>
-              Campanha de endomarketing completa — do conceito às peças — reconhecida pela liderança.
-            </p>
-            <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0 }}>Campanha SPDATA&Você · Comunicação interna · Pesquisa de clima</p>
-          </div>
-        </div>
       </div>
 
-      {/* ── CAMPANHA SPDATA&VOCÊ ── */}
+      {/* SPDATA&Você */}
       <div style={{ backgroundColor:T.white, borderTop:`1px solid ${T.ruleLight}` }}>
-        <div style={{ padding:'40px 36px 28px', display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:'20px' }}>
-          <div>
-            <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Campanha em destaque</p>
-            <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 12px' }}>
-              SPDATA&Você
-            </h3>
-            <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.inkMid, margin:0, maxWidth:'480px' }}>
-              {c.estrategia}
-            </p>
-          </div>
-          <span style={{ padding:'4px 12px', backgroundColor:T.magenta, color:'#fff', fontSize:'9px', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', flexShrink:0 }}>2021–2022</span>
-        </div>
-
-        {/* 5 peças SPDATA&Você */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(5, 1fr)', gap:'3px', marginBottom:'3px' }}>
-          {voceImages.map(item => (
-            <div key={item.label} onClick={() => setLightbox(item.src)}
-              style={{ position:'relative', overflow:'hidden', aspectRatio:'1/1', cursor:'zoom-in', backgroundColor:'#f4f4f4' }}>
-              <img src={item.src} alt={item.label}
-                style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block', transition:'transform 0.45s ease' }}
-                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.05)')}
-                onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)' }} />
-              <div style={{ position:'absolute', bottom:'8px', left:'10px', right:'8px' }}>
-                <p style={{ fontSize:'8px', fontWeight:300, color:'rgba(255,255,255,0.85)', margin:0 }}>{item.label}</p>
-              </div>
+        <div className="spdata-section-wrap" style={{ padding: isMobile ? '28px 20px 20px' : '30px 36px 22px', maxWidth:'1120px', margin:'0 auto' }}>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'minmax(0,1fr) auto', gap:'20px', alignItems:'start' }}>
+            <div>
+              <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Campanha em destaque</p>
+              <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>SPDATA&Você</h3>
+              <p className="spdata-body-copy" style={{ fontSize:'15px', fontWeight:400, lineHeight:1.62, color:T.ink, margin:0, maxWidth:'920px' }}>
+                Desenvolvimento da campanha SPDATA&Você, com identidade visual própria e linha editorial focada em pessoas e benefícios.
+              </p>
             </div>
-          ))}
+            <span style={{ padding:'4px 12px', backgroundColor:T.magenta, color:'#fff', fontSize:'9px', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', flexShrink:0 }}>2021–2022</span>
+          </div>
         </div>
-        <div style={{ padding:'10px 20px', backgroundColor:T.bg, borderTop:`1px solid ${T.ruleLight}`, display:'flex', alignItems:'baseline', gap:'12px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.magenta, margin:0 }}>SPDATA&Você</p>
-          <span style={{ width:'1px', height:'10px', backgroundColor:T.rule, display:'inline-block' }} />
-          <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0 }}>Campanha de endomarketing · identidade visual, conteúdo e distribuição interna</p>
-        </div>
-      </div>
 
-      {/* ── CAMPANHA CRACHÁ ── */}
-      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding:'36px 36px 24px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Ação interna em destaque</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(16px,1.8vw,22px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 10px' }}>
-            Campanha do Crachá
-          </h3>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.75, color:T.inkMid, margin:0, maxWidth:'480px' }}>
-            Ação de comunicação interna para adesão ao novo crachá de acesso por RFID. Visual consistente com a linha de endomarketing, linguagem direta e orientada a ação.
-          </p>
-        </div>
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'3px' }}>
-          {crachaCampanha.map(item => (
-            <div key={item.label} onClick={() => setLightbox(item.src)}
-              style={{ position:'relative', overflow:'hidden', aspectRatio:'4/3', cursor:'zoom-in', backgroundColor:'#f0f0f0' }}>
+        <div className="spdata-campaign-grid" style={{ display:'grid', gridTemplateColumns: isMobile ? 'repeat(2, minmax(0,1fr))' : 'repeat(5, minmax(0,1fr))', gap:'3px', maxWidth:'1120px', margin:'0 auto 3px' }}>
+          {voceImages.map(item => (
+            <button key={item.label} onClick={() => setLightbox(item.src)}
+              style={{ position:'relative', overflow:'hidden', aspectRatio:'1/1', cursor:'zoom-in', backgroundColor:'#f4f4f4', border:'none', padding:0 }}>
               <img src={item.src} alt={item.label}
                 style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block', transition:'transform 0.45s ease' }}
                 onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.04)')}
                 onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)' }} />
-              <div style={{ position:'absolute', bottom:'10px', left:'12px', right:'8px' }}>
-                <p style={{ fontSize:'9px', fontWeight:300, color:'rgba(255,255,255,0.85)', margin:0 }}>{item.label}</p>
+              <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,0.42) 0%, transparent 50%)', pointerEvents:'none' }} />
+              <div style={{ position:'absolute', bottom:'8px', left:'10px', right:'8px', textAlign:'left', pointerEvents:'none' }}>
+                <p style={{ fontSize:'8px', fontWeight:500, color:'rgba(255,255,255,0.90)', margin:0 }}>{item.label}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+        <div style={{ padding:'9px 20px', backgroundColor:T.bg, borderTop:`1px solid ${T.ruleLight}`, display:'flex', alignItems:'baseline', gap:'12px' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.magenta, margin:0 }}>SPDATA&Você</p>
+          <span style={{ width:'1px', height:'10px', backgroundColor:T.rule, display:'inline-block' }} />
+          <p style={{ fontSize:'10px', fontWeight:400, color:T.inkLight, margin:0 }}>Campanha de endomarketing (identidade visual, conteúdo e distribuição interna)</p>
+        </div>
+      </div>
+
+      {/* Crachá + identidade de produtos */}
+      <div className="spdata-dual-section" style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white, padding: isMobile ? '28px 20px' : '30px 36px' }}>
+        <div style={{ maxWidth:'1120px', margin:'0 auto', display:'grid', gridTemplateColumns: isMobile ? '1fr' : 'minmax(0,0.92fr) minmax(0,1.08fr)', gap:'18px' }}>
+          <article style={{ backgroundColor:T.bg, padding:'20px', borderTop:`2px solid ${T.magenta}` }}>
+            <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Ação interna em destaque</p>
+            <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(16px,1.8vw,21px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 8px' }}>Campanha do Crachá</h3>
+            <p style={{ fontSize:'13px', fontWeight:400, lineHeight:1.58, color:T.ink, margin:'0 0 14px' }}>
+              Ação de comunicação interna para adesão ao novo crachá de acesso por RFID, com linguagem direta e orientada à ação.
+            </p>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6px' }}>
+              {crachaCampanha.map(item => (
+                <button key={item.label} onClick={() => setLightbox(item.src)}
+                  style={{ position:'relative', overflow:'hidden', aspectRatio:'4/3', cursor:'zoom-in', backgroundColor:T.white, border:'none', padding:0 }}>
+                  <img src={item.src} alt={item.label}
+                    style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block' }} />
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article style={{ backgroundColor:T.bg, padding:'20px', borderTop:`2px solid ${T.navy}` }}>
+            <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 8px' }}>Branding Digital & Produtos</p>
+            <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(16px,1.8vw,21px)', fontWeight:600, lineHeight:1.25, color:T.ink, margin:'0 0 8px' }}>Identidade visual diferenciada por público.</h3>
+            <p style={{ fontSize:'13px', fontWeight:400, lineHeight:1.58, color:T.ink, margin:'0 0 14px' }}>
+              Dois produtos e dois públicos, com linguagem visual diferenciada: paleta fria e tecnológica para SPDATA e paleta quente e humanizada para Minha Clínica.
+            </p>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6px' }}>
+              <div style={{ padding:'14px', borderTop:`3px solid ${T.navy}`, backgroundColor:T.white }}>
+                <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:T.navy, margin:'0 0 5px' }}>SPDATA</p>
+                <p style={{ fontSize:'11px', fontWeight:500, color:T.ink, margin:'0 0 3px' }}>Hospitais & Clínicas · B2B</p>
+                <p style={{ fontSize:'10px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.5 }}>Paleta fria, tech. Comunicação técnica e institucional.</p>
+              </div>
+              <div style={{ padding:'14px', borderTop:`3px solid ${T.magenta}`, backgroundColor:T.white }}>
+                <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:T.magenta, margin:'0 0 5px' }}>Minha Clínica</p>
+                <p style={{ fontSize:'11px', fontWeight:500, color:T.ink, margin:'0 0 3px' }}>Clínicas menores · B2B</p>
+                <p style={{ fontSize:'10px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.5 }}>Paleta quente, humanizada. Linguagem acessível.</p>
               </div>
             </div>
-          ))}
-        </div>
-        <div style={{ padding:'10px 20px', backgroundColor:T.bg, borderTop:`1px solid ${T.ruleLight}` }}>
-          <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0 }}>Ação de adesão ao novo sistema de crachá RFID · peças de comunicação interna</p>
+          </article>
         </div>
       </div>
 
-      {/* ── BRANDING DIGITAL & PRODUTOS ── */}
-      <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding:'40px 36px 28px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 14px' }}>Branding Digital & Produtos</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 12px' }}>
-            Traduzindo tecnologia médica pra gente de verdade.
-          </h3>
-          <p style={{ fontSize:'12px', fontWeight:300, lineHeight:1.78, color:T.inkMid, margin:'0 0 24px', maxWidth:'480px' }}>
-            Dois produtos, dois públicos, duas identidades visuais. Padronizei a presença digital das linhas SPDATA e Minha Clínica com linguagem diferenciada por público — paleta fria/tech para B2B hospitalar, paleta quente/humanizada para clínicas menores.
-          </p>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2px', marginBottom:'28px' }}>
-            <div style={{ padding:'18px', borderTop:`3px solid ${T.navy}`, backgroundColor:T.bg }}>
-              <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:T.navy, margin:'0 0 6px' }}>SPDATA</p>
-              <p style={{ fontSize:'11px', fontWeight:400, color:T.ink, margin:'0 0 4px' }}>Hospitais & Clínicas · B2B</p>
-              <p style={{ fontSize:'11px', fontWeight:300, color:T.inkLight, margin:0, lineHeight:1.55 }}>Paleta fria, tech. Comunicação técnica e institucional.</p>
-            </div>
-            <div style={{ padding:'18px', borderTop:`3px solid ${T.magenta}`, backgroundColor:T.bg }}>
-              <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:T.magenta, margin:'0 0 6px' }}>Minha Clínica</p>
-              <p style={{ fontSize:'11px', fontWeight:400, color:T.ink, margin:'0 0 4px' }}>Clínicas menores · B2B</p>
-              <p style={{ fontSize:'11px', fontWeight:300, color:T.inkLight, margin:0, lineHeight:1.55 }}>Paleta quente, humanizada. Linguagem acessível.</p>
-            </div>
-          </div>
+      {/* Comunicação interna e institucional */}
+      <div style={{ borderTop:`1px solid ${T.ruleLight}`, backgroundColor:T.white }}>
+        <div className="spdata-section-wrap" style={{ padding: isMobile ? '26px 20px 16px' : '28px 36px 16px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 6px' }}>Comunicação interna e institucional</p>
+          <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0 }}>Peças e aplicações desenvolvidas para diferentes demandas e canais.</p>
         </div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:'3px', marginBottom:'3px' }}>
-          {[spdataCI1, spdataCI6, spdataCI4, spdataCI3].map((src, i) => (
-            <div key={i} onClick={() => setLightbox(src)}
-              style={{ position:'relative', overflow:'hidden', aspectRatio:'1/1', cursor:'zoom-in', backgroundColor:'#f0f0f0' }}>
-              <img src={src} alt=""
-                style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block', transition:'transform 0.55s ease' }}
-                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.06)')}
-                onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-            </div>
+        <div className="spdata-horizontal-track" style={{ display:'flex', gap:'8px', overflowX:'auto', overflowY:'hidden', maxWidth:'1120px', margin:'0 auto', padding: isMobile ? '0 20px 24px' : '0 36px 28px', scrollSnapType:'x mandatory' }}>
+          {internalImages.map(item => (
+            <button key={item.label} onClick={() => setLightbox(item.src)}
+              style={{ width: isMobile ? '136px' : '150px', flex:'0 0 auto', aspectRatio:'1/1', position:'relative', overflow:'hidden', backgroundColor:T.bg, border:`1px solid ${T.ruleLight}`, padding:0, cursor:'zoom-in', scrollSnapAlign:'start' }}>
+              <img src={item.src} alt={item.label}
+                style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block' }} />
+            </button>
           ))}
-        </div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:'3px' }}>
-          {[spdataCI5, spdataCI2, spdataRS1, spdataCracha3].map((src, i) => (
-            <div key={i} onClick={() => setLightbox(src)}
-              style={{ position:'relative', overflow:'hidden', aspectRatio:'1/1', cursor:'zoom-in', backgroundColor:'#f0f0f0' }}>
-              <img src={src} alt=""
-                style={{ width:'100%', height:'100%', objectFit:'contain', objectPosition:'center', display:'block', transition:'transform 0.55s ease' }}
-                onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.06)')}
-                onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')} />
-            </div>
-          ))}
-        </div>
-        <div style={{ padding:'10px 20px', backgroundColor:T.bg, borderTop:`1px solid ${T.ruleLight}`, display:'flex', alignItems:'baseline', gap:'12px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.18em', textTransform:'uppercase', color:T.navy, margin:0 }}>Identidade Digital</p>
-          <span style={{ width:'1px', height:'10px', backgroundColor:T.rule, display:'inline-block' }} />
-          <p style={{ fontSize:'10px', fontWeight:300, color:T.inkLight, margin:0 }}>Redes sociais, comunicação de produto e site institucional</p>
         </div>
       </div>
 
-      {/* ── RESULTADOS ── */}
+      {/* Resultados */}
       <div style={{ borderTop:`1px solid ${T.rule}`, backgroundColor:T.white }}>
-        <div style={{ padding:'40px 36px 36px' }}>
-          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 14px' }}>Resultados</p>
-          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 28px' }}>
-            Cultura, pessoas e marca alinhadas.
-          </h3>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2px', margin:'0 0 28px' }}>
+        <div style={{ padding: isMobile ? '28px 20px 32px' : '30px 36px 34px', maxWidth:'1120px', margin:'0 auto' }}>
+          <p style={{ fontSize:'9px', fontWeight:700, letterSpacing:'0.26em', textTransform:'uppercase', color:T.inkLight, margin:'0 0 10px' }}>Resultados</p>
+          <h3 style={{ fontFamily:'Playfair Display, serif', fontSize:'clamp(18px,2vw,24px)', fontWeight:600, lineHeight:1.25, letterSpacing:'-0.015em', color:T.ink, margin:'0 0 18px' }}>Cultura, pessoas e marca alinhadas.</h3>
+          <div style={{ display:'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap:'8px', margin:'0 0 12px' }}>
             {[
-              { label:'Campanha de endomarketing', desc:'Conceito, identidade e execução da campanha SPDATA&Você — elogiada pelo CEO.', cor:T.magenta },
+              { label:'Campanha de endomarketing', desc:'Conceito, identidade e execução da campanha SPDATA&Você, elogiada pelo CEO.', cor:T.magenta },
               { label:'Identidade visual por produto', desc:'Linguagem diferenciada para SPDATA hospitalar e Minha Clínica, com consistência entre canais.', cor:T.ruleLight },
-            ].map((s,i) => (
-              <div key={i} style={{ padding:'22px 20px', borderTop:`3px solid ${s.cor}`, backgroundColor:T.bg }}>
-                <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 6px' }}>{s.label}</p>
-                <p style={{ fontSize:'11px', fontWeight:300, color:T.inkMid, margin:0, lineHeight:1.65 }}>{s.desc}</p>
+            ].map((item,i) => (
+              <div key={i} style={{ padding:'18px', borderTop:`3px solid ${item.cor}`, backgroundColor:T.bg }}>
+                <p style={{ fontSize:'12px', fontWeight:600, color:T.ink, margin:'0 0 5px' }}>{item.label}</p>
+                <p style={{ fontSize:'11px', fontWeight:400, color:T.inkMid, margin:0, lineHeight:1.6 }}>{item.desc}</p>
               </div>
             ))}
           </div>
-          <div style={{ padding:'16px 20px', backgroundColor:T.bg, borderLeft:`2px solid ${T.magenta}` }}>
-            <p style={{ fontSize:'12px', fontWeight:400, fontStyle:'italic', lineHeight:1.72, color:T.inkMid, margin:0 }}>
-              {c.resultadoTexto}
-            </p>
+          <div style={{ padding:'14px 18px', backgroundColor:T.bg, borderLeft:`2px solid ${T.magenta}` }}>
+            <p style={{ fontSize:'11px', fontWeight:400, lineHeight:1.65, color:T.inkMid, margin:0 }}>{c.resultadoTexto}</p>
           </div>
         </div>
       </div>
 
-      {/* ── NARRATIVA ── */}
-      {cases[1].narrativa && <NarrativaBlock texto={cases[1].narrativa} cor={T.magenta} cargo="Analista de Comunicação e Marketing — SPDATA" />}
-
-      {/* ── NAVEGAÇÃO ── */}
-      <div style={{ padding:'20px 36px', backgroundColor:T.white, borderTop:`1px solid ${T.rule}` }}>
+      {/* Navegação */}
+      <div style={{ padding:'20px 36px', backgroundColor:T.white, borderTop:`1px solid ${T.rule}`, display:'flex', alignItems:'center', justifyContent:'space-between', gap:'12px', flexWrap:'wrap' }}>
         <button onClick={onBack} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',background:'none',border:`1px solid ${T.rule}`,color:T.inkMid,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.18s' }}
           onMouseEnter={e=>{e.currentTarget.style.borderColor=T.magenta;e.currentTarget.style.color=T.magenta}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor=T.rule;e.currentTarget.style.color=T.inkMid}}>
           ← Todos os cases
+        </button>
+        <button onClick={onNext} style={{ display:'inline-flex',alignItems:'center',gap:'8px',padding:'9px 20px',backgroundColor:T.magenta,border:`1px solid ${T.magenta}`,color:T.white,fontSize:'11px',cursor:'pointer',fontFamily:'Inter, sans-serif',letterSpacing:'0.06em',textTransform:'uppercase' }}>
+          Próximo case →
         </button>
       </div>
     </div>
@@ -2060,7 +2030,7 @@ function SimpleCaseDetail({ caseIndex, onBack }: { caseIndex: number; onBack: ()
 
 function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () => void; onOpenCase: (id: number) => void }) {
   if (id === 0) return <SadaCaseDetail onBack={onBack} onNext={() => onOpenCase(1)} />
-  if (id === 1) return <SpdataCaseDetail onBack={onBack} />
+  if (id === 1) return <SpdataCaseDetail onBack={onBack} onNext={() => onOpenCase(2)} />
   if (id === 2) return <StartupCaseDetail onBack={onBack} />
   if (id === 3) return <SimpleCaseDetail caseIndex={3} onBack={onBack} />
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
