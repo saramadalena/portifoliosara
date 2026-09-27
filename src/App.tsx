@@ -2167,6 +2167,16 @@ function CaseDetailRouter({ id, onBack, onOpenCase }: { id: number; onBack: () =
   return <SimpleCaseDetail caseIndex={id} onBack={onBack} />
 }
 
+// Link editorial da navegação principal
+function NavLink({ href, children, onClick }: { href: string; children: string; onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
+  const [hov, setHov] = useState(false)
+  return (
+    <a href={href} onClick={onClick} style={{ fontSize:'11px',fontWeight:500,letterSpacing:'0.1em',textTransform:'uppercase',textDecoration:'none',color: hov?T.navy:T.inkLight,transition:'color 0.18s',paddingBottom:'2px',borderBottom: hov?`1px solid ${T.navy}`:'1px solid transparent',minHeight:'44px',display:'inline-flex',alignItems:'center' }} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
+      {children}
+    </a>
+  )
+}
+
 function MobileMenu({ open, onClose, onCase, onNav }: { open: boolean; onClose: () => void; onCase: () => void; onNav: (id: string) => void }) {
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
