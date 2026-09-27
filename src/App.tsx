@@ -9,6 +9,7 @@ import spdataVoce1 from './imports/spdata_voce__1_.png'
 import spdataVoce2 from './imports/spdata_voce__2_.png'
 import spdataVoce4 from './imports/spdata_voce__4_.png'
 import spdataVoce5 from './imports/spdata_voce__5_.png'
+import spdataCapa from './imports/institucional-spdata-voce.jpg'
 import spdataVoce8 from './imports/spdata_voce__8_.png'
 import spdataCI1 from './imports/CI__1_.png'
 import spdataCI2 from './imports/CI__2_.png'
@@ -1328,7 +1329,7 @@ function CaseGallery({ onOpen }: { onOpen: (id: number) => void }) {
   const { isMobile, isTablet } = useBreakpoint()
   const covers: (string | null)[] = [
     imgDiaVCapa,
-    spdataVoce5,
+    spdataCapa,
     startupCapa,
     startupCapaNova,
   ]
@@ -2409,7 +2410,7 @@ export default function App() {
           <div style={{ display:'flex',alignItems:'flex-end',justifyContent:'space-between',gap:'24px',paddingBottom:'40px',flexWrap:'wrap' }}>
             <h2 style={{ fontFamily:'Playfair Display, serif',fontSize:'clamp(26px,2.8vw,40px)',fontWeight:700,lineHeight:1.1,letterSpacing:'-0.03em',margin:0,color:T.ink,maxWidth:'560px' }}>
               Projetos reais,{' '}
-              <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>estratégia e execução em contexto.</em>
+              <em style={{ fontStyle:'italic',fontWeight:400,color:T.magenta }}>resultados mensuráveis.</em>
             </h2>
             {!isMobile && <p style={{ fontSize:'12px',fontWeight:300,color:T.inkLight,maxWidth:'260px',lineHeight:1.75,margin:0,textAlign:'right',flexShrink:0 }}>Estrutura: <em>Contexto · Desafio · Estratégia<br/>Execução · Resultados</em></p>}
           </div>
